@@ -40,7 +40,7 @@ try {
  $entry=([uri](Join-Path $workspace 'bots\Rift\lib\index.js')).AbsoluteUri
  $output=& (Join-Path $program 'sidecar\node\node.exe') --input-type=module -e 'await import(process.argv[1]);' $entry 2>&1|Out-String
  Check ($LASTEXITCODE -eq 0) 'installed Rift bytecode loads in bundled Node without network'
- Check ((Test-Path (Join-Path $program 'sidecar\node\LICENSE')) -and (Test-Path (Join-Path $program 'sidecar\hermes\vendor\silk-wasm\LICENSE')) -and (Test-Path (Join-Path $program 'sidecar\rift\LICENSE'))) 'third-party notices remain installed'
+ Check ((Test-Path (Join-Path $program 'sidecar\node\LICENSE')) -and (Test-Path (Join-Path $program 'sidecar\hermes\vendor\silk-wasm\LICENSE')) -and (Test-Path (Join-Path $program 'sidecar\rift\LICENSE')) -and (Test-Path (Join-Path $program 'docs\licenses\COPYING.GPLv3'))) 'third-party notices remain installed'
  Check (-not (Test-Path (Join-Path $program 'sidecar\hermes\native\hook.cpp')) -and -not (Test-Path (Join-Path $program 'pack\login'))) 'private native source and login package are absent'
  Check ((Test-Path (Join-Path $program 'art\character\hero.webp')) -and (Test-Path (Join-Path $program 'art\character\avatar.webp'))) 'Mingling redrawn hero and original avatar remain installed'
 } catch {$failure=$_.Exception.Message} finally {
