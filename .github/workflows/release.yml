@@ -112,7 +112,7 @@ jobs:
         env:
           CHANNEL: ${{ inputs.channel || '' }}
         run: |
-          $tag = (Select-String win32/src/version.h '^#define APP_VERSION_TAG').Line.Split('"')[1]
+          $tag = (Select-String -LiteralPath win32/src/version.h -Pattern '^#define APP_VERSION_TAG ').Line.Split('"')[1]
           if (-not $env:CHANNEL) { $env:CHANNEL = if ($tag -match '-beta\.') { 'beta' } else { 'stable' } }
           New-Item -ItemType Directory -Force .tmp/previous | Out-Null
           if ($env:CHANNEL -eq 'beta') { gh release download channel-beta --repo YYZ-YPC/kairos --pattern latest.json --dir .tmp/previous 2>$null } else { gh release download --repo YYZ-YPC/kairos --pattern latest.json --dir .tmp/previous 2>$null }
@@ -127,7 +127,8 @@ jobs:
           if ($info -and -not $info.isDraft) { Write-Output 'Published release preserved; validation artifacts remain in Actions'; exit 0 }
           if (-not $info) { gh release create $tag --repo YYZ-YPC/kairos --draft --title "时序之子 $tag" --notes-file CHANGELOG.md }
           if ($env:CHANNEL -eq 'beta') { gh release edit $tag --repo YYZ-YPC/kairos --prerelease }
-          gh release upload $tag dist/* --repo YYZ-YPC/kairos --clobber
+          $uploadAssets=@(Get-ChildItem -LiteralPath dist -File | ForEach-Object FullName)
+          gh release upload $tag @uploadAssets --repo YYZ-YPC/kairos --clobber
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
           if ($env:CHANNEL -eq 'beta') {
             gh release view channel-beta --repo YYZ-YPC/kairos 2>$null
