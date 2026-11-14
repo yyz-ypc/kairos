@@ -25,7 +25,7 @@ function Setup-Tide([string]$basePath, [string]$homePath) {
     $ErrorActionPreference = 'Continue'
     try {
         $out = & powershell.exe -NoProfile -ExecutionPolicy Bypass -File (Join-Path $repo 'tools\setup-hermes.ps1') `
-            -Base $basePath -Bots (Join-Path $basePath 'fixture-components') -DataDir $homePath 2>&1 | Out-String
+            -Base $basePath -Bots (Join-Path $basePath 'fixture-components') -DataDir $homePath -Source (Join-Path $basePath 'sidecar\hermes') 2>&1 | Out-String
         $code = $LASTEXITCODE
     } finally { $ErrorActionPreference = $prev }
     return [pscustomobject]@{ Code = $code; Output = $out }
