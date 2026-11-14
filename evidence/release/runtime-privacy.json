@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "files_scanned": 517,
+  "scope": "Release payload text and bytecode in UTF-8 and UTF-16LE; unchanged upstream executables above 20MiB excluded",
+  "errors": []
+}

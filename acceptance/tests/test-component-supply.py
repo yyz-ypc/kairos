@@ -1,5 +1,5 @@
 """Real PowerShell/curl integration against a local Range-capable 20 MiB source."""
-import copy,hashlib,http.server,json,os,pathlib,subprocess,threading,time,shutil,uuid
+import sys,copy,hashlib,http.server,json,os,pathlib,subprocess,threading,time,shutil,uuid
 ROOT=pathlib.Path(__file__).resolve().parents[2]
 OUT=ROOT/'evidence/component-supply';OUT.mkdir(exist_ok=True)
 WORK=ROOT/'.tmp/component-supply'/uuid.uuid4().hex
@@ -125,5 +125,9 @@ try:
   report['native_window_handoff']=True
  report['requests']=requests
 finally:
+ if sys.exc_info()[0] is not None:
+  for log in sorted(OUT.glob('*.log')):
+   print('FAKE-SOURCE FAILURE LOG:',log.name,flush=True)
+   print(log.read_bytes()[-12000:].decode('utf-8',errors='replace'),flush=True)
  server.shutdown();(OUT/'fake-source.json').write_text(json.dumps(report,indent=2),encoding='utf-8')
 print(json.dumps(report,ensure_ascii=False,indent=2))

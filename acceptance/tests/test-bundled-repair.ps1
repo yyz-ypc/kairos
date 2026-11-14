@@ -31,4 +31,8 @@ $rejected=$false;try{Resolve-BundledPath $target 'sidecar/../../escape.dll'}catc
 Move-Item -LiteralPath ($zip+'.held') -Destination $zip
 Restore-BundledAsset -Root $target -Asset $a -Offline
 Assert (Test-BundledAsset $target $a) 'repair can recover corrupted file'
+& {
+ function Get-FileHash { throw 'FileHash module unavailable in nested scope' }
+ Assert (Test-BundledAsset $target $a) 'shared hashing works without PowerShell FileHash module'
+}
 Write-Output ('SUMMARY total='+$cases+' failed=0')

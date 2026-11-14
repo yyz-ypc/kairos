@@ -1,0 +1,63 @@
+{
+  "single_repair_keeps_interrupted_queue": true,
+  "defaults": {
+    "rift_done": true,
+    "breeze_done": true,
+    "ollama_unselected": true,
+    "service_deferred_without_client": true
+  },
+  "offline_cache_no_download": true,
+  "pause": {
+    "stop_seconds": 0.204,
+    "bytes": 4587520,
+    "speed": 1013721,
+    "samples": [
+      2228224,
+      4325376
+    ],
+    "range_resume": true,
+    "required_done": 8,
+    "manual_outside_queue": 4
+  },
+  "killed": {
+    "checkpoint_bytes": 2228224,
+    "file_bytes": 2752512,
+    "range_resume": true
+  },
+  "sha256_mirror_fallback": true,
+  "insufficient_disk_no_request": true,
+  "check_keeps_checkpoint": true,
+  "release_ignores_test_environment": true,
+  "requests": [
+    {
+      "path": "/good/pkg.bin",
+      "start": 0,
+      "at": 1794648340.3058531
+    },
+    {
+      "path": "/good/pkg.bin",
+      "start": 4587520,
+      "at": 1794648346.2053022
+    },
+    {
+      "path": "/good/pkg.bin",
+      "start": 0,
+      "at": 1794648366.8814347
+    },
+    {
+      "path": "/good/pkg.bin",
+      "start": 2752512,
+      "at": 1794648370.3091233
+    },
+    {
+      "path": "/bad/pkg.bin",
+      "start": 0,
+      "at": 1794648392.4048696
+    },
+    {
+      "path": "/good/pkg.bin",
+      "start": 0,
+      "at": 1794648395.2555947
+    }
+  ]
+}

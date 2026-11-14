@@ -876,7 +876,7 @@ function Test-RiftBundledNpm($StepObj, $Comp) {
         $relative = $file.FullName.Substring($source.TrimEnd('\').Length + 1)
         $target = Join-Path (Join-Path $dir 'node_modules') $relative
         if (-not (Test-Path -LiteralPath $target)) { return $false }
-        if ((Get-FileHash -LiteralPath $target -Algorithm SHA256).Hash -ne (Get-FileHash -LiteralPath $file.FullName -Algorithm SHA256).Hash) { return $false }
+        if ((Get-BundledFileHash -LiteralPath $target -Algorithm SHA256).Hash -ne (Get-BundledFileHash -LiteralPath $file.FullName -Algorithm SHA256).Hash) { return $false }
     }
     Write-LogLine 'rift: bundled npm versions and per-file SHA256 verified; no npm network operation'
     return $true

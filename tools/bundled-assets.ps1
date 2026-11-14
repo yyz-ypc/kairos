@@ -1,5 +1,12 @@
 ﻿#requires -Version 5.1
 # Shared repair primitive. Only catalogued package files may be replaced.
+# Independent streaming hash: nested Windows PowerShell module autoload may be unavailable.
+function Get-BundledFileHash {
+    param([Parameter(Mandatory)][string]$LiteralPath,[ValidateSet('SHA256')][string]$Algorithm='SHA256')
+    $stream=[IO.File]::OpenRead($LiteralPath);$sha=[Security.Cryptography.SHA256]::Create()
+    try { return [pscustomobject]@{Hash=([BitConverter]::ToString($sha.ComputeHash($stream))).Replace('-','').ToLowerInvariant()} }
+    finally {$stream.Dispose();$sha.Dispose()}
+}
 function Get-BundledCatalog([string]$Root,[string]$Catalog='') {
     if(-not $Catalog){$Catalog=Join-Path $Root 'tools\bundled-assets.json'}
     if(-not (Test-Path -LiteralPath $Catalog)){return $null}
@@ -23,7 +30,7 @@ function Test-BundledAsset([string]$Root,$Asset) {
     foreach($f in $Asset.files){
         $p=Resolve-BundledPath $Root $f.path
         if(-not (Test-Path -LiteralPath $p -PathType Leaf)){return $false}
-        if((Get-Item -LiteralPath $p).Length -ne $f.size -or (Get-FileHash -LiteralPath $p -Algorithm SHA256).Hash.ToLowerInvariant() -ne $f.sha256){return $false}
+        if((Get-Item -LiteralPath $p).Length -ne $f.size -or (Get-BundledFileHash -LiteralPath $p -Algorithm SHA256).Hash.ToLowerInvariant() -ne $f.sha256){return $false}
     }
     return $true
 }
@@ -41,13 +48,13 @@ function Restore-BundledAsset([string]$Root,$Asset,[switch]$Offline,[string]$Pac
     New-Item -ItemType Directory -Path $temp -Force|Out-Null
     try {
         if(Test-Path -LiteralPath $archive){
-            if((Get-FileHash -LiteralPath $archive -Algorithm SHA256).Hash.ToLowerInvariant() -ne $Asset.sha256){throw ('Local pack SHA256 mismatch; '+$guide)}
+            if((Get-BundledFileHash -LiteralPath $archive -Algorithm SHA256).Hash.ToLowerInvariant() -ne $Asset.sha256){throw ('Local pack SHA256 mismatch; '+$guide)}
         }else{
             if($Offline -or -not (Test-BundledNetwork)){throw ('Offline; '+$guide)}
             if($Asset.url -notmatch '^https://github\.com/YYZ-YPC/kairos/releases/download/[^\s]+$'){throw 'HTTPS release URL required'}
             $archive=Join-Path $temp $Asset.name
             Invoke-WebRequest -UseBasicParsing -Uri $Asset.url -OutFile $archive -TimeoutSec 90
-            if((Get-FileHash -LiteralPath $archive -Algorithm SHA256).Hash.ToLowerInvariant() -ne $Asset.sha256){throw 'Downloaded pack SHA256 mismatch'}
+            if((Get-BundledFileHash -LiteralPath $archive -Algorithm SHA256).Hash.ToLowerInvariant() -ne $Asset.sha256){throw 'Downloaded pack SHA256 mismatch'}
         }
         if((Get-Item -LiteralPath $archive).Length -ne $Asset.size){throw 'Archive size mismatch'}
         Add-Type -AssemblyName System.IO.Compression.FileSystem
@@ -60,7 +67,7 @@ function Restore-BundledAsset([string]$Root,$Asset,[switch]$Offline,[string]$Pac
                 $name=$entry.FullName;if(-not $expected.ContainsKey($name) -or $staged.ContainsKey($name)){throw 'Unexpected or duplicate archive entry'}
                 $f=$expected[$name];$p=Join-Path $temp ('files\'+$name);New-Item -ItemType Directory -Path (Split-Path $p) -Force|Out-Null
                 [IO.Compression.ZipFileExtensions]::ExtractToFile($entry,$p,$true)
-                if((Get-Item -LiteralPath $p).Length -ne $f.size -or (Get-FileHash -LiteralPath $p -Algorithm SHA256).Hash.ToLowerInvariant() -ne $f.sha256){throw ('Per-file SHA256 mismatch: '+$name)}
+                if((Get-Item -LiteralPath $p).Length -ne $f.size -or (Get-BundledFileHash -LiteralPath $p -Algorithm SHA256).Hash.ToLowerInvariant() -ne $f.sha256){throw ('Per-file SHA256 mismatch: '+$name)}
                 $staged[$name]=$p
             }
         }finally{$zip.Dispose()}
