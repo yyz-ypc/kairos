@@ -1,7 +1,7 @@
 """Stable/beta/snapshot version-generation regression; temporary headers only."""
 from pathlib import Path
 import re,subprocess,tempfile
-root=Path(__file__).resolve().parents[1];source=(root/'win32/src/version.h').read_text();cases=[]
+root=Path(__file__).resolve().parents[1];source=(root/'win32/src/version.h').read_text(encoding='utf-8-sig');cases=[]
 def run(text,expected):
  with tempfile.TemporaryDirectory(prefix='kairos-version-') as d:
   f=Path(d)/'version.h';f.write_text(text,encoding='utf8');p=subprocess.run(['powershell','-NoProfile','-ExecutionPolicy','Bypass','-File',str(root/'tools/check-version.ps1'),'-Header',str(f),'-SkipDocs'],capture_output=True);assert (p.returncode==0)==expected,p.stdout+p.stderr

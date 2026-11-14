@@ -23,6 +23,8 @@ jobs:
         shell: pwsh
     env:
       GH_TOKEN: ${{ github.token }}
+      PYTHONUTF8: '1'
+      PYTHONIOENCODING: utf-8
       KAIROS_ISCC: C:\Program Files (x86)\Inno Setup 6\ISCC.exe
     steps:
       - uses: actions/checkout@v4
@@ -58,6 +60,7 @@ jobs:
           python tools/test-release-versions.py
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
           node tools/build-web.mjs
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
           node --test win32/tests/webui.test.cjs
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
           python tools/check-ui-palettes.py --check-css
