@@ -14,6 +14,14 @@
 - 真实安装副本已完成离线修复检查：退出码 0，Hermes 显示“已就绪（随安装包）”；已有 OneBot 配置逐字节未改变。没有登录 QQ、发送消息或启动真实账号。
 - 随包修复 12 项、bundled 契约 38 项、WebUI 62 项通过。
 - 其他 20 个组件清单项完全不变；Hermes 的 bundled、detect、verify、source、版本和锁定语义不变，仅安装命令补入显式 Source。
-- 完整构建通过。安装包、云端全量验收及发布摘要完成后在本报告下方归档。
+- 完整构建通过。云端全量验收及最终安装包本机复验均通过。
 
 本机修复先备份原程序与受影响脚本；私人备份保存在用户工作区的“旧版”目录，不进入公开仓库。脱敏记录见 ../hotfix-1.0.1/repair.json 和 icon.json。
+
+## 最终交付
+
+成功 CI：[https://github.com/yyz-ypc/kairos/actions/runs/43598525134](https://github.com/yyz-ypc/kairos/actions/runs/43598525134)，构建提交 `d54ed7d3136b383faccf94884f5fb86aae7309d9`。core、WebUI 62、契约 38、随包修复 12、迁移 19、分离目录离线 17、渲染矩阵 570 全部通过，云端与最终包本机隔离安装均为 12/12。
+
+`Kairos-1.0.1-setup.exe`：137952855 字节。SHA256：`6a95b27a95d7a9d704ab01e5fd98d8afb2dee5e6faed7eb858b4a77751ec1e3e`。本地七项资产、更新清单和 GitHub 上传 digest 已逐项核对。`latest.json.previous` 保留 V1.0.0；原版资产未改写。
+
+[修复记录](../hotfix-1.0.1/repair.json) · [原图标验证](../hotfix-1.0.1/icon.json) · [最终安装验收](../hotfix-1.0.1/installer-test.json) · [CI](../hotfix-1.0.1/ci.json) · [资产清单](../hotfix-1.0.1/artifacts.json)。

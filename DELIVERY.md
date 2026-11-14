@@ -3,3 +3,5 @@
 修复潮信在安装目录与工作区分离时无法修复的问题，恢复冥零程序与安装器图标。
 
 [仓库](https://github.com/YYZ-YPC/kairos) · [修复版资产](https://github.com/YYZ-YPC/kairos/releases/tag/V1.0.1) · [本次报告](evidence/release/HOTFIX-1.0.1.md)。V1.0.0 资产保留供回滚；安装目录、账号数据和聊天配置不重置。
+
+最终安装包 137952855 字节；SHA256 `6a95b27a95d7a9d704ab01e5fd98d8afb2dee5e6faed7eb858b4a77751ec1e3e`。云端全部质量门槛与最终包本机 12 项安装验收通过。
