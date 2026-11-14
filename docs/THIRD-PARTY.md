@@ -83,3 +83,5 @@ SOFTWARE.
 ## 编译运行时补充
 
 rift/hermes 原始实现不进入公开 Git 仓库；Release 采用 Node 24.21.0 / V8 字节码、原生 DLL 与无源码映射的浏览器构建产物。bytenode 1.5.7 为 MIT，许可证随 sidecar/*/vendor/bytenode/LICENSE 分发。Node 完整许可在 sidecar/node/LICENSE，silk-wasm 完整许可在 sidecar/hermes/vendor/silk-wasm/LICENSE。已有 rift、ws、MinHook、FFmpeg 和 WebView2 声明保留。
+
+FFmpeg 7.1 的完整 GPL v3 正文随安装包位于 `docs/licenses/COPYING.GPLv3`，保留二进制原始 `-L` 声明；原文来自 FFmpeg n7.1 的 COPYING.GPLv3。
