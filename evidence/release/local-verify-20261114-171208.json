@@ -1,0 +1,93 @@
+{
+    "schema":  1,
+    "at":  "2026-11-14T09:12:09.1291388Z",
+    "scope":  "开发机静态/单元；不包含安装、服务启动、VMware 来宾运行",
+    "results":  [
+                    {
+                        "id":  "criteria-1",
+                        "status":  "通过（仅清单结构）",
+                        "detail":  "组件 22 个；字段/图错误 0 个",
+                        "data":  [
+
+                                 ]
+                    },
+                    {
+                        "id":  "criteria-2-static",
+                        "status":  "通过（仅静态完整性）",
+                        "detail":  "所有 source 均为 64 位 SHA256；篡改拒装需 VM 实测",
+                        "data":  {
+                                     "invalid":  [
+
+                                                 ]
+                                 }
+                    },
+                    {
+                        "id":  "source-tree-manifests",
+                        "status":  "通过",
+                        "detail":  "已核验 1 个随包源码树",
+                        "data":  [
+                                     {
+                                         "component":  "rift",
+                                         "manifest":  "tools\\source-manifests\\rift.json",
+                                         "expected":  "aba7747b511ce876b526b556631c33dfd8edb3cd34d83aae61fef2da1e0d1b31",
+                                         "actual":  "aba7747b511ce876b526b556631c33dfd8edb3cd34d83aae61fef2da1e0d1b31",
+                                         "ok":  true
+                                     }
+                                 ]
+                    },
+                    {
+                        "id":  "dependency-locks",
+                        "status":  "通过",
+                        "detail":  "uv 依赖锁逐包 SHA256；本项检查锁文件本身",
+                        "data":  [
+                                     {
+                                         "component":  "astrbot",
+                                         "lock":  "{repo}\\tools\\astrbot-requirements.txt",
+                                         "expected":  "d79a303019a7e8791e19d7d8dd6c0c9b390364f92d765003789da1849b0ca06d",
+                                         "actual":  "d79a303019a7e8791e19d7d8dd6c0c9b390364f92d765003789da1849b0ca06d",
+                                         "ok":  true
+                                     },
+                                     {
+                                         "component":  "edge-tts",
+                                         "lock":  "{repo}\\tools\\edge-tts-requirements.txt",
+                                         "expected":  "a381e84d807a95ebefba15e7b4c1b37af236b2c85859818f769fd8038bd348ee",
+                                         "actual":  "a381e84d807a95ebefba15e7b4c1b37af236b2c85859818f769fd8038bd348ee",
+                                         "ok":  true
+                                     }
+                                 ]
+                    },
+                    {
+                        "id":  "installer-artifact",
+                        "status":  "存在（未安装验证）",
+                        "detail":  "安装包已生成；安装行为需 VM",
+                        "data":  {
+                                     "path":  "F:\\dsh工作区\\Kairos\\release-source\\dist\\Kairos-1.0.0-setup.exe",
+                                     "exists":  true,
+                                     "bytes":  137667632,
+                                     "sha256":  "d3777bb16d882798d46e78e52f88f11d2db856680c0b89d74082e4a6139b3de1"
+                                 }
+                    },
+                    {
+                        "id":  "upgrade-helper-unit",
+                        "status":  "通过（单元）",
+                        "detail":  "覆盖前备份排除保护目录且含 unins；主程序 .new 原子替换",
+                        "data":  {
+                                     "backupExit":  0,
+                                     "backupFiles":  2,
+                                     "protectedBackedUp":  false,
+                                     "uninsBackedUp":  true,
+                                     "finishExit":  0,
+                                     "mainReplaced":  true,
+                                     "newExeRemoved":  true
+                                 }
+                    },
+                    {
+                        "id":  "powershell-parse",
+                        "status":  "通过",
+                        "detail":  "解析 37 个 PowerShell 脚本",
+                        "data":  [
+
+                                 ]
+                    }
+                ]
+}

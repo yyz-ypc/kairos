@@ -1,0 +1,142 @@
+name: Kairos release checks
+on:
+  push:
+    branches: [main]
+    tags: ['V*']
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      channel:
+        type: choice
+        options: [stable, beta]
+        default: stable
+permissions:
+  contents: read
+jobs:
+  windows:
+    runs-on: windows-latest
+    timeout-minutes: 45
+    permissions:
+      contents: write
+    defaults:
+      run:
+        shell: pwsh
+    env:
+      GH_TOKEN: ${{ github.token }}
+      KAIROS_ISCC: C:\Program Files (x86)\Inno Setup 6\ISCC.exe
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.21.0'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: msys2/setup-msys2@v2
+        id: msys
+        with:
+          msystem: MINGW64
+          install: mingw-w64-x86_64-gcc
+          update: false
+      - name: Configure compiler
+        run: |
+          $compiler = '${{ steps.msys.outputs.msys2-location }}\mingw64\bin'
+          "MINGW_BIN=$compiler" >> $env:GITHUB_ENV
+          New-Item -ItemType Directory -Force .tmp,pack/components,dist | Out-Null
+      - name: Restore pinned release runtimes
+        run: |
+          $bundleTag=(Get-Content tools/bundled-assets.json -Raw | ConvertFrom-Json).version
+          gh release download $bundleTag --repo YYZ-YPC/kairos --pattern 'kairos-*.zip' --dir pack/components
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          powershell -NoProfile -ExecutionPolicy Bypass -File tools/repair-bundled.ps1 -Offline
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          Copy-Item pack/components/*.zip dist/
+      - name: Version, contracts, WebUI and offline repair
+        run: |
+          powershell -NoProfile -ExecutionPolicy Bypass -File tools/check-version.ps1
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          python tools/test-release-versions.py
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          node tools/build-web.mjs
+          node --test win32/tests/webui.test.cjs
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          python tools/check-ui-palettes.py --check-css
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          python acceptance/tests/test-tide-bundle-contract.py
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          powershell -NoProfile -ExecutionPolicy Bypass -File acceptance/tests/test-bundled-repair.ps1
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          powershell -NoProfile -ExecutionPolicy Bypass -File acceptance/tests/test-tide-migration.ps1
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Component fake-source regressions
+        run: |
+          python acceptance/tests/test-component-supply.py
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          python acceptance/tests/test-component-uninstall.py
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          powershell -NoProfile -ExecutionPolicy Bypass -File acceptance/tests/test-component-protocol.ps1
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Core and C++ build
+        run: |
+          cmd /c win32\tests\run-core-tests.bat
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          cmd /c win32\build.bat
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Bundled runtime offline initialization
+        run: |
+          powershell -NoProfile -ExecutionPolicy Bypass -File acceptance/tests/test-tide-offline.ps1
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: 25 combinations and responsive rendering
+        run: |
+          $edge='C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe'
+          Start-Process -FilePath $edge -ArgumentList @('--headless=new','--disable-gpu','--no-first-run','--remote-debugging-port=9342',"--user-data-dir=$env:RUNNER_TEMP\kairos-matrix",'about:blank') -WindowStyle Hidden
+          Start-Sleep -Seconds 2
+          node tools/render-matrix.mjs
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Installer
+        run: |
+          if (-not (Test-Path $env:KAIROS_ISCC)) { choco install innosetup --yes --no-progress }
+          cmd /c installer\build-installer.bat -FromBuild
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Isolated installer and local acceptance
+        run: |
+          powershell -NoProfile -ExecutionPolicy Bypass -File acceptance/tests/test-installer-isolated.ps1
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          powershell -NoProfile -ExecutionPolicy Bypass -File acceptance/local-verify.ps1 -OutDir evidence/release
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Manifest and draft Release
+        if: github.event_name != 'pull_request'
+        env:
+          CHANNEL: ${{ inputs.channel || '' }}
+        run: |
+          $tag = (Select-String win32/src/version.h '^#define APP_VERSION_TAG').Line.Split('"')[1]
+          if (-not $env:CHANNEL) { $env:CHANNEL = if ($tag -match '-beta\.') { 'beta' } else { 'stable' } }
+          New-Item -ItemType Directory -Force .tmp/previous | Out-Null
+          if ($env:CHANNEL -eq 'beta') { gh release download channel-beta --repo YYZ-YPC/kairos --pattern latest.json --dir .tmp/previous 2>$null } else { gh release download --repo YYZ-YPC/kairos --pattern latest.json --dir .tmp/previous 2>$null }
+          $args = @('tools/generate-release.py','--dir','dist','--version',$tag,'--channel',$env:CHANNEL)
+          if (Test-Path .tmp/previous/latest.json) {
+            $previous=Get-Content .tmp/previous/latest.json -Raw | ConvertFrom-Json
+            if ($previous.version -ne $tag -and $previous.channel -eq $env:CHANNEL) { $args += @('--previous','.tmp/previous/latest.json') }
+          }
+          python @args
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          $info=gh release view $tag --repo YYZ-YPC/kairos --json isDraft 2>$null | ConvertFrom-Json
+          if ($info -and -not $info.isDraft) { throw 'Published releases are immutable; create a new version' }
+          if (-not $info) { gh release create $tag --repo YYZ-YPC/kairos --draft --title "时序之子 $tag" --notes-file CHANGELOG.md }
+          if ($env:CHANNEL -eq 'beta') { gh release edit $tag --repo YYZ-YPC/kairos --prerelease }
+          gh release upload $tag dist/* --repo YYZ-YPC/kairos --clobber
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          if ($env:CHANNEL -eq 'beta') {
+            gh release view channel-beta --repo YYZ-YPC/kairos 2>$null
+            if ($LASTEXITCODE) { gh release create channel-beta --repo YYZ-YPC/kairos --prerelease --draft --title 'Beta channel manifest' --notes 'Channel pointer; assets remain on versioned releases.' }
+            gh release upload channel-beta dist/latest.json --repo YYZ-YPC/kairos --clobber
+          }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kairos-release-evidence
+          path: |
+            dist/
+            evidence/matrix/
+            evidence/release/
+            evidence/render-matrix.json

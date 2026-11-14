@@ -1,0 +1,250 @@
+/* 主题体验层：同一份 DOM，不同的光、材质、重量与节奏。
+   这里只改颜色以外的质感——背景、阴影、圆角、字形间距与动效；
+   不改任何尺寸与结构，分页仍按真实高度重算。 */
+
+/* ── 默认与深色：夜里是有纵深的 ───────────────────────────── */
+:root{
+ --t-card-shadow:none;
+ --t-rail-bg:var(--panel);
+ --t-bar-bg:var(--bg);
+ --t-edge:var(--line);
+}
+:root[data-theme="nightfall"]{
+ --t-card-shadow:0 1px 0 color-mix(in srgb,var(--ink) 6%,transparent) inset,0 24px 44px -34px var(--shadow);
+ --t-rail-bg:linear-gradient(180deg,color-mix(in srgb,var(--panel) 88%,var(--tide)) 0%,var(--panel) 42%,color-mix(in srgb,var(--panel) 82%,var(--shadow)) 100%);
+ --t-bar-bg:linear-gradient(180deg,color-mix(in srgb,var(--panel) 55%,var(--bg)) 0%,var(--bg) 100%);
+}
+@media (prefers-color-scheme:dark){
+ :root:not([data-theme]){
+  --t-card-shadow:0 1px 0 color-mix(in srgb,var(--ink) 6%,transparent) inset,0 24px 44px -34px var(--shadow);
+  --t-rail-bg:linear-gradient(180deg,color-mix(in srgb,var(--panel) 88%,var(--tide)) 0%,var(--panel) 42%,color-mix(in srgb,var(--panel) 82%,var(--shadow)) 100%);
+  --t-bar-bg:linear-gradient(180deg,color-mix(in srgb,var(--panel) 55%,var(--bg)) 0%,var(--bg) 100%);
+ }
+}
+
+/* ── 浅色：纸面与柔光 ─────────────────────────────────────── */
+:root[data-theme="daylight"]{
+ --t-card-shadow:0 1px 2px color-mix(in srgb,var(--ink) 8%,transparent),0 14px 28px -24px color-mix(in srgb,var(--ink) 60%,transparent);
+ --t-rail-bg:color-mix(in srgb,var(--panel) 72%,var(--bg));
+ --t-bar-bg:var(--panel);
+}
+@media (prefers-color-scheme:light){
+ :root:not([data-theme]){
+  --t-card-shadow:0 1px 2px color-mix(in srgb,var(--ink) 8%,transparent),0 14px 28px -24px color-mix(in srgb,var(--ink) 60%,transparent);
+  --t-rail-bg:color-mix(in srgb,var(--panel) 72%,var(--bg));
+  --t-bar-bg:var(--panel);
+ }
+}
+
+/* 把上面选好的质感真正贴到外壳上（themes.css 最后加载，覆盖同名规则）。 */
+.rail{background:var(--t-rail-bg)}
+.bar{background:var(--t-bar-bg)}
+.card,.panel,.stat,.dependency-board,.attention,.closed-door,.barrier-summary,.task-receipt,.hero,
+.btn,.quick button,.opts button,.chip{
+ transition:background-color 200ms ease,border-color 200ms ease,box-shadow 200ms ease,color 200ms ease,transform 140ms ease;
+}
+.card,.panel,.stat,.dependency-board,.attention,.closed-door,.barrier-summary,.task-receipt,.hero{
+ box-shadow:var(--t-card-shadow);
+}
+
+/* ── 月下：把页面放进夜里 ─────────────────────────────────── */
+:root[data-theme="moon"]{
+ --r:14px;--r-card:16px;--r-ctl:10px;--r-hero:22px;--r-pill:8px;
+ --t-card-shadow:0 1px 0 color-mix(in srgb,var(--ink) 7%,transparent) inset,0 26px 50px -34px var(--shadow);
+ --t-rail-bg:color-mix(in srgb,var(--panel) 62%,transparent);
+ --t-bar-bg:color-mix(in srgb,var(--bg) 52%,transparent);
+ --t-edge:color-mix(in srgb,var(--tide) 26%,transparent);
+ --art-moon-rail:url("__ART_MOON_RAIL__");
+}
+:root[data-theme="moon"] body{
+ background-color:var(--bg);
+ background-image:
+  linear-gradient(180deg,color-mix(in srgb,var(--bg) 93%,transparent) 0%,color-mix(in srgb,var(--bg) 76%,transparent) 44%,color-mix(in srgb,var(--bg) 30%,transparent) 100%),
+  radial-gradient(1140px 580px at 76% -16%,color-mix(in srgb,var(--tide) 14%,transparent),transparent 64%),
+  url("__ART_MOON_NIGHT__");
+ background-position:center top,center top,center bottom;
+ background-size:cover,cover,cover;
+ background-repeat:no-repeat,no-repeat,no-repeat;
+ background-attachment:fixed,fixed,fixed;
+}
+:root[data-theme="moon"] .rail{
+ background-color:color-mix(in srgb,var(--panel) 42%,transparent);
+ background-image:
+  linear-gradient(180deg,color-mix(in srgb,var(--panel) 58%,transparent) 0%,color-mix(in srgb,var(--panel) 78%,transparent) 40%,color-mix(in srgb,var(--panel) 92%,transparent) 100%),
+  var(--art-moon-rail);
+ background-position:center top,center top;
+ background-size:cover,cover;
+ background-repeat:no-repeat,no-repeat;
+ backdrop-filter:blur(2px) saturate(1.06);
+ -webkit-backdrop-filter:blur(2px) saturate(1.06);
+ border-right-color:var(--t-edge);
+ box-shadow:inset -1px 0 0 color-mix(in srgb,var(--tide) 14%,transparent);
+}
+:root[data-theme="moon"] .bar{
+ backdrop-filter:blur(12px);
+ -webkit-backdrop-filter:blur(12px);
+ border-bottom-color:var(--t-edge);
+}
+:root[data-theme="moon"] .foot{
+ border-top-color:var(--t-edge);
+ background:linear-gradient(180deg,color-mix(in srgb,var(--bg) 30%,transparent) 0%,color-mix(in srgb,var(--bg) 88%,transparent) 100%);
+ backdrop-filter:blur(6px);
+ -webkit-backdrop-filter:blur(6px);
+}
+:root[data-theme="moon"] .card,
+:root[data-theme="moon"] .panel,
+:root[data-theme="moon"] .screen-panel,
+:root[data-theme="moon"] .stat,
+:root[data-theme="moon"] .dependency-board,
+:root[data-theme="moon"] .closed-door,
+:root[data-theme="moon"] .barrier-summary{
+ background:color-mix(in srgb,var(--panel) 90%,transparent);
+ border-color:color-mix(in srgb,var(--tide) 16%,var(--line));
+}
+:root[data-theme="moon"] .hero::before{
+ content:"";position:absolute;right:-64px;top:-118px;width:340px;height:340px;border-radius:50%;
+ background:radial-gradient(circle,color-mix(in srgb,var(--tide) 24%,transparent),transparent 68%);
+ z-index:-3;pointer-events:none;
+}
+:root[data-theme="moon"] .hero::after{
+ background:linear-gradient(100deg,var(--panel) 30%,color-mix(in srgb,var(--panel) 88%,transparent) 62%,color-mix(in srgb,var(--panel) 72%,transparent));
+}
+:root[data-theme="moon"] #nav button{border-radius:10px}
+:root[data-theme="moon"] #nav button.active,
+:root[data-theme="moon"] #nav button[aria-current]{
+ box-shadow:0 0 26px -12px var(--tide),inset 0 0 0 1px color-mix(in srgb,var(--tide) 48%,transparent);
+}
+:root[data-theme="moon"] .head h1{font-weight:500;letter-spacing:.05em}
+:root[data-theme="moon"] .card-h h2,
+:root[data-theme="moon"] .panel-h h2{letter-spacing:.1em;font-weight:500}
+:root[data-theme="moon"] .btn,
+:root[data-theme="moon"] .quick button,
+:root[data-theme="moon"] .opts button{border-color:color-mix(in srgb,var(--tide) 34%,var(--line-2))}
+:root[data-theme="moon"] .btn:hover,
+:root[data-theme="moon"] .quick button:hover,
+:root[data-theme="moon"] .opts button:hover{box-shadow:0 0 22px -10px var(--tide)}
+@keyframes moon-rise{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+:root[data-theme="moon"] .screen-panel,
+:root[data-theme="moon"] .today-layout,
+:root[data-theme="moon"] .seer-workspace,
+:root[data-theme="moon"] .array-workspace{animation:moon-rise 300ms cubic-bezier(.22,.7,.2,1) both}
+
+/* ── 白橙：特行组的纸、线、印章 ───────────────────────────── */
+:root[data-theme="suit"]{
+ --r:0px;--r-card:0px;--r-ctl:0px;--r-pill:0px;--r-hero:0px;
+ --t-card-shadow:4px 4px 0 color-mix(in srgb,var(--ink) 76%,transparent);
+ --t-rail-bg:var(--panel);
+ --t-bar-bg:var(--panel);
+ --t-edge:color-mix(in srgb,var(--ink) 88%,var(--panel));
+}
+:root[data-theme="suit"] body{
+ background-image:
+  linear-gradient(90deg,color-mix(in srgb,var(--ink) 4.5%,transparent) 1px,transparent 1px),
+  linear-gradient(0deg,color-mix(in srgb,var(--ink) 4.5%,transparent) 1px,transparent 1px);
+ background-size:32px 32px,32px 32px;
+}
+:root[data-theme="suit"] body::before{
+ content:"";position:fixed;left:0;right:0;bottom:0;height:64vh;z-index:-1;pointer-events:none;
+ background:url("__ART_SUIT_DESK__") right bottom/contain no-repeat;
+ opacity:.18;mix-blend-mode:multiply;
+ -webkit-mask-image:linear-gradient(180deg,transparent 0%,var(--shadow) 46%,var(--shadow) 100%);
+ mask-image:linear-gradient(180deg,transparent 0%,var(--shadow) 46%,var(--shadow) 100%);
+}
+:root[data-theme="suit"] .rail{border-right:2px solid var(--ink)}
+:root[data-theme="suit"] .bar{border-bottom:2px solid var(--ink)}
+:root[data-theme="suit"] .foot{border-top:2px solid var(--ink);font-family:var(--mono);letter-spacing:.06em}
+:root[data-theme="suit"] .card,
+:root[data-theme="suit"] .panel,
+:root[data-theme="suit"] .screen-panel,
+:root[data-theme="suit"] .stat,
+:root[data-theme="suit"] .dependency-board,
+:root[data-theme="suit"] .closed-door,
+:root[data-theme="suit"] .barrier-summary,
+:root[data-theme="suit"] .task-receipt{border-color:var(--ink)}
+:root[data-theme="suit"] .head h1{letter-spacing:.16em;font-weight:600}
+:root[data-theme="suit"] .head .no,
+:root[data-theme="suit"] .direction-label,
+:root[data-theme="suit"] .side-coordinate{letter-spacing:.14em;font-weight:600}
+:root[data-theme="suit"] .card-h h2,
+:root[data-theme="suit"] .panel-h h2{letter-spacing:.14em}
+:root[data-theme="suit"] .card-h h2::before,
+:root[data-theme="suit"] .panel-h h2::before{border-radius:0;width:4px;height:14px}
+:root[data-theme="suit"] .status-line::before{width:12px;height:12px;background:var(--tide)}
+:root[data-theme="suit"] #nav button{border-radius:0;border-color:transparent}
+:root[data-theme="suit"] #nav button.active,
+:root[data-theme="suit"] #nav button[aria-current]{
+ border-color:var(--ink);background:var(--panel);
+ box-shadow:3px 3px 0 color-mix(in srgb,var(--tide) 82%,transparent);
+}
+:root[data-theme="suit"] .screen-tabs button[aria-current]{
+ border-color:var(--ink);border-bottom:4px solid var(--tide);
+}
+:root[data-theme="suit"] .seg button[aria-current],
+:root[data-theme="suit"] .seg button.selected{box-shadow:inset 0 -2px 0 var(--tide)}
+:root[data-theme="suit"] .btn,
+:root[data-theme="suit"] .quick button,
+:root[data-theme="suit"] .opts button,
+:root[data-theme="suit"] .hero .actions button:not(.primary),
+:root[data-theme="suit"] .card .actions button:not(.primary){
+ border:1px solid var(--ink);background:var(--panel);
+ box-shadow:2px 2px 0 color-mix(in srgb,var(--ink) 72%,transparent);
+}
+:root[data-theme="suit"] button.primary{
+ border:1px solid var(--ink);background:var(--tide);color:var(--on-tide);
+ box-shadow:3px 3px 0 var(--ink);font-weight:600;
+}
+:root[data-theme="suit"] .btn:hover,
+:root[data-theme="suit"] .quick button:hover,
+:root[data-theme="suit"] .opts button:hover,
+:root[data-theme="suit"] .hero .actions button:not(.primary):hover,
+:root[data-theme="suit"] .card .actions button:not(.primary):hover{
+ transform:translate(-2px,-2px);
+ box-shadow:4px 4px 0 color-mix(in srgb,var(--ink) 72%,transparent);
+ background:color-mix(in srgb,var(--tide) 8%,var(--panel));
+}
+:root[data-theme="suit"] button.primary:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink);background:var(--tide);color:var(--on-tide)}
+:root[data-theme="suit"] .btn:active,
+:root[data-theme="suit"] .quick button:active,
+:root[data-theme="suit"] .opts button:active,
+:root[data-theme="suit"] .hero .actions button:active,
+:root[data-theme="suit"] .card .actions button:active{transform:translate(2px,2px);box-shadow:0 0 0 transparent}
+:root[data-theme="suit"] .chip{border:1px solid var(--ink);background:var(--panel)}
+:root[data-theme="suit"] .input-row input,
+:root[data-theme="suit"] textarea,
+:root[data-theme="suit"] select,
+:root[data-theme="suit"] input[type="text"],
+:root[data-theme="suit"] input[type="url"],
+:root[data-theme="suit"] input[type="password"],
+:root[data-theme="suit"] input:not([type]){background:var(--panel);border:1px solid var(--ink);box-shadow:inset 2px 2px 0 color-mix(in srgb,var(--ink) 8%,transparent)}
+@keyframes suit-stamp{from{opacity:0;transform:translateY(4px) scale(.995)}to{opacity:1;transform:none}}
+:root[data-theme="suit"] .screen-panel,
+:root[data-theme="suit"] .today-layout{animation:suit-stamp 180ms cubic-bezier(.3,.7,.3,1) both}
+
+/* ── 高对比：去掉一切装饰，只留信息 ───────────────────────── */
+:root[data-theme="boundary"]{--t-card-shadow:none;--t-rail-bg:var(--panel);--t-bar-bg:var(--bg)}
+:root[data-theme="boundary"] .card,
+:root[data-theme="boundary"] .panel,
+:root[data-theme="boundary"] .stat,
+:root[data-theme="boundary"] .screen-panel,
+:root[data-theme="boundary"] .closed-door,
+:root[data-theme="boundary"] .barrier-summary,
+:root[data-theme="boundary"] .btn,
+:root[data-theme="boundary"] .quick button,
+:root[data-theme="boundary"] .opts button{border-width:2px}
+:root[data-theme="boundary"] .bar,
+:root[data-theme="boundary"] .foot{border-width:2px}
+:root[data-theme="boundary"] a{text-decoration:underline;text-underline-offset:2px}
+:root[data-theme="boundary"] .status-line::before{height:4px}
+:root[data-theme="boundary"] .hero::after{opacity:1}
+
+/* ── 自定义配色沿用所在风格的空间，只把边缘与阴影交给夜色/纸面 ── */
+:root[data-theme="custom"] .rail{background:var(--t-rail-bg)}
+
+/* 窄窗把侧栏收到底部时，月下改用更实的底，数字才看得清 */
+@media(max-width:760px){
+ :root[data-theme="moon"] .rail{
+  background-color:color-mix(in srgb,var(--panel) 90%,transparent);
+  background-image:linear-gradient(180deg,color-mix(in srgb,var(--panel) 92%,transparent),color-mix(in srgb,var(--panel) 97%,transparent)),var(--art-moon-rail);
+  background-size:cover,cover;
+ }
+}

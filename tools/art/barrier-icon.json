@@ -1,0 +1,123 @@
+{
+  "style": "barrier",
+  "prompt": "A single elegant emblem object centered on a plain background, simple bold silhouette, no text, no people. An immense dark stone architectural doorway framing a brilliantly lit amber garden, long steps and geometric threshold, clear volumetric light rays, elegant fantasy editorial illustration, no people, no text",
+  "negative": "low quality, blurry, watermark, text, letters, people",
+  "seed": 1102503,
+  "width": 512,
+  "height": 512,
+  "model": "anima-base-v1.0.safetensors",
+  "encoder": "qwen_3_06b_base.safetensors",
+  "vae": "qwen_image_vae.safetensors",
+  "steps": 24,
+  "cfg": 5,
+  "workflow": {
+    "1": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "anima-base-v1.0.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    "2": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen_3_06b_base.safetensors",
+        "type": "stable_diffusion"
+      }
+    },
+    "3": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "qwen_image_vae.safetensors"
+      }
+    },
+    "4": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "A single elegant emblem object centered on a plain background, simple bold silhouette, no text, no people. An immense dark stone architectural doorway framing a brilliantly lit amber garden, long steps and geometric threshold, clear volumetric light rays, elegant fantasy editorial illustration, no people, no text"
+      }
+    },
+    "5": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "low quality, blurry, watermark, text, letters, people"
+      }
+    },
+    "6": {
+      "class_type": "EmptySD3LatentImage",
+      "inputs": {
+        "width": 512,
+        "height": 512,
+        "batch_size": 1
+      }
+    },
+    "7": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "positive": [
+          "4",
+          0
+        ],
+        "negative": [
+          "5",
+          0
+        ],
+        "latent_image": [
+          "6",
+          0
+        ],
+        "seed": 1102503,
+        "steps": 24,
+        "cfg": 5,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1
+      }
+    },
+    "8": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "7",
+          0
+        ],
+        "vae": [
+          "3",
+          0
+        ]
+      }
+    },
+    "9": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "8",
+          0
+        ],
+        "filename_prefix": "Kairos-final/barrier-icon"
+      }
+    }
+  },
+  "status": "approved",
+  "submission": {
+    "prompt_id": "63d079d2-bfb1-4d2b-9900-03b95c009208",
+    "number": 16,
+    "node_errors": {}
+  },
+  "output": "art/styles/barrier-icon.webp",
+  "size_bytes": 9260,
+  "sha256": "7c88d3fb20c559478a3d49755afbda8698a0429db5b6f225a717b5c8a6c71d3c",
+  "webp_quality": 85
+}

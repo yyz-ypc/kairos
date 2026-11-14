@@ -1,0 +1,123 @@
+{
+  "style": "folio",
+  "prompt": "An open archival book with beautifully folded ivory paper pages and blue silver constellation diagrams, a fountain pen and subtle paper texture, overhead editorial illustration, elegant clean composition, no people, no letters",
+  "negative": "low quality, blurry, watermark, text, letters, people",
+  "seed": 1101504,
+  "width": 1024,
+  "height": 576,
+  "model": "anima-base-v1.0.safetensors",
+  "encoder": "qwen_3_06b_base.safetensors",
+  "vae": "qwen_image_vae.safetensors",
+  "steps": 32,
+  "cfg": 5.5,
+  "workflow": {
+    "1": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "anima-base-v1.0.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    "2": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen_3_06b_base.safetensors",
+        "type": "stable_diffusion"
+      }
+    },
+    "3": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "qwen_image_vae.safetensors"
+      }
+    },
+    "4": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "An open archival book with beautifully folded ivory paper pages and blue silver constellation diagrams, a fountain pen and subtle paper texture, overhead editorial illustration, elegant clean composition, no people, no letters"
+      }
+    },
+    "5": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "low quality, blurry, watermark, text, letters, people"
+      }
+    },
+    "6": {
+      "class_type": "EmptySD3LatentImage",
+      "inputs": {
+        "width": 1024,
+        "height": 576,
+        "batch_size": 1
+      }
+    },
+    "7": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "positive": [
+          "4",
+          0
+        ],
+        "negative": [
+          "5",
+          0
+        ],
+        "latent_image": [
+          "6",
+          0
+        ],
+        "seed": 1101504,
+        "steps": 32,
+        "cfg": 5.5,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1
+      }
+    },
+    "8": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "7",
+          0
+        ],
+        "vae": [
+          "3",
+          0
+        ]
+      }
+    },
+    "9": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "8",
+          0
+        ],
+        "filename_prefix": "Kairos-candidates/folio-v2"
+      }
+    }
+  },
+  "status": "approved",
+  "submission": {
+    "prompt_id": "0f287502-fcff-41dd-99cd-7c350e461156",
+    "number": 10,
+    "node_errors": {}
+  },
+  "output": "art/styles/folio-hero.webp",
+  "size_bytes": 47676,
+  "sha256": "621c04b2b5041ea2a6927008264cb9c26bda181b44d5049d6f284206e22bb0f1",
+  "webp_quality": 85
+}

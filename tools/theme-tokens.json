@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "themes": {
+    "nightfall": {
+      "bg": "#151c25",
+      "panel": "#202b38",
+      "ink": "#f3f6fc",
+      "mute": "#bdcadc",
+      "tide": "#9dc7ff",
+      "field-line": "#8eabc9",
+      "ok": "#9de1b5",
+      "bad": "#ffb0b2"
+    },
+    "daylight": {
+      "bg": "#f3f6fa",
+      "panel": "#ffffff",
+      "ink": "#14253b",
+      "mute": "#435771",
+      "tide": "#19599b",
+      "field-line": "#617b9a",
+      "ok": "#22633d",
+      "bad": "#a62640"
+    },
+    "boundary": {
+      "bg": "#000000",
+      "panel": "#000000",
+      "ink": "#ffffff",
+      "mute": "#eeeeee",
+      "tide": "#8cffff",
+      "field-line": "#ffffff",
+      "ok": "#adffbf",
+      "bad": "#ffbdc9"
+    },
+    "moon": {
+      "bg": "#0d1627",
+      "panel": "#17253c",
+      "ink": "#f1f4ff",
+      "mute": "#c0cbe5",
+      "tide": "#b8cbff",
+      "field-line": "#95aacb",
+      "ok": "#a8e4c4",
+      "bad": "#ffb8cf"
+    },
+    "suit": {
+      "bg": "#f6f4ef",
+      "panel": "#ffffff",
+      "ink": "#23272f",
+      "mute": "#505966",
+      "tide": "#a33b0a",
+      "field-line": "#767c83",
+      "ok": "#245f40",
+      "bad": "#a1233f"
+    }
+  },
+  "minimum": {
+    "body": 4.5,
+    "boundary_body": 7,
+    "controls": 3
+  }
+}

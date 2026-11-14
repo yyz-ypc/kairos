@@ -1,0 +1,182 @@
+/* 第四、第五种信息组织：塔层（垂直楼层，切面阅读）与卷页（书脊导航，正文加页边批注）。
+   它们只改空间与阅读节奏，不引入新字体、图标或图片。 */
+
+/* ---------- 塔层 ---------- */
+:root[data-style=tower]{--rail:0px;--r:0px;--r-card:0px;--r-hero:0px;--r-ctl:0px}
+:root[data-style=tower] .shell{grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr)}
+:root[data-style=tower] .rail{position:sticky;top:0;height:auto;flex-direction:row;align-items:center;gap:14px;padding:8px 22px;border-right:0;border-bottom:1px solid var(--line);background:var(--panel);z-index:6}
+:root[data-style=tower] .me{padding:0;gap:8px;flex-shrink:0}
+:root[data-style=tower] .ava{width:26px;height:26px;border-radius:3px}
+:root[data-style=tower] .me-t strong{font-size:13px;letter-spacing:1.5px}
+:root[data-style=tower] .me-t small{display:none}
+:root[data-style=tower] .rail-label{display:none}
+:root[data-style=tower] #nav{display:flex;flex:1;justify-content:center;gap:0;min-width:0}
+:root[data-style=tower] #nav button{position:relative;display:flex;flex-direction:column;align-items:center;gap:1px;width:auto;min-height:0;padding:5px 14px 7px;border:0;border-radius:0;text-align:center;font-size:11.5px;letter-spacing:.08em;color:var(--mute)}
+:root[data-style=tower] #nav button:hover{background:var(--tide-soft);color:var(--ink)}
+:root[data-style=tower] #nav button.active{background:none;color:var(--ink)}
+:root[data-style=tower] #nav button.active::after{content:"";position:absolute;left:12px;right:12px;bottom:0;height:2px;background:var(--tide)}
+:root[data-style=tower] #nav .ic{display:none}
+:root[data-style=tower] #nav .lb{flex:0 0 auto;font-size:11.5px;letter-spacing:.08em}
+:root[data-style=tower] #nav .nav-no{font-size:9px;letter-spacing:.16em;color:var(--tide)}
+:root[data-style=tower] .rail-foot{margin:0 0 0 auto;padding:0;display:flex;align-items:center;gap:10px;flex-shrink:0}
+:root[data-style=tower] .bubble{display:none}
+:root[data-style=tower] .rail-meta{margin:0;padding:0;font-size:10px;white-space:nowrap}
+:root[data-style=tower] .bar{height:30px;padding:0 26px;background:transparent;border-bottom:0;justify-content:flex-end}
+:root[data-style=tower] .bar-l{display:flex}
+:root[data-style=tower] .crumb{font-size:11px;letter-spacing:.18em;color:var(--mute);font-weight:500}
+:root[data-style=tower] .crumb::before{content:"塔层 · "}
+:root[data-style=tower] .bar-hint{display:none}
+:root[data-style=tower] .page{max-width:none;padding:18px 30px 12px}
+:root[data-style=tower] .head h1{font-size:27px;font-weight:500;letter-spacing:.02em}
+:root[data-style=tower] .card,:root[data-style=tower] .panel{background:transparent;border:0;border-top:1px solid var(--line);border-radius:0;padding:16px 0;margin:0}
+:root[data-style=tower] .card-h{padding-bottom:10px}
+:root[data-style=tower] .card-h h2{font-size:13px;letter-spacing:.1em;color:var(--mute);font-weight:500}
+:root[data-style=tower] .panel{padding:0;border:0}
+.tower-workspace{min-width:0}
+.tower-room{position:relative;min-width:0;padding-left:52px}
+.tower-room::before{content:"";position:absolute;left:16px;top:2px;bottom:0;width:1px;background:var(--line)}
+.tower-room::after{content:attr(data-floor);position:absolute;right:4px;top:-26px;font:600 118px/1 var(--mono);letter-spacing:-.04em;color:var(--ink);opacity:.05;pointer-events:none;user-select:none}
+.tower-room>.screen-route{position:relative;z-index:1}
+.tower-base{margin-top:10px;border-top:2px solid var(--field-line);padding:14px 0 0 52px;display:grid;grid-template-columns:minmax(200px,.8fr) minmax(0,1.6fr);gap:26px;align-items:start;min-width:0}
+.tower-base .screen-board{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:26px}
+.tower-base .card{border-top:0;padding:0;background:none}
+.tower-base .attention{background:none;border:0;border-left:2px solid var(--lamp);padding:0 0 4px 12px;margin:0}
+.tower-base .attention .direction-label{margin-bottom:4px}
+.tower-base .attention p{font-size:12px}
+.tower-base .attention{margin-bottom:0}
+.tower-today .dashboard-board{grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);gap:0 30px}
+.tower-today .hero{min-height:196px;border-radius:0;background:var(--panel);padding:22px 24px}
+.tower-today .hero .art{object-position:50% 26%}
+.tower-today .hero::after{opacity:1;background:linear-gradient(90deg,var(--panel) 0%,color-mix(in srgb,var(--panel) 84%,transparent) 46%,color-mix(in srgb,var(--panel) 28%,transparent) 100%)}
+.tower-today .hero h1{font-size:31px}
+.tower-today .stats{margin:0;border-top:1px solid var(--line);padding:14px 0}
+.tower-today .stat{border:0;border-left:1px solid var(--line);border-radius:0;padding:4px 16px;background:none}
+.tower-today .stat:first-child{border-left:0;padding-left:0}
+.tower-today .today-help{border-top:1px solid var(--line);padding:12px 0 0}
+.tower-today .today-help button{border-radius:0}
+
+/* ---------- 卷页 ---------- */
+:root[data-style=folio]{--rail:92px;--r:2px;--r-card:2px;--r-hero:2px;--r-ctl:2px}
+:root[data-style=folio] .rail{position:sticky;top:0;height:100vh;padding:14px 6px 12px;align-items:center;border-right:1px solid var(--field-line);background:var(--panel)}
+:root[data-style=folio] .me{flex-direction:column;gap:6px;padding:0 0 8px;text-align:center}
+:root[data-style=folio] .ava{width:36px;height:36px;border-radius:50%}
+:root[data-style=folio] .me-t strong{font-size:13px;letter-spacing:3px}
+:root[data-style=folio] .me-t small{display:none}
+:root[data-style=folio] .rail-label{display:none}
+:root[data-style=folio] #nav{display:flex;flex-direction:column;gap:3px;width:100%;flex:1;min-height:0}
+:root[data-style=folio] #nav button{writing-mode:vertical-rl;text-orientation:upright;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:6px;width:100%;height:auto;min-height:0;flex:1;max-height:92px;padding:8px 2px;border:0;border-left:2px solid transparent;border-radius:0;font-size:12px;letter-spacing:.18em;color:var(--mute);background:none}
+:root[data-style=folio] #nav button:hover{background:var(--tide-soft);color:var(--ink)}
+:root[data-style=folio] #nav button.active{border-left-color:var(--tide);background:var(--tide-soft);color:var(--ink)}
+:root[data-style=folio] #nav .ic{display:none}
+:root[data-style=folio] #nav .lb{flex:0 0 auto;white-space:nowrap}
+:root[data-style=folio] #nav .nav-no{writing-mode:horizontal-tb;font-size:9px;letter-spacing:.1em;color:var(--tide)}
+:root[data-style=folio] .rail-foot{margin-top:8px;padding:0}
+:root[data-style=folio] .bubble{display:none}
+:root[data-style=folio] .rail-meta{writing-mode:vertical-rl;text-orientation:upright;letter-spacing:.12em;font-size:9px;margin:0 auto;padding:0;max-height:92px;overflow:hidden}
+:root[data-style=folio] .bar{height:46px;padding:0 42px;background:transparent}
+:root[data-style=folio] .crumb{font-size:12px;letter-spacing:.26em;color:var(--mute);font-weight:500}
+:root[data-style=folio] .bar-hint{display:none}
+:root[data-style=folio] .crumb::before{content:"卷 · "}
+:root[data-style=folio] .page{max-width:1080px;padding:22px 44px 14px}
+:root[data-style=folio] .head{padding-bottom:14px;border-bottom:1px solid var(--line);margin-bottom:18px}
+:root[data-style=folio] .head h1{font-size:31px;line-height:1.24;font-weight:500;letter-spacing:.01em}
+:root[data-style=folio] .head .no{letter-spacing:.2em}
+:root[data-style=folio] .card,:root[data-style=folio] .panel{background:transparent;border:0;border-top:1px solid var(--line);border-radius:0;padding:15px 0 6px;margin:0}
+:root[data-style=folio] .card-h h2{font-size:12.5px;letter-spacing:.16em;color:var(--mute);font-weight:500}
+:root[data-style=folio] .stat{border:0;border-top:1px solid var(--line);border-radius:0;background:none;padding:10px 0 0}
+.folio-workspace{display:grid;grid-template-columns:minmax(0,1fr) 232px;gap:38px;align-items:start;min-width:0}
+.folio-page,.folio-margin{min-width:0}
+.folio-margin{border-left:1px solid var(--line);padding-left:22px;min-width:0}
+.folio-margin .screen-board{grid-template-columns:minmax(0,1fr);gap:14px}
+.folio-margin .card{border-top:0;padding:0 0 14px;background:none}
+.folio-margin h2{font-size:12px;letter-spacing:.14em;color:var(--mute);font-weight:500}
+.folio-margin .attention{border-left:2px solid var(--tide);background:none;padding:0 0 12px 12px;margin-bottom:14px}
+.folio-margin .attention p{font-size:11.5px;line-height:1.8}
+.folio-today .dashboard-board{grid-template-columns:minmax(0,1.5fr) minmax(280px,1fr);gap:0 40px}
+.folio-today .hero{grid-column:1/-1;min-height:0;padding:4px 0 20px;border-radius:0;background:none;border-bottom:1px solid var(--line);overflow:hidden}
+.folio-today .hero .art{position:absolute;left:auto;right:0;top:0;width:50%;height:100%;object-fit:cover;object-position:50% 22%;opacity:.55;z-index:-2;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,var(--mask) 34%,var(--mask) 86%,transparent 100%);
+  mask-image:linear-gradient(90deg,transparent 0,var(--mask) 34%,var(--mask) 86%,transparent 100%)}
+.folio-today .dashboard-board>.card:nth-child(2){grid-column:1/-1}
+.folio-today .dashboard-board>.card:nth-child(2) .input-row{max-width:560px}
+.folio-today .hero::after{background:linear-gradient(90deg,var(--bg) 30%,color-mix(in srgb,var(--bg) 62%,transparent) 62%,transparent 96%);opacity:1}
+.folio-today .hero h1{font-size:38px;line-height:1.16;letter-spacing:.01em;margin:10px 0 0}
+.folio-today .hero p{max-width:40ch;margin-top:12px}
+.folio-today>.screen-board{display:contents}
+.folio-today .dashboard-board>.board-wide{grid-column:1/-1}
+.folio-today .stats{border-top:1px solid var(--line);padding-top:12px}
+.folio-today .card{margin:0}
+.folio-page .jobs-cols{grid-template-columns:minmax(0,1fr)}
+.folio-page .help-layout{grid-template-columns:minmax(0,1fr)}
+.folio-page .doc,.folio-page .doc p{line-height:2}
+
+/* 小窗：塔层保留顶部楼层条；卷页收起书脊、恢复底部导航。 */
+@media(max-width:1100px){
+ .folio-workspace{grid-template-columns:minmax(0,1fr) 180px;gap:24px}
+ .folio-today{grid-template-columns:minmax(0,1.4fr) minmax(240px,1fr);gap:0 26px}
+}
+@media(max-width:979px){
+ .folio-workspace{grid-template-columns:minmax(0,1fr)}
+ .folio-margin{display:none}
+ .tower-base{grid-template-columns:minmax(0,1fr);gap:14px;padding-left:36px}
+ .tower-room{padding-left:36px}
+ .folio-today .dashboard-board{grid-template-columns:minmax(0,1fr)}
+ .folio-today .dashboard-board>.board-wide{grid-column:auto}
+}
+@media(max-width:1100px){.folio-margin{display:none}}
+@media(max-height:720px){.tower-base,.folio-margin{display:none}}
+@media(max-width:760px){
+ :root[data-style=tower] .shell{grid-template-rows:auto minmax(0,1fr)}
+ :root[data-style=tower] .rail{position:sticky;top:0;inset:auto;height:auto;flex-direction:row;padding:5px 8px;border-top:0;border-bottom:1px solid var(--line);gap:6px}
+ :root[data-style=tower] .main{padding-bottom:0}
+ :root[data-style=tower] .me{display:none}
+ :root[data-style=tower] #nav{display:flex;grid-template-columns:none;grid-column:auto;gap:0;flex:1}
+ :root[data-style=tower] #nav button{flex:1;min-height:46px;padding:4px 2px;font-size:11px}
+ :root[data-style=tower] #nav .nav-no{font-size:8px}
+ :root[data-style=tower] .rail-foot{margin:0;padding:0}
+ :root[data-style=tower] .rail-meta{font-size:9px}
+ :root[data-style=tower] .page{padding:12px 14px 10px}
+ :root[data-style=tower] .tower-room{padding-left:0}
+ :root[data-style=tower] .tower-room::before,:root[data-style=tower] .tower-room::after{display:none}
+ :root[data-style=tower] .tower-base{padding-left:0;grid-template-columns:minmax(0,1fr)}
+ :root[data-style=tower] .tower-today .hero{padding:16px;min-height:0}
+
+ :root[data-style=folio] .rail{position:fixed;inset:auto 0 0;height:auto;padding:4px 6px calc(4px + env(safe-area-inset-bottom,0px));border-right:0;border-top:1px solid var(--field-line);z-index:10}
+ :root[data-style=folio] .me,:root[data-style=folio] .rail-label,:root[data-style=folio] .rail-foot{display:none}
+ :root[data-style=folio] #nav{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:2px;flex:initial}
+ :root[data-style=folio] #nav button{writing-mode:horizontal-tb;flex-direction:column;justify-content:center;gap:2px;flex:initial;max-height:none;min-height:54px;padding:5px 2px;border-left:0;border-radius:0;letter-spacing:.04em}
+ :root[data-style=folio] #nav button.active{border-left:0;box-shadow:inset 0 -2px 0 var(--tide)}
+ :root[data-style=folio] .main{padding-bottom:72px}
+ :root[data-style=folio] .page{padding:14px 16px 10px;max-width:none}
+ :root[data-style=folio] .bar{padding:0 16px}
+ :root[data-style=folio] .head h1{font-size:25px}
+ :root[data-style=folio] .folio-today .hero h1{font-size:29px}
+ :root[data-style=folio] .folio-today .hero .art{display:none}
+ :root[data-style=folio] .folio-today .hero::after{display:none}
+}
+@media(prefers-reduced-motion:no-preference){
+ .tower-room{animation:floor-up 220ms ease-out}
+ .folio-page{animation:page-in 200ms ease-out}
+}
+@keyframes floor-up{from{transform:translateY(10px);opacity:.65}to{transform:translateY(0);opacity:1}}
+@keyframes page-in{from{opacity:.6}to{opacity:1}}
+
+/* 塔层与卷页用线分隔内容，不靠盒子和投影；主题只保留纸面/网格与按钮的材质。 */
+:root[data-style=tower] .card,:root[data-style=tower] .panel,:root[data-style=tower] .hero,:root[data-style=tower] .stat,
+:root[data-style=tower] .attention,:root[data-style=tower] .dependency-board,:root[data-style=tower] .task-receipt,
+:root[data-style=folio] .card,:root[data-style=folio] .panel,:root[data-style=folio] .hero,:root[data-style=folio] .stat,
+:root[data-style=folio] .attention,:root[data-style=folio] .dependency-board,:root[data-style=folio] .task-receipt{box-shadow:none}
+:root[data-style=tower][data-theme="suit"] .rail{border-right:0;border-bottom:2px solid var(--ink)}
+:root[data-style=tower][data-theme="suit"] .bar{border-bottom:0}
+:root[data-style=folio][data-theme="suit"] .rail{border-right:2px solid var(--ink)}
+
+/* 塔层在窄窗仍保留顶部楼层条，提示条要落到楼层条下面 */
+@media(max-width:760px){:root[data-style=tower] #toast{top:78px}}
+
+/* Fit the tower main row below its horizontal navigation, including first-run controls. */
+:root[data-style=tower] .main{height:100%;min-height:0}
+
+/* Constrain long settings to the existing pagination surface in both structures. */
+.tower-workspace,.tower-room,.folio-page{flex:1;min-height:0;display:flex;flex-direction:column}
+.folio-workspace{flex:1;min-height:0;grid-template-rows:minmax(0,1fr);align-items:stretch}
+.tower-base{flex:0 0 auto}

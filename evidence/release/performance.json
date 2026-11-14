@@ -1,0 +1,352 @@
+{
+  "repeatMemoryAfter": {
+    "processes": [
+      {
+        "workingSet": 26066944,
+        "name": "Kairos",
+        "privateBytes": 5726208
+      },
+      {
+        "workingSet": 10973184,
+        "name": "msedgewebview2",
+        "privateBytes": 2727936
+      },
+      {
+        "workingSet": 39366656,
+        "name": "msedgewebview2",
+        "privateBytes": 12181504
+      },
+      {
+        "workingSet": 168415232,
+        "name": "msedgewebview2",
+        "privateBytes": 75399168
+      },
+      {
+        "workingSet": 146341888,
+        "name": "msedgewebview2",
+        "privateBytes": 359288832
+      },
+      {
+        "workingSet": 20566016,
+        "name": "msedgewebview2",
+        "privateBytes": 7655424
+      },
+      {
+        "workingSet": 119459840,
+        "name": "msedgewebview2",
+        "privateBytes": 71139328
+      }
+    ],
+    "workingSet": 531189760,
+    "privateBytes": 534118400
+  },
+  "repeatPrivateBytesDelta": 19664896,
+  "repeatWebviewPrivateBytesDelta": 19177472,
+  "paints": [
+    {
+      "name": "first-paint",
+      "entryType": "paint",
+      "startTime": 456,
+      "duration": 0,
+      "navigationId": 1249,
+      "paintTime": 372.5,
+      "presentationTime": 456
+    },
+    {
+      "name": "first-contentful-paint",
+      "entryType": "paint",
+      "startTime": 456,
+      "duration": 0,
+      "navigationId": 1249,
+      "paintTime": 372.5,
+      "presentationTime": 456
+    }
+  ],
+  "navigationTiming": [
+    {
+      "name": "https://kairos.localhost/",
+      "entryType": "navigation",
+      "startTime": 0,
+      "duration": 374.09999999403954,
+      "navigationId": 1249,
+      "initiatorType": "navigation",
+      "deliveryType": "",
+      "nextHopProtocol": "",
+      "renderBlockingStatus": "non-blocking",
+      "contentType": "text/html",
+      "contentEncoding": "",
+      "workerStart": 0,
+      "workerRouterEvaluationStart": 0,
+      "workerCacheLookupStart": 0,
+      "workerMatchedSourceType": "",
+      "workerFinalSourceType": "",
+      "redirectStart": 0,
+      "redirectEnd": 0,
+      "fetchStart": 4,
+      "domainLookupStart": 4,
+      "domainLookupEnd": 4,
+      "connectStart": 4,
+      "secureConnectionStart": 4,
+      "connectEnd": 4,
+      "requestStart": 4,
+      "responseStart": 347.5,
+      "firstInterimResponseStart": 0,
+      "finalResponseHeadersStart": 0,
+      "responseEnd": 347.5,
+      "transferSize": 212342,
+      "encodedBodySize": 212042,
+      "decodedBodySize": 212042,
+      "responseStatus": 200,
+      "serverTiming": [],
+      "unloadEventStart": 0,
+      "unloadEventEnd": 0,
+      "domInteractive": 373.5,
+      "domContentLoadedEventStart": 373.5,
+      "domContentLoadedEventEnd": 373.5,
+      "domComplete": 374,
+      "loadEventStart": 374.09999999403954,
+      "loadEventEnd": 374.09999999403954,
+      "type": "navigate",
+      "redirectCount": 0,
+      "activationStart": 0,
+      "criticalCHRestart": 0,
+      "notRestoredReasons": null,
+      "confidence": {}
+    }
+  ],
+  "webviewPrivateBytesBefore": 271585280,
+  "webviewPrivateBytesAfter": 509214720,
+  "webviewPrivateBytesDelta": 237629440,
+  "startupTrace": [
+    "107687343 ui-init",
+    "107687343 webview-init",
+    "107687343 environment-ready",
+    "107687359 find-runtime",
+    "107687421 runtime-found",
+    "107687515 ui-init-complete",
+    "107687640 controller-ready",
+    "107687640 navigate",
+    "107688000 web-ready"
+  ],
+  "engine": "actual WebView2 in Kairos.exe",
+  "fixture": "isolated synthetic state; no QQ accounts; empty sidecar",
+  "profile": "new per-run WebView profile",
+  "firstScreenMs": 709.75,
+  "targetMs": 1500,
+  "firstScreenPassed": true,
+  "navigationsDuringStyleSwitch": 0,
+  "styleSwitchTimes": [
+    {
+      "cycle": 0,
+      "style": "seer",
+      "milliseconds": 5.299999997019768
+    },
+    {
+      "cycle": 0,
+      "style": "array",
+      "milliseconds": 10.400000005960464
+    },
+    {
+      "cycle": 0,
+      "style": "barrier",
+      "milliseconds": 10.5
+    },
+    {
+      "cycle": 0,
+      "style": "tower",
+      "milliseconds": 71.69999998807907
+    },
+    {
+      "cycle": 0,
+      "style": "folio",
+      "milliseconds": 17.399999991059303
+    },
+    {
+      "cycle": 1,
+      "style": "seer",
+      "milliseconds": 18.5
+    },
+    {
+      "cycle": 1,
+      "style": "array",
+      "milliseconds": 33.3999999910593
+    },
+    {
+      "cycle": 1,
+      "style": "barrier",
+      "milliseconds": 10.200000002980232
+    },
+    {
+      "cycle": 1,
+      "style": "tower",
+      "milliseconds": 29.299999997019768
+    },
+    {
+      "cycle": 1,
+      "style": "folio",
+      "milliseconds": 7.5
+    },
+    {
+      "cycle": 2,
+      "style": "seer",
+      "milliseconds": 10.800000011920929
+    },
+    {
+      "cycle": 2,
+      "style": "array",
+      "milliseconds": 14.599999994039536
+    },
+    {
+      "cycle": 2,
+      "style": "barrier",
+      "milliseconds": 6.5
+    },
+    {
+      "cycle": 2,
+      "style": "tower",
+      "milliseconds": 15
+    },
+    {
+      "cycle": 2,
+      "style": "folio",
+      "milliseconds": 10.600000008940697
+    },
+    {
+      "cycle": 3,
+      "style": "seer",
+      "milliseconds": 10.5
+    },
+    {
+      "cycle": 3,
+      "style": "array",
+      "milliseconds": 149.70000000298023
+    },
+    {
+      "cycle": 3,
+      "style": "barrier",
+      "milliseconds": 28.5
+    },
+    {
+      "cycle": 3,
+      "style": "tower",
+      "milliseconds": 53.400000005960464
+    },
+    {
+      "cycle": 3,
+      "style": "folio",
+      "milliseconds": 37
+    },
+    {
+      "cycle": 4,
+      "style": "seer",
+      "milliseconds": 37
+    },
+    {
+      "cycle": 4,
+      "style": "array",
+      "milliseconds": 34.79999999701977
+    },
+    {
+      "cycle": 4,
+      "style": "barrier",
+      "milliseconds": 8
+    },
+    {
+      "cycle": 4,
+      "style": "tower",
+      "milliseconds": 32.70000000298023
+    },
+    {
+      "cycle": 4,
+      "style": "folio",
+      "milliseconds": 10.400000005960464
+    }
+  ],
+  "memoryBefore": {
+    "processes": [
+      {
+        "workingSet": 25366528,
+        "name": "Kairos",
+        "privateBytes": 5636096
+      },
+      {
+        "workingSet": 10973184,
+        "name": "msedgewebview2",
+        "privateBytes": 2727936
+      },
+      {
+        "workingSet": 37171200,
+        "name": "msedgewebview2",
+        "privateBytes": 11898880
+      },
+      {
+        "workingSet": 156233728,
+        "name": "msedgewebview2",
+        "privateBytes": 72376320
+      },
+      {
+        "workingSet": 89927680,
+        "name": "msedgewebview2",
+        "privateBytes": 143982592
+      },
+      {
+        "workingSet": 20566016,
+        "name": "msedgewebview2",
+        "privateBytes": 7655424
+      },
+      {
+        "workingSet": 77553664,
+        "name": "msedgewebview2",
+        "privateBytes": 32944128
+      }
+    ],
+    "workingSet": 417792000,
+    "privateBytes": 277221376
+  },
+  "memoryAfter": {
+    "processes": [
+      {
+        "workingSet": 25620480,
+        "name": "Kairos",
+        "privateBytes": 5238784
+      },
+      {
+        "workingSet": 10973184,
+        "name": "msedgewebview2",
+        "privateBytes": 2727936
+      },
+      {
+        "workingSet": 38625280,
+        "name": "msedgewebview2",
+        "privateBytes": 12017664
+      },
+      {
+        "workingSet": 168087552,
+        "name": "msedgewebview2",
+        "privateBytes": 75292672
+      },
+      {
+        "workingSet": 143286272,
+        "name": "msedgewebview2",
+        "privateBytes": 356675584
+      },
+      {
+        "workingSet": 20566016,
+        "name": "msedgewebview2",
+        "privateBytes": 7655424
+      },
+      {
+        "workingSet": 103272448,
+        "name": "msedgewebview2",
+        "privateBytes": 54845440
+      }
+    ],
+    "workingSet": 510431232,
+    "privateBytes": 514453504
+  },
+  "workingSetDelta": 92639232,
+  "privateBytesDelta": 237232128,
+  "jsHeapBefore": 1503992,
+  "jsHeapAfter": 1908832,
+  "jsHeapDelta": 404840
+}

@@ -1,0 +1,150 @@
+/* 共同的交互基础；不承载各自的空间隐喻。 */
+.direction-label{display:block;font:11px/1.5 var(--mono);letter-spacing:.08em;color:var(--tide);margin-bottom:10px}
+.today-layout{display:grid;gap:18px;align-items:start}.today-main,.today-side{min-width:0}
+.today-layout .stats{gap:6px;margin:12px 0}.today-layout .stat{padding:8px;min-width:0;border-radius:var(--r-ctl)}
+.today-layout .stat b{font-size:10px;letter-spacing:0}.today-layout .stat strong{font-size:20px;margin-top:4px}
+.today-layout .card{padding:14px;margin-bottom:12px}.today-layout .card-h{padding-bottom:10px}
+.today-layout .svc{padding:9px 0;gap:8px}.today-layout .svc-i{width:26px;height:26px;border:0;background:none;border-radius:0}.svc-i svg{width:22px;height:22px}
+.today-layout .input-row{flex-wrap:wrap}.today-layout .input-row input{flex-basis:100%;width:100%}
+.attention{border-left:3px solid var(--ok);padding:12px 16px;margin-bottom:18px;background:var(--panel)}
+.attention p{margin:0 0 8px;font-size:13px;line-height:1.7}.attention-warn{border-color:var(--lamp)}
+.attention-warn .direction-label{color:var(--lamp)}
+.dependency-board{border:1px solid var(--field-line);padding:18px;background:var(--panel);min-width:0}
+.dependency-board ol{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.dependency-board li{position:relative;display:flex;align-items:center;gap:10px;padding:12px 0;min-width:0}
+.dependency-board li+li::before{content:"↓";position:absolute;top:-7px;left:8px;font-size:12px;color:var(--mute)}
+.node-index{display:grid;place-items:center;width:26px;height:26px;flex-shrink:0;border:1px solid var(--field-line);border-radius:50%;color:var(--tide);font:11px/1 var(--mono)}
+.dependency-board b{display:block;font-size:13px;font-weight:600}.dependency-board small{display:block;font-size:11px;color:var(--mute)}
+.task-receipt{padding:12px 16px;border-bottom:1px solid var(--field-line);background:var(--panel);margin-bottom:18px}
+.task-receipt p{margin:0;font-size:12px;color:var(--sub)}.task-receipt .direction-label{margin-bottom:4px}
+.seer-workspace,.array-workspace{display:grid;gap:20px;align-items:start}
+.seer-current,.seer-focus,.array-slot,.array-outside{min-width:0}
+.seer-memory h2{font-size:15px;margin:0 0 12px}.array-receipts{margin-top:18px}
+.seer-workspace .jobs-cols,.array-workspace .jobs-cols{grid-template-columns:minmax(0,1fr)}
+.seer-workspace .joblist,.array-workspace .joblist{max-height:260px}
+.seer-workspace .grid,.array-workspace .grid{grid-template-columns:repeat(auto-fit,minmax(min(210px,100%),1fr))}
+.seer-workspace .feature-fields,.array-workspace .feature-fields{grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr))}
+.seer-workspace .component-list,.array-workspace .component-list{grid-template-columns:minmax(0,1fr)}
+.seer-workspace .form-row,.array-workspace .form-row{grid-template-columns:minmax(0,1fr)}
+.barrier-door{align-self:stretch;display:flex;justify-content:center;border-left:2px solid var(--field-line);border-right:2px solid var(--field-line);background:var(--panel);padding:8px 0}
+.barrier-door .gate-handle{writing-mode:vertical-rl;text-orientation:upright;padding:12px 5px;letter-spacing:2px;align-self:center;max-width:32px;min-height:160px;border:0;border-radius:0;background:none;font-size:12px;color:var(--tide)}
+.barrier-summary{padding:18px 16px;background:var(--panel);border-radius:10px;min-width:0}.barrier-summary h2{font-size:16px;line-height:1.5;margin:0 0 14px}
+.barrier-summary .svc{flex-wrap:wrap;gap:8px}.barrier-summary .svc-i{display:none}.barrier-summary .svc .slim{margin-left:auto}
+.barrier-workspace,.barrier-records{display:grid;grid-template-columns:minmax(160px,220px) 36px minmax(0,1fr);gap:12px;align-items:start;min-width:0}
+.barrier-records{grid-template-columns:minmax(0,1fr) 36px minmax(0,1fr)}
+.barrier-content,.barrier-records>section{min-width:0}
+.closed-door{padding:36px 20px;border:1px solid var(--line);background:var(--panel);text-align:center;min-height:230px}
+.closed-door>span{color:var(--tide);font-size:25px}.closed-door h2{font-size:18px;line-height:1.5;margin:14px 0}.closed-door p{font-size:13px;color:var(--sub);line-height:1.8}
+.gate-feedback{grid-column:1/-1;font-size:12px;color:var(--lamp);margin:0}.gate-feedback:empty{display:none}
+.side-coordinate{display:block;font:11px/1.5 var(--mono);color:var(--tide);border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:18px}
+.barrier-records .joblist{max-height:calc(100vh - 290px)}
+.barrier-records pre{max-height:calc(100vh - 320px);overflow:visible}
+.help-layout{display:grid;grid-template-columns:minmax(150px,.7fr) minmax(0,1.3fr);gap:16px;align-items:start;min-width:0}
+.help-layout>aside,.help-reading{min-width:0}.help-index{display:grid;gap:6px;margin-bottom:14px;max-height:300px;overflow:visible}
+.help-entry{display:block;width:100%;text-align:left;padding:10px;border:1px solid var(--line);background:var(--panel)}
+.help-entry b{display:block;font-size:13px}.help-entry small{display:block;font-size:11px;color:var(--mute);margin-top:4px}
+.help-entry[aria-current]{border-color:var(--tide)}.help-reading .doc{max-height:calc(100vh - 280px);overflow:visible;overscroll-behavior:contain}
+:root[data-style=array] .help-layout{grid-template-columns:minmax(0,1.2fr) minmax(150px,.8fr)}
+
+/* 灵视：前景聚焦、中景可行动、远景保留时间方向。 */
+:root[data-style=seer]{--r:18px;--r-card:18px;--r-hero:22px;--rail:164px}
+:root[data-style=seer] .rail{background:var(--bg);border-right:0}
+:root[data-style=seer] #nav{border-left:1px solid var(--field-line);margin-left:8px;padding-left:8px}
+:root[data-style=seer] #nav button{border-radius:18px 5px 5px 18px;padding-left:10px}
+:root[data-style=seer] #nav button::before{content:"";position:absolute;left:-12px;width:5px;height:5px;background:var(--field-line);border-radius:50%}
+:root[data-style=seer] #nav button.active::before{width:9px;height:9px;left:-14px;background:var(--tide)}
+:root[data-style=seer] .status-line::before{border-radius:50%;width:6px;height:6px}
+:root[data-style=seer] .page{padding-top:12px}
+.seer-today{grid-template-columns:minmax(0,1.02fr) minmax(0,1.12fr)}
+.seer-near .hero{min-height:184px}.seer-near .hero::after{background:linear-gradient(90deg,var(--panel) 12%,color-mix(in srgb,var(--panel) 93%,transparent) 70%,color-mix(in srgb,var(--panel) 76%,transparent))}
+.seer-near .hero .art{object-position:50% 30%}.seer-near .attention{border-radius:0 16px 16px 0;margin-bottom:4px;padding:10px 14px}
+.seer-near .attention .direction-label{margin-bottom:4px}.seer-near .attention p{font-size:12px;margin-bottom:3px}
+.seer-mid{padding:14px 16px 0;border-left:2px solid var(--tide);background:var(--panel);border-radius:18px 18px 0 0}
+.seer-mid .card{padding:0;border:0;border-radius:0}.seer-mid .direction-label{margin-bottom:12px}
+.seer-far{margin:20px 0 0 14px;padding-left:16px;border-left:1px solid var(--field-line)}
+.seer-far .card{border:0;background:none;padding:0}.seer-far .recent-entry{position:relative;padding-left:14px}
+.seer-far .recent-entry::before{content:"";position:absolute;left:0;top:16px;width:4px;height:4px;border-radius:50%;background:var(--mute)}
+.seer-workspace{grid-template-columns:minmax(0,1fr) 210px}.seer-memory{padding:18px 0 18px 18px;border-left:1px solid var(--field-line);min-width:0}
+.seer-focus>.card,.seer-focus>.panel{border-radius:18px}.seer-focus .head h1{font-size:28px;font-weight:500}
+
+/* 术阵：六个术式位围绕可操作的阵眼，外环只放真实依赖和回执。 */
+:root[data-style=array]{--r:4px;--r-card:4px;--r-hero:4px;--r-ctl:4px;--rail:208px}
+:root[data-style=array] .rail{border-right:1px solid var(--field-line);padding-left:10px;padding-right:10px}
+:root[data-style=array] .me{flex-direction:column;gap:8px;text-align:center;padding-bottom:10px}
+:root[data-style=array] .ava{border-radius:50%;width:52px;height:52px}
+:root[data-style=array] .rail-label{text-align:center}
+:root[data-style=array] #nav{position:relative;display:block;height:300px;flex-shrink:0;isolation:isolate}
+:root[data-style=array] #nav::before{content:"";position:absolute;inset:34px 16px;border:1px solid var(--field-line);border-radius:50%;z-index:-1}
+:root[data-style=array] #nav::after{content:"阵眼";position:absolute;inset:125px 64px auto;text-align:center;font-size:11px;letter-spacing:3px;color:var(--mute);z-index:-1}
+:root[data-style=array] #nav button{position:absolute;width:82px;height:56px;min-height:56px;padding:5px;display:flex;flex-direction:column;gap:3px;background:var(--panel);border:1px solid var(--field-line);border-radius:4px;text-align:center;font-size:12px}
+:root[data-style=array] #nav .ic{display:none}:root[data-style=array] #nav .lb{flex:0 0 auto}
+:root[data-style=array] #nav button:nth-child(1){left:52px;top:0}
+:root[data-style=array] #nav button:nth-child(2){right:0;top:68px}
+:root[data-style=array] #nav button:nth-child(3){right:0;top:168px}
+:root[data-style=array] #nav button:nth-child(4){left:52px;bottom:0}
+:root[data-style=array] #nav button:nth-child(5){left:0;top:168px}
+:root[data-style=array] #nav button:nth-child(6){left:0;top:68px}
+:root[data-style=array] #nav button.active{border:2px solid var(--tide);background:var(--tide-soft)}
+.array-today{grid-template-columns:minmax(0,1.3fr) minmax(260px,.85fr)}
+.array-eye{position:relative;border:1px solid var(--field-line);padding:16px;background:var(--panel)}
+.array-eye::before{content:"";position:absolute;inset:8px;pointer-events:none;border:1px solid var(--line);border-radius:4px}
+.array-eye .hero{min-height:130px;padding:10px 130px 10px 0;margin-bottom:10px}
+.array-eye .hero .art{inset:0 0 auto auto;width:112px;height:112px;object-fit:cover;border-radius:50%;border:2px solid var(--field-line);z-index:0}
+.array-eye .hero::after{display:none}.array-eye .hero h1{font-size:24px;font-weight:600;letter-spacing:.06em}
+.array-eye .hero-in{position:relative;z-index:1}.array-eye .hero-eyebrow span{display:none}.array-eye .hero .actions{position:relative;width:calc(100% + 120px)}
+.array-eye .task-receipt{padding:10px 0;border-top:1px solid var(--line);margin-bottom:12px}
+.array-eye .card{border:0;padding:0;background:none}.array-eye .stats{margin-top:16px}
+.array-ring .dependency-board{border-radius:0}.array-ring>.card{margin-top:16px}
+.array-workspace{grid-template-columns:minmax(0,1fr) 230px}
+.array-slot{border:1px solid var(--field-line);padding:18px;background:var(--panel)}
+.array-slot .head h1{font-size:24px;letter-spacing:.06em}.array-slot .card{border-radius:0;box-shadow:none}
+.array-records>section{grid-row:1}.array-records>aside{grid-row:2}
+
+/* 次元壁垒：边界本身是操作，关闭时不显示私密正文。 */
+:root[data-style=barrier]{--r:8px;--r-card:8px;--r-hero:8px;--r-ctl:6px;--rail:164px}
+:root[data-style=barrier] .rail{border-right:3px double var(--field-line)}
+:root[data-style=barrier] #nav button{border-radius:6px 0 0 6px}
+:root[data-style=barrier] #nav button:nth-child(4){margin-top:26px}
+:root[data-style=barrier] #nav button:nth-child(1)::before,:root[data-style=barrier] #nav button:nth-child(4)::before{position:absolute;left:8px;top:-19px;font-size:9px;letter-spacing:.1em;color:var(--mute)}
+:root[data-style=barrier] #nav button:nth-child(1)::before{content:"常规侧"}
+:root[data-style=barrier] #nav button:nth-child(4)::before{content:"神秘侧"}
+:root[data-style=barrier] #nav{margin-top:18px}
+:root[data-style=barrier] #nav button.active{border-right:4px solid var(--tide)}
+.barrier-today{grid-template-columns:minmax(0,1fr) 36px minmax(0,1fr);gap:12px}
+.barrier-daily .hero{min-height:180px;background:var(--panel)}.barrier-daily .hero .art{object-position:50% 30%}
+.barrier-daily .hero::after{background:var(--panel);opacity:.94}.barrier-other .card{border-radius:2px}
+.barrier-other{padding-top:4px}.today-private{padding:20px;background:var(--panel);border:1px solid var(--field-line)}
+.barrier-content .head .no::before{content:"秘 · ";color:var(--tide)}
+.barrier-content .card,.barrier-content .panel{border-radius:2px}
+
+/* 小窗把术阵展开、把右侧移到抽屉；不靠裁切隐藏横向溢出。 */
+@media(max-width:1100px){.array-eye .hero{padding-right:90px}.array-eye .hero .art{width:76px;height:76px;opacity:1}.array-eye .hero .actions{width:calc(100% + 84px)}.seer-workspace{grid-template-columns:minmax(0,1fr) 170px}.array-workspace{grid-template-columns:minmax(0,1fr) 190px}.barrier-workspace{grid-template-columns:minmax(150px,180px) 32px minmax(0,1fr)}}
+@media(max-width:979px){
+ .today-layout.seer-today,.today-layout.array-today,.today-layout.barrier-today{grid-template-columns:minmax(0,1fr)}
+ .seer-workspace,.array-workspace{grid-template-columns:minmax(0,1fr)}.seer-memory,.array-outside{margin-top:12px;border-top:1px solid var(--line);padding-top:16px}
+ .seer-memory{border-left:0;padding-left:0}.seer-memory .recent-entry{max-width:100%}
+ .barrier-today>.barrier-door{border:0;background:none;padding:0;justify-content:flex-start}.barrier-today>.barrier-door .gate-handle{writing-mode:horizontal-tb;text-orientation:mixed;max-width:none;min-height:36px;letter-spacing:0;border:1px solid var(--field-line);padding:7px 10px}
+ :root[data-style=array]{--rail:164px}:root[data-style=array] #nav{display:grid;height:auto;gap:6px}
+ :root[data-style=array] #nav::before,:root[data-style=array] #nav::after{display:none}
+ :root[data-style=array] #nav button{position:static;width:100%;height:auto;min-height:42px;flex-direction:row;text-align:left;padding:8px;gap:8px}
+ .seer-mid{padding:12px 14px 0}
+}
+@media(max-width:860px){:root[data-style]{--rail:124px}.barrier-workspace{grid-template-columns:32px minmax(0,1fr)}.barrier-summary{grid-column:1/-1}.barrier-summary .svc{display:none}.barrier-summary h2{margin:0}.barrier-summary p{margin:8px 0}.barrier-summary .direction-label{margin-bottom:6px}.barrier-summary .quiet{display:none}.barrier-records{grid-template-columns:minmax(0,1fr)}.barrier-records>.barrier-door{writing-mode:horizontal-tb;border:0;justify-content:flex-start}.barrier-records .gate-handle{writing-mode:horizontal-tb;max-width:none;min-height:36px;padding:7px 10px;letter-spacing:0;border:1px solid var(--field-line)}}
+@media(max-width:860px){.help-layout,:root[data-style=array] .help-layout{grid-template-columns:minmax(0,1fr)}.help-index{max-height:160px}.help-reading .doc{max-height:420px}}
+@media(max-width:760px){
+ :root[data-style=array] #nav{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:2px}:root[data-style=array] #nav button{display:flex;flex-direction:column;justify-content:center;gap:3px;width:100%;min-height:56px;padding:6px 2px;border-color:transparent}
+ :root[data-style=seer] #nav{border:0;margin:0;padding:0}:root[data-style=seer] #nav button{border-radius:6px}:root[data-style=seer] #nav button::before{display:none}
+ :root[data-style=barrier] #nav{margin:0}:root[data-style=barrier] #nav button:nth-child(4){margin-top:0}:root[data-style=barrier] #nav button::before{display:none}
+ .barrier-workspace{grid-template-columns:28px minmax(0,1fr);gap:8px}.barrier-summary{padding:12px}.barrier-door .gate-handle{padding:7px 3px;min-height:140px}
+ .today-layout .stats{grid-template-columns:repeat(2,minmax(0,1fr))}.today-layout .hero{padding:16px}.array-eye .hero{padding:8px 0}.array-eye{padding:14px}
+ .array-eye .hero .art{display:none}.array-eye .hero .actions{width:auto}
+ .array-slot{padding:14px}.hero-eyebrow{letter-spacing:0}.array-outside .dependency-board{padding:14px}.head-a{width:100%}
+ .card,.panel{max-width:100%}.row,.alert-row{flex-wrap:wrap}.row time{margin-left:auto}.row small{white-space:normal}.form-row{grid-template-columns:minmax(0,1fr)}
+}
+@media(prefers-reduced-motion:no-preference){.seer-focus{animation:focus-in 180ms ease-out}.array-slot{animation:focus-in 220ms ease-out}.barrier-content{animation:door-in 160ms ease-out}}
+@keyframes focus-in{from{opacity:.7}to{opacity:1}}@keyframes door-in{from{transform:translateX(12px);opacity:.7}to{transform:translateX(0);opacity:1}}
+[data-theme=contrast] .hero .art{display:none}[data-theme=contrast] .hero::after{opacity:1}[data-theme=contrast] .card,[data-theme=contrast] .panel{border-color:var(--field-line)}
+[data-theme=contrast] .array-eye .hero{padding-right:0}
+
+/* 术阵的圆形头像不要被羽化遮罩切边 */
+:root[data-style="array"] .hero .art{-webkit-mask-image:none;mask-image:none}

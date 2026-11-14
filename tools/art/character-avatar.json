@@ -1,0 +1,8 @@
+{
+  "source": "user-provided art/avatar.png",
+  "output": "art/character/avatar.webp",
+  "original_sha256": "3928d2393b94c79fe193a316449f1613e6b97ac0c9b975f98acf2acb93e31e3a",
+  "sha256": "31477746823f2bb034efde3b5538b127a9b942d4adee31872d9e4b814993bcd1",
+  "size_bytes": 77980,
+  "note": "Original Mingling identity retained by explicit user request; converted to WebP only"
+}

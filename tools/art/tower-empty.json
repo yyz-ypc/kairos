@@ -1,0 +1,123 @@
+{
+  "style": "tower",
+  "prompt": "A quiet unoccupied scene, one simple object, no text, no people. masterpiece, high quality, no people, no text, no letters, wide composition, generous negative space, slender futuristic tower, stacked luminous floors, vertical architecture, dawn orange and graphite, clean isometric illustration",
+  "negative": "low quality, blurry, watermark, text, letters, people",
+  "seed": 1102403,
+  "width": 768,
+  "height": 512,
+  "model": "anima-base-v1.0.safetensors",
+  "encoder": "qwen_3_06b_base.safetensors",
+  "vae": "qwen_image_vae.safetensors",
+  "steps": 24,
+  "cfg": 5,
+  "workflow": {
+    "1": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "anima-base-v1.0.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    "2": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen_3_06b_base.safetensors",
+        "type": "stable_diffusion"
+      }
+    },
+    "3": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "qwen_image_vae.safetensors"
+      }
+    },
+    "4": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "A quiet unoccupied scene, one simple object, no text, no people. masterpiece, high quality, no people, no text, no letters, wide composition, generous negative space, slender futuristic tower, stacked luminous floors, vertical architecture, dawn orange and graphite, clean isometric illustration"
+      }
+    },
+    "5": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "low quality, blurry, watermark, text, letters, people"
+      }
+    },
+    "6": {
+      "class_type": "EmptySD3LatentImage",
+      "inputs": {
+        "width": 768,
+        "height": 512,
+        "batch_size": 1
+      }
+    },
+    "7": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "positive": [
+          "4",
+          0
+        ],
+        "negative": [
+          "5",
+          0
+        ],
+        "latent_image": [
+          "6",
+          0
+        ],
+        "seed": 1102403,
+        "steps": 24,
+        "cfg": 5,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1
+      }
+    },
+    "8": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "7",
+          0
+        ],
+        "vae": [
+          "3",
+          0
+        ]
+      }
+    },
+    "9": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "8",
+          0
+        ],
+        "filename_prefix": "Kairos-final/tower-empty"
+      }
+    }
+  },
+  "status": "approved",
+  "submission": {
+    "prompt_id": "1edd5499-9140-4d68-98b9-0ed641644645",
+    "number": 17,
+    "node_errors": {}
+  },
+  "output": "art/styles/tower-empty.webp",
+  "size_bytes": 7946,
+  "sha256": "27c3c60a614d76c53d7715080f188a11314dbdba1f701dd3a76f98e109614715",
+  "webp_quality": 85
+}

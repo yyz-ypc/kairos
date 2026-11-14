@@ -1,0 +1,155 @@
+{
+  "prompt": "Mingling, one fully clothed young anime companion, preserve the reference character identity, short silver white bob haircut with vivid cyan blue lower hair tips, huge clear electric blue eyes, small black butterfly hair ornaments, black choker with tiny silver butterfly pendant, oversized black short sleeve T-shirt with a large white butterfly print and cobalt blue sleeve trim, relaxed friendly confident expression, half body portrait, standing at a luminous astronomical workbench, subtle starry blue graphic atmosphere, sophisticated clean anime illustration, beautifully drawn face and hair, soft cinematic rim lighting, neat hands, tasteful composition, no text, no watermark",
+  "seed": 1101514,
+  "width": 1024,
+  "height": 704,
+  "model": "anima-base-v1.0.safetensors",
+  "encoder": "qwen_3_06b_base.safetensors",
+  "vae": "qwen_image_vae.safetensors",
+  "steps": 32,
+  "cfg": 5.5,
+  "denoise": 0.48,
+  "reference": "user-provided art/hero.png",
+  "reference_sha256": "252ce034dbf6bfe435179a1447c99756af560f7595c2193c0d0377f247801cd3",
+  "workflow": {
+    "1": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "anima-base-v1.0.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    "2": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen_3_06b_base.safetensors",
+        "type": "stable_diffusion"
+      }
+    },
+    "3": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "qwen_image_vae.safetensors"
+      }
+    },
+    "4": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "Mingling, one fully clothed young anime companion, preserve the reference character identity, short silver white bob haircut with vivid cyan blue lower hair tips, huge clear electric blue eyes, small black butterfly hair ornaments, black choker with tiny silver butterfly pendant, oversized black short sleeve T-shirt with a large white butterfly print and cobalt blue sleeve trim, relaxed friendly confident expression, half body portrait, standing at a luminous astronomical workbench, subtle starry blue graphic atmosphere, sophisticated clean anime illustration, beautifully drawn face and hair, soft cinematic rim lighting, neat hands, tasteful composition, no text, no watermark"
+      }
+    },
+    "5": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "low quality, distorted face, deformed hands, different character, long hair, dark hair, red eyes, revealing clothing, text, logo, watermark"
+      }
+    },
+    "6": {
+      "class_type": "EmptySD3LatentImage",
+      "inputs": {
+        "width": 1024,
+        "height": 576,
+        "batch_size": 1
+      }
+    },
+    "7": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "positive": [
+          "4",
+          0
+        ],
+        "negative": [
+          "5",
+          0
+        ],
+        "latent_image": [
+          "12",
+          0
+        ],
+        "seed": 1101514,
+        "steps": 32,
+        "cfg": 5.5,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 0.48
+      }
+    },
+    "8": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "7",
+          0
+        ],
+        "vae": [
+          "3",
+          0
+        ]
+      }
+    },
+    "9": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "8",
+          0
+        ],
+        "filename_prefix": "Kairos-character/mingling-redraw"
+      }
+    },
+    "10": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "Kairos-reference/mingling-hero.png"
+      }
+    },
+    "11": {
+      "class_type": "ImageScale",
+      "inputs": {
+        "image": [
+          "10",
+          0
+        ],
+        "upscale_method": "lanczos",
+        "width": 1024,
+        "height": 704,
+        "crop": "disabled"
+      }
+    },
+    "12": {
+      "class_type": "VAEEncode",
+      "inputs": {
+        "pixels": [
+          "11",
+          0
+        ],
+        "vae": [
+          "3",
+          0
+        ]
+      }
+    }
+  },
+  "status": "adopted-identity-preserving-redraw",
+  "submission": {
+    "prompt_id": "2a49aa20-dcda-4428-b26a-2beac203ebd0",
+    "number": 21,
+    "node_errors": {}
+  },
+  "output": "art/character/hero.webp",
+  "size_bytes": 42662,
+  "sha256": "c96bec90ec7ef069b9149a611f9707c620fe2f04fbb5dca8f2b33e815cb0ed84"
+}

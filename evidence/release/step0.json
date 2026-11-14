@@ -1,0 +1,8 @@
+{
+  "version": "V1.0.0",
+  "file_version": "1.0.0.0",
+  "build": "passed",
+  "installer_size": 71735045,
+  "installer_sha256": "d6397cbbb8b270afbaf064de83d9302ac4a1841b0ae205079739f6dedf10833a",
+  "note": "Version baseline before refactor; not final release installer"
+}

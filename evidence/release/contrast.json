@@ -1,0 +1,406 @@
+{
+  "combinations": 25,
+  "passed": true,
+  "results": [
+    {
+      "style": "seer",
+      "theme": "nightfall",
+      "ratios": {
+        "ink/bg": 15.84,
+        "ink/panel": 13.25,
+        "mute/bg": 10.325,
+        "mute/panel": 8.637,
+        "tide/bg": 9.837,
+        "tide/panel": 8.228,
+        "ok/bg": 11.326,
+        "ok/panel": 9.474,
+        "bad/bg": 9.884,
+        "bad/panel": 8.268
+      }
+    },
+    {
+      "style": "seer",
+      "theme": "daylight",
+      "ratios": {
+        "ink/bg": 14.271,
+        "ink/panel": 15.469,
+        "mute/bg": 6.821,
+        "mute/panel": 7.393,
+        "tide/bg": 6.582,
+        "tide/panel": 7.134,
+        "ok/bg": 6.635,
+        "ok/panel": 7.191,
+        "bad/bg": 6.517,
+        "bad/panel": 7.064
+      }
+    },
+    {
+      "style": "seer",
+      "theme": "boundary",
+      "ratios": {
+        "ink/bg": 21.0,
+        "ink/panel": 21.0,
+        "mute/bg": 18.1,
+        "mute/panel": 18.1,
+        "tide/bg": 17.863,
+        "tide/panel": 17.863,
+        "ok/bg": 17.833,
+        "ok/panel": 17.833,
+        "bad/bg": 13.374,
+        "bad/panel": 13.374
+      }
+    },
+    {
+      "style": "seer",
+      "theme": "moon",
+      "ratios": {
+        "ink/bg": 16.47,
+        "ink/panel": 13.997,
+        "mute/bg": 11.122,
+        "mute/panel": 9.453,
+        "tide/bg": 11.217,
+        "tide/panel": 9.533,
+        "ok/bg": 12.539,
+        "ok/panel": 10.656,
+        "bad/bg": 11.203,
+        "bad/panel": 9.521
+      }
+    },
+    {
+      "style": "seer",
+      "theme": "suit",
+      "ratios": {
+        "ink/bg": 13.62,
+        "ink/panel": 14.971,
+        "mute/bg": 6.45,
+        "mute/panel": 7.09,
+        "tide/bg": 5.994,
+        "tide/panel": 6.589,
+        "ok/bg": 6.858,
+        "ok/panel": 7.538,
+        "bad/bg": 6.757,
+        "bad/panel": 7.427
+      }
+    },
+    {
+      "style": "array",
+      "theme": "nightfall",
+      "ratios": {
+        "ink/bg": 15.84,
+        "ink/panel": 13.25,
+        "mute/bg": 10.325,
+        "mute/panel": 8.637,
+        "tide/bg": 9.837,
+        "tide/panel": 8.228,
+        "ok/bg": 11.326,
+        "ok/panel": 9.474,
+        "bad/bg": 9.884,
+        "bad/panel": 8.268
+      }
+    },
+    {
+      "style": "array",
+      "theme": "daylight",
+      "ratios": {
+        "ink/bg": 14.271,
+        "ink/panel": 15.469,
+        "mute/bg": 6.821,
+        "mute/panel": 7.393,
+        "tide/bg": 6.582,
+        "tide/panel": 7.134,
+        "ok/bg": 6.635,
+        "ok/panel": 7.191,
+        "bad/bg": 6.517,
+        "bad/panel": 7.064
+      }
+    },
+    {
+      "style": "array",
+      "theme": "boundary",
+      "ratios": {
+        "ink/bg": 21.0,
+        "ink/panel": 21.0,
+        "mute/bg": 18.1,
+        "mute/panel": 18.1,
+        "tide/bg": 17.863,
+        "tide/panel": 17.863,
+        "ok/bg": 17.833,
+        "ok/panel": 17.833,
+        "bad/bg": 13.374,
+        "bad/panel": 13.374
+      }
+    },
+    {
+      "style": "array",
+      "theme": "moon",
+      "ratios": {
+        "ink/bg": 16.47,
+        "ink/panel": 13.997,
+        "mute/bg": 11.122,
+        "mute/panel": 9.453,
+        "tide/bg": 11.217,
+        "tide/panel": 9.533,
+        "ok/bg": 12.539,
+        "ok/panel": 10.656,
+        "bad/bg": 11.203,
+        "bad/panel": 9.521
+      }
+    },
+    {
+      "style": "array",
+      "theme": "suit",
+      "ratios": {
+        "ink/bg": 13.62,
+        "ink/panel": 14.971,
+        "mute/bg": 6.45,
+        "mute/panel": 7.09,
+        "tide/bg": 5.994,
+        "tide/panel": 6.589,
+        "ok/bg": 6.858,
+        "ok/panel": 7.538,
+        "bad/bg": 6.757,
+        "bad/panel": 7.427
+      }
+    },
+    {
+      "style": "barrier",
+      "theme": "nightfall",
+      "ratios": {
+        "ink/bg": 15.84,
+        "ink/panel": 13.25,
+        "mute/bg": 10.325,
+        "mute/panel": 8.637,
+        "tide/bg": 9.837,
+        "tide/panel": 8.228,
+        "ok/bg": 11.326,
+        "ok/panel": 9.474,
+        "bad/bg": 9.884,
+        "bad/panel": 8.268
+      }
+    },
+    {
+      "style": "barrier",
+      "theme": "daylight",
+      "ratios": {
+        "ink/bg": 14.271,
+        "ink/panel": 15.469,
+        "mute/bg": 6.821,
+        "mute/panel": 7.393,
+        "tide/bg": 6.582,
+        "tide/panel": 7.134,
+        "ok/bg": 6.635,
+        "ok/panel": 7.191,
+        "bad/bg": 6.517,
+        "bad/panel": 7.064
+      }
+    },
+    {
+      "style": "barrier",
+      "theme": "boundary",
+      "ratios": {
+        "ink/bg": 21.0,
+        "ink/panel": 21.0,
+        "mute/bg": 18.1,
+        "mute/panel": 18.1,
+        "tide/bg": 17.863,
+        "tide/panel": 17.863,
+        "ok/bg": 17.833,
+        "ok/panel": 17.833,
+        "bad/bg": 13.374,
+        "bad/panel": 13.374
+      }
+    },
+    {
+      "style": "barrier",
+      "theme": "moon",
+      "ratios": {
+        "ink/bg": 16.47,
+        "ink/panel": 13.997,
+        "mute/bg": 11.122,
+        "mute/panel": 9.453,
+        "tide/bg": 11.217,
+        "tide/panel": 9.533,
+        "ok/bg": 12.539,
+        "ok/panel": 10.656,
+        "bad/bg": 11.203,
+        "bad/panel": 9.521
+      }
+    },
+    {
+      "style": "barrier",
+      "theme": "suit",
+      "ratios": {
+        "ink/bg": 13.62,
+        "ink/panel": 14.971,
+        "mute/bg": 6.45,
+        "mute/panel": 7.09,
+        "tide/bg": 5.994,
+        "tide/panel": 6.589,
+        "ok/bg": 6.858,
+        "ok/panel": 7.538,
+        "bad/bg": 6.757,
+        "bad/panel": 7.427
+      }
+    },
+    {
+      "style": "tower",
+      "theme": "nightfall",
+      "ratios": {
+        "ink/bg": 15.84,
+        "ink/panel": 13.25,
+        "mute/bg": 10.325,
+        "mute/panel": 8.637,
+        "tide/bg": 9.837,
+        "tide/panel": 8.228,
+        "ok/bg": 11.326,
+        "ok/panel": 9.474,
+        "bad/bg": 9.884,
+        "bad/panel": 8.268
+      }
+    },
+    {
+      "style": "tower",
+      "theme": "daylight",
+      "ratios": {
+        "ink/bg": 14.271,
+        "ink/panel": 15.469,
+        "mute/bg": 6.821,
+        "mute/panel": 7.393,
+        "tide/bg": 6.582,
+        "tide/panel": 7.134,
+        "ok/bg": 6.635,
+        "ok/panel": 7.191,
+        "bad/bg": 6.517,
+        "bad/panel": 7.064
+      }
+    },
+    {
+      "style": "tower",
+      "theme": "boundary",
+      "ratios": {
+        "ink/bg": 21.0,
+        "ink/panel": 21.0,
+        "mute/bg": 18.1,
+        "mute/panel": 18.1,
+        "tide/bg": 17.863,
+        "tide/panel": 17.863,
+        "ok/bg": 17.833,
+        "ok/panel": 17.833,
+        "bad/bg": 13.374,
+        "bad/panel": 13.374
+      }
+    },
+    {
+      "style": "tower",
+      "theme": "moon",
+      "ratios": {
+        "ink/bg": 16.47,
+        "ink/panel": 13.997,
+        "mute/bg": 11.122,
+        "mute/panel": 9.453,
+        "tide/bg": 11.217,
+        "tide/panel": 9.533,
+        "ok/bg": 12.539,
+        "ok/panel": 10.656,
+        "bad/bg": 11.203,
+        "bad/panel": 9.521
+      }
+    },
+    {
+      "style": "tower",
+      "theme": "suit",
+      "ratios": {
+        "ink/bg": 13.62,
+        "ink/panel": 14.971,
+        "mute/bg": 6.45,
+        "mute/panel": 7.09,
+        "tide/bg": 5.994,
+        "tide/panel": 6.589,
+        "ok/bg": 6.858,
+        "ok/panel": 7.538,
+        "bad/bg": 6.757,
+        "bad/panel": 7.427
+      }
+    },
+    {
+      "style": "folio",
+      "theme": "nightfall",
+      "ratios": {
+        "ink/bg": 15.84,
+        "ink/panel": 13.25,
+        "mute/bg": 10.325,
+        "mute/panel": 8.637,
+        "tide/bg": 9.837,
+        "tide/panel": 8.228,
+        "ok/bg": 11.326,
+        "ok/panel": 9.474,
+        "bad/bg": 9.884,
+        "bad/panel": 8.268
+      }
+    },
+    {
+      "style": "folio",
+      "theme": "daylight",
+      "ratios": {
+        "ink/bg": 14.271,
+        "ink/panel": 15.469,
+        "mute/bg": 6.821,
+        "mute/panel": 7.393,
+        "tide/bg": 6.582,
+        "tide/panel": 7.134,
+        "ok/bg": 6.635,
+        "ok/panel": 7.191,
+        "bad/bg": 6.517,
+        "bad/panel": 7.064
+      }
+    },
+    {
+      "style": "folio",
+      "theme": "boundary",
+      "ratios": {
+        "ink/bg": 21.0,
+        "ink/panel": 21.0,
+        "mute/bg": 18.1,
+        "mute/panel": 18.1,
+        "tide/bg": 17.863,
+        "tide/panel": 17.863,
+        "ok/bg": 17.833,
+        "ok/panel": 17.833,
+        "bad/bg": 13.374,
+        "bad/panel": 13.374
+      }
+    },
+    {
+      "style": "folio",
+      "theme": "moon",
+      "ratios": {
+        "ink/bg": 16.47,
+        "ink/panel": 13.997,
+        "mute/bg": 11.122,
+        "mute/panel": 9.453,
+        "tide/bg": 11.217,
+        "tide/panel": 9.533,
+        "ok/bg": 12.539,
+        "ok/panel": 10.656,
+        "bad/bg": 11.203,
+        "bad/panel": 9.521
+      }
+    },
+    {
+      "style": "folio",
+      "theme": "suit",
+      "ratios": {
+        "ink/bg": 13.62,
+        "ink/panel": 14.971,
+        "mute/bg": 6.45,
+        "mute/panel": 7.09,
+        "tide/bg": 5.994,
+        "tide/panel": 6.589,
+        "ok/bg": 6.858,
+        "ok/panel": 7.538,
+        "bad/bg": 6.757,
+        "bad/panel": 7.427
+      }
+    }
+  ]
+}

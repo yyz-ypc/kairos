@@ -1,0 +1,123 @@
+{
+  "style": "folio",
+  "prompt": "A single elegant emblem object centered on a plain background, simple bold silhouette, no text, no people. An open archival book with beautifully folded ivory paper pages and blue silver constellation diagrams, a fountain pen and subtle paper texture, overhead editorial illustration, elegant clean composition, no people, no letters",
+  "negative": "low quality, blurry, watermark, text, letters, people",
+  "seed": 1102505,
+  "width": 512,
+  "height": 512,
+  "model": "anima-base-v1.0.safetensors",
+  "encoder": "qwen_3_06b_base.safetensors",
+  "vae": "qwen_image_vae.safetensors",
+  "steps": 24,
+  "cfg": 5,
+  "workflow": {
+    "1": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "anima-base-v1.0.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    "2": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen_3_06b_base.safetensors",
+        "type": "stable_diffusion"
+      }
+    },
+    "3": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "qwen_image_vae.safetensors"
+      }
+    },
+    "4": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "A single elegant emblem object centered on a plain background, simple bold silhouette, no text, no people. An open archival book with beautifully folded ivory paper pages and blue silver constellation diagrams, a fountain pen and subtle paper texture, overhead editorial illustration, elegant clean composition, no people, no letters"
+      }
+    },
+    "5": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "low quality, blurry, watermark, text, letters, people"
+      }
+    },
+    "6": {
+      "class_type": "EmptySD3LatentImage",
+      "inputs": {
+        "width": 512,
+        "height": 512,
+        "batch_size": 1
+      }
+    },
+    "7": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "positive": [
+          "4",
+          0
+        ],
+        "negative": [
+          "5",
+          0
+        ],
+        "latent_image": [
+          "6",
+          0
+        ],
+        "seed": 1102505,
+        "steps": 24,
+        "cfg": 5,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1
+      }
+    },
+    "8": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "7",
+          0
+        ],
+        "vae": [
+          "3",
+          0
+        ]
+      }
+    },
+    "9": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "8",
+          0
+        ],
+        "filename_prefix": "Kairos-final/folio-icon"
+      }
+    }
+  },
+  "status": "approved",
+  "submission": {
+    "prompt_id": "ddcd5beb-5e97-441c-a55f-7e2ac73f23d2",
+    "number": 20,
+    "node_errors": {}
+  },
+  "output": "art/styles/folio-icon.webp",
+  "size_bytes": 16496,
+  "sha256": "684219b26faf08d8a38256c739b9e1af5dbbfee12e9a3bfc25da93480adaaab3",
+  "webp_quality": 85
+}

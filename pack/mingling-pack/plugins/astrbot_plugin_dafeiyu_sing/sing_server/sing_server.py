@@ -1,0 +1,279 @@
+"""大肥鱼唱歌服务：歌词 + 曲子名 → SoulX-Singer 唱出来的 wav。
+
+模型只在启动时加载一次，之后每首歌十几秒。
+
+  python sing_server.py --soulx D:\\dafeiyu\\sing\\SoulX-Singer --model D:\\dafeiyu\\sing\\models\\SoulX-Singer\\model.pt
+
+两个后端：
+  soulx   本地 SoulX-Singer，按谱唱，准；要 N 卡，给了 --soulx 和 --model 才开
+  doubao  豆包 Seed Audio 1.0（云端），更像真人但不按谱，抽 3 次挑音准最好的；
+          找得到火山凭证才开（环境变量或 --volc-env 指的文件，见 doubao_backend.py），1 元/分钟
+
+  GET  /health → {"ok": true, "backends": ["soulx", "doubao"], ...}
+  POST /sing   {"melody": "小星星", "lyrics": "第一句/第二句/第三句/第四句", "backend": "soulx"}
+       → {"ok": true, "path": "...wav", "file": "xxx.wav", "seconds": 17.9, "gen_time": 12.3, "lyrics": [...]}
+  GET  /out/<file>   取生成好的 wav（唱歌服务和 AstrBot 不在同一台电脑时用）
+"""
+import argparse
+import hashlib
+import json
+import os
+import statistics
+import sys
+import threading
+import time
+import uuid
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+import melodies  # noqa: E402
+
+STATE = {}
+LOCK = threading.Lock()
+
+
+def _file_sha256(path):
+    digest = hashlib.sha256()
+    with open(path, "rb") as handle:
+        for block in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(block)
+    return digest.hexdigest()
+
+
+def _load_pin_json(path):
+    with open(path, encoding="utf-8-sig") as handle:
+        return json.load(handle)
+
+
+def _require_pin_field(record, name):
+    value = record.get(name)
+    if not isinstance(value, str) or not value.strip():
+        raise RuntimeError(f"安装记录缺少 {name}，请重新部署以校验旧安装并升级元数据")
+    return value.strip()
+
+
+# 独立锚点：与 tools/components.json 的 soulx-singer 段、tools/setup-singing.ps1 的
+# $script:SoulxSourcePin 三处一致。安装记录和 marker 可以互相自洽地伪造，但伪造不了这里。
+_EXPECTED_SOURCE_COMMIT = "81aeb3ae772c70093c3de74dc23c92d983801ae4"
+_EXPECTED_MODEL_SHA256 = "447eaf41f91a6b6659d55e9ec3c9b809221724fb8592aebaec35a23751a5b500"
+_EXPECTED_LOADER_SHA256 = "b41d688f68827df649b301da10105a4db89e348ad44fc76de280a1cb46d562a2"
+
+
+def _verify_soulx_pins(source, model, installed_path):
+    """服务自己的安全门：直接跑 start-singing.cmd 或 Python 也绕不过。"""
+    if not os.path.isfile(installed_path):
+        raise RuntimeError(f"缺少安装记录：{installed_path}，请先重新部署")
+    installed = _load_pin_json(installed_path)
+    source_commit = _require_pin_field(installed, "sourceCommit")
+    model_sha256 = _require_pin_field(installed, "modelSha256")
+    _require_pin_field(installed, "modelHashSource")
+    loader_sha256 = _require_pin_field(installed, "loaderSha256")
+    if source_commit != _EXPECTED_SOURCE_COMMIT:
+        raise RuntimeError(f"源码 commit 不是固定版本：{source_commit}")
+    if model_sha256 != _EXPECTED_MODEL_SHA256:
+        raise RuntimeError(f"模型哈希不是固定版本：{model_sha256}")
+    if loader_sha256 != _EXPECTED_LOADER_SHA256:
+        raise RuntimeError(f"加载器哈希不是固定版本：{loader_sha256}")
+
+    marker_path = os.path.join(source, ".mingling-source.json")
+    if not os.path.isfile(marker_path):
+        raise RuntimeError("源码缺少固定标记，请重新部署")
+    marker = _load_pin_json(marker_path)
+    if marker.get("sourceCommit") != source_commit:
+        raise RuntimeError("源码 commit 与安装记录不一致，拒绝加载")
+    if marker.get("loaderSha256") != loader_sha256:
+        raise RuntimeError("源码加载器哈希与安装记录不一致，拒绝加载")
+
+    loader_path = os.path.join(source, "cli", "inference.py")
+    if not os.path.isfile(loader_path):
+        raise RuntimeError("固定源码缺少 cli/inference.py，拒绝加载")
+    with open(loader_path, encoding="utf-8") as handle:
+        loader_text = handle.read()
+    if "weights_only=False" in loader_text or "weights_only=True" not in loader_text:
+        raise RuntimeError("真实模型加载路径不是 weights_only=True，拒绝加载")
+    if _file_sha256(loader_path) != loader_sha256:
+        raise RuntimeError("真实模型加载器被改动，拒绝加载")
+
+    if not os.path.isfile(model):
+        raise RuntimeError(f"模型不存在：{model}")
+    if _file_sha256(model) != model_sha256:
+        raise RuntimeError("模型哈希与安装记录不一致，拒绝加载")
+
+
+
+def load(args):
+    STATE.update(out=args.out, backends=[])
+    try:
+        import doubao_backend
+        creds = doubao_backend.load_creds(args.volc_env)
+    except ImportError as e:  # 没装 praat-parselmouth 之类
+        print(f"[sing] doubao backend off: {e!r}", flush=True)
+        creds = None
+    if creds:
+        STATE.update(doubao=doubao_backend, creds=creds)
+        STATE["backends"].append("doubao")
+    if args.soulx and args.model and os.path.isfile(args.model):
+        os.chdir(args.soulx)
+        load_soulx(args)
+        STATE["backends"].append("soulx")
+    print(f"[sing] backends: {STATE['backends'] or 'none'}", flush=True)
+
+
+def load_soulx(args):
+    root = os.path.dirname(os.path.abspath(args.soulx))
+    _verify_soulx_pins(args.soulx, args.model, os.path.join(root, "installed.json"))
+    sys.path.insert(0, args.soulx)
+    import torch
+    from soulxsinger.utils.file_utils import load_config
+    from soulxsinger.utils.data_processor import DataProcessor
+    from cli.inference import build_model
+
+    device = "cuda" if torch.cuda.is_available() and args.device != "cpu" else "cpu"
+    config = load_config(os.path.join(args.soulx, "soulxsinger", "config", "soulxsinger.yaml"))
+    t0 = time.time()
+    model = build_model(args.model, config, device=device, use_fp16=device == "cuda")
+    phoneset_path = os.path.join(args.soulx, "soulxsinger", "utils", "phoneme", "phone_set.json")
+    dp = DataProcessor(hop_size=config.audio.hop_size, sample_rate=config.audio.sample_rate,
+                       phoneset_path=phoneset_path, device=device)
+    with open(os.path.join(args.voice, "prompt.json"), encoding="utf-8") as f:
+        prompt_meta = json.load(f)[0]
+    prompt_median = statistics.median(int(p) for p in prompt_meta["note_pitch"].split() if int(p) > 0)
+    prompt = dp.process(prompt_meta, os.path.join(args.voice, "prompt.wav"))
+    with open(phoneset_path, encoding="utf-8") as f:
+        phoneset = set(json.load(f))
+    STATE.update(torch=torch, model=model, config=config, dp=dp, prompt=prompt, device=device,
+                 prompt_median=prompt_median, phoneset=phoneset, voice_dir=args.voice)
+    reference_file = os.path.join(args.voice, "reference.json")
+    if os.path.isfile(reference_file):
+        with open(reference_file, encoding="utf-8-sig") as f:
+            STATE["voice_name"] = json.load(f).get("name", "自定义")
+    print(f"[sing] model ready on {device} in {time.time() - t0:.1f}s", flush=True)
+
+
+def sing(melody, lyrics):
+    import numpy as np
+    import soundfile as sf
+
+    torch, model, config, dp = STATE["torch"], STATE["model"], STATE["config"], STATE["dp"]
+    sr = config.audio.sample_rate
+    t0 = time.time()
+    with LOCK:
+        # 换参考和读取参考音域必须与推理使用同一把锁。
+        metas, shift, lines = melodies.build(melody, lyrics, STATE["phoneset"], STATE["prompt_median"])
+        merged = np.zeros(int(metas[-1]["time"][1] / 1000 * sr), dtype=np.float32)
+        for meta in metas:
+            start = int(meta["time"][0] / 1000 * sr)
+            target = dp.process(dict(meta), None)
+            with torch.no_grad():
+                audio = model.infer({"prompt": STATE["prompt"], "target": target}, auto_shift=False,
+                                    pitch_shift=shift, n_steps=config.infer.n_steps, cfg=config.infer.cfg,
+                                    control="score", use_fp16=STATE["device"] == "cuda")
+            audio = audio.squeeze().cpu().numpy()
+            n = min(len(audio), len(merged) - start)
+            merged[start:start + n] = audio[:n]
+    gen_time = time.time() - t0
+    peak = float(np.abs(merged).max()) or 1.0
+    merged = merged / peak * 0.9
+    tail = np.zeros(int(0.4 * sr), dtype=np.float32)
+    merged = np.concatenate([merged, tail])
+    name = f"{time.strftime('%m%d-%H%M%S')}-{uuid.uuid4().hex[:6]}.wav"
+    path = os.path.join(STATE["out"], name)
+    sf.write(path, merged, sr, subtype="PCM_16")
+    print(f"[sing] {melodies.resolve_melody(melody)} {'/'.join(lines)} -> {name} "
+          f"{len(merged) / sr:.1f}s audio in {gen_time:.1f}s", flush=True)
+    return {"ok": True, "path": path, "file": name, "seconds": round(len(merged) / sr, 1),
+            "gen_time": round(gen_time, 1), "melody": melodies.resolve_melody(melody), "lyrics": lines,
+            "backend": "soulx"}
+
+
+def sing_doubao(melody, lyrics):
+    with LOCK:  # 一次只抽一首，免得并发多花钱
+        res = STATE["doubao"].sing(melody, lyrics, STATE["creds"], STATE["out"],
+                                   log=lambda s: print(s, flush=True))
+    print(f"[sing] doubao {res['melody']} {'/'.join(res['lyrics'])} -> {res['file']} in_tune={res['in_tune']} "
+          f"takes={len(res['takes'])} billed={res['billed_seconds']}s ({res['cost_yuan']} yuan)", flush=True)
+    return res
+
+
+class Handler(BaseHTTPRequestHandler):
+    def _json(self, code, obj):
+        body = json.dumps(obj, ensure_ascii=False).encode("utf-8")
+        self.send_response(code)
+        self.send_header("Content-Type", "application/json; charset=utf-8")
+        self.send_header("Content-Length", str(len(body)))
+        self.end_headers()
+        self.wfile.write(body)
+
+    def do_GET(self):
+        if self.path == "/health":
+            return self._json(200, {"ok": bool(STATE.get("backends")), "backends": STATE.get("backends", []),
+                                    "device": STATE.get("device"), "melodies": list(melodies.MELODIES),
+                                    "voice_name": STATE.get("voice_name", "未标记参考")})
+        if self.path.startswith("/out/"):
+            name = os.path.basename(self.path[5:])
+            path = os.path.join(STATE["out"], name)
+            if not name.endswith(".wav") or not os.path.isfile(path):
+                return self._json(404, {"ok": False, "error": "not found"})
+            data = open(path, "rb").read()
+            self.send_response(200)
+            self.send_header("Content-Type", "audio/wav")
+            self.send_header("Content-Length", str(len(data)))
+            self.end_headers()
+            self.wfile.write(data)
+            return
+        self._json(404, {"ok": False, "error": "not found"})
+
+    def do_POST(self):
+        if self.path == "/voice/reload":
+            try:
+                with LOCK:
+                    voice_dir = STATE["voice_dir"]
+                    with open(os.path.join(voice_dir, "prompt.json"), encoding="utf-8-sig") as f:
+                        metadata = json.load(f)[0]
+                    pitches = [int(p) for p in metadata["note_pitch"].split() if int(p) > 0]
+                    median = statistics.median(pitches)
+                    prompt = STATE["dp"].process(metadata, os.path.join(voice_dir, "prompt.wav"))
+                    with open(os.path.join(voice_dir, "reference.json"), encoding="utf-8-sig") as f:
+                        name = json.load(f).get("name", "自定义")
+                    STATE.update(prompt=prompt, prompt_median=median, voice_name=name)
+                return self._json(200, {"ok": True, "voice_name": name})
+            except Exception as error:
+                return self._json(400, {"ok": False, "error": str(error)})
+        if self.path != "/sing":
+            return self._json(404, {"ok": False, "error": "not found"})
+        try:
+            req = json.loads(self.rfile.read(int(self.headers.get("Content-Length", 0))) or b"{}")
+            backend = req.get("backend") or "soulx"
+            if backend not in STATE.get("backends", []):
+                return self._json(400, {"ok": False, "error": f"唱歌后端 {backend} 没开，现在能用的：{STATE.get('backends')}"})
+            fn = sing_doubao if backend == "doubao" else sing
+            self._json(200, fn(req.get("melody", "小星星"), req.get("lyrics", "")))
+        except Exception as e:  # 唱劈了也要回个话，别让插件干等
+            print(f"[sing] error: {e!r}", flush=True)
+            self._json(500, {"ok": False, "error": repr(e)})
+
+    def log_message(self, fmt, *args):
+        pass
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--soulx", help="SoulX-Singer 源码目录（不给就不开 soulx 后端）")
+    ap.add_argument("--model", help="SoulX 的 model.pt 路径")
+    ap.add_argument("--volc-env", help="火山凭证文件（豆包后端用），默认 ~/.config/volc-speech/env")
+    ap.add_argument("--voice", default=os.path.join(HERE, "voice"), help="放 prompt.wav 和 prompt.json 的目录")
+    ap.add_argument("--out", default=os.path.join(HERE, "out"))
+    ap.add_argument("--host", default="127.0.0.1")
+    ap.add_argument("--port", type=int, default=18620)
+    ap.add_argument("--device", default="cuda")
+    args = ap.parse_args()
+    args.out = os.path.abspath(args.out)
+    os.makedirs(args.out, exist_ok=True)
+    load(args)
+    print(f"[sing] listening on http://{args.host}:{args.port}", flush=True)
+    ThreadingHTTPServer((args.host, args.port), Handler).serve_forever()
+
+
+if __name__ == "__main__":
+    main()

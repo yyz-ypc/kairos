@@ -1,0 +1,26 @@
+{
+  "说明": "构建期运行时固定清单。tools/fetch-runtime.ps1 只认这里的哈希与大小；没有对应条目就拒绝下载。数值对应 V4-snapshot-2 实际随包的二进制（见 acceptance/evidence 的基线记录），升级运行时应当是单独一次带完整回归的改动。",
+  "node": {
+    "version": "24.21.0",
+    "url": "https://nodejs.org/dist/v24.21.0/win-x64/node.exe",
+    "fileName": "node.exe",
+    "sha256": "ba4e6d110e8c1592a1ecd390f6b05f3da124b13871a5be62b341a07a853c6c32",
+    "size": 93580104,
+    "sourceUrl": "https://nodejs.org/dist/v24.21.0/SHASUMS256.txt",
+    "verifiedAt": "2026-11-13"
+  },
+  "ffmpeg": {
+    "version": "7.1",
+    "url": "https://github.com/GyanD/codexffmpeg/releases/download/7.1/ffmpeg-7.1-essentials_build.zip",
+    "fileName": "ffmpeg-7.1-essentials_build.zip",
+    "sha256": "fa7d4d7e795db0e2503f49f105f46ed5852386f0cfdd819899be3b65ebde24fc",
+    "size": 92100272,
+    "zipSha256": "fa7d4d7e795db0e2503f49f105f46ed5852386f0cfdd819899be3b65ebde24fc",
+    "zipSize": 92100272,
+    "entryName": "ffmpeg-7.1-essentials_build/bin/ffmpeg.exe",
+    "ffmpegExeSha256": "2ce797a0f88d7f067180338fb227f7b1928ea727bd9a4d7a1d022f7c52af71a3",
+    "ffmpegExeSize": 87638016,
+    "sourceUrl": "https://github.com/GyanD/codexffmpeg/releases/tag/7.1",
+    "verifiedAt": "2026-11-13"
+  }
+}

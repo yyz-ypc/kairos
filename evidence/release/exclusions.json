@@ -1,0 +1,321 @@
+{
+  "excluded_categories": [
+    "original rift/hermes source and private Git history",
+    "persona and original character artwork",
+    "QQ login packages and sessions",
+    "account/cookie/token/local settings",
+    "voice references and personal prompts",
+    "runtime binaries and wheels (Release assets only)",
+    "old account screenshots and developer logs"
+  ],
+  "excluded_files": [
+    {
+      "path": "art/avatar.png",
+      "reason": "legacy private artwork"
+    },
+    {
+      "path": "art/empty.png",
+      "reason": "legacy private artwork"
+    },
+    {
+      "path": "art/hero.png",
+      "reason": "legacy private artwork"
+    },
+    {
+      "path": "installer/brand_auto.iss",
+      "reason": "private/generated"
+    },
+    {
+      "path": "installer/login_auto.iss",
+      "reason": "private/generated"
+    },
+    {
+      "path": "installer/version_auto.iss",
+      "reason": "private/generated"
+    },
+    {
+      "path": "win32/build.local.bat",
+      "reason": "private/generated"
+    },
+    {
+      "path": "acceptance/evidence/local-verify-20261114-144111.json",
+      "reason": "generated/local data"
+    },
+    {
+      "path": "acceptance/evidence/local-verify-20261114-144256.json",
+      "reason": "generated/local data"
+    },
+    {
+      "path": "art/candidates/array.webp",
+      "reason": "legacy private artwork"
+    },
+    {
+      "path": "art/candidates/barrier.webp",
+      "reason": "legacy private artwork"
+    },
+    {
+      "path": "art/candidates/contact-sheet.webp",
+      "reason": "legacy private artwork"
+    },
+    {
+      "path": "art/candidates/folio.webp",
+      "reason": "legacy private artwork"
+    },
+    {
+      "path": "art/candidates/seer.webp",
+      "reason": "legacy private artwork"
+    },
+    {
+      "path": "art/candidates/tower.webp",
+      "reason": "legacy private artwork"
+    },
+    {
+      "path": "art/themes/moon-night.jpg",
+      "reason": "legacy private artwork"
+    },
+    {
+      "path": "art/themes/moon-rail.jpg",
+      "reason": "legacy private artwork"
+    },
+    {
+      "path": "art/themes/suit-desk.jpg",
+      "reason": "legacy private artwork"
+    },
+    {
+      "path": "pack/mingling-pack/voice/mingling-a-参考.txt",
+      "reason": "private or release asset"
+    },
+    {
+      "path": "pack/mingling-pack/voice/mingling-a-参考.wav",
+      "reason": "private or release asset"
+    },
+    {
+      "path": "pack/mingling-pack/voice/mingling-b-参考.txt",
+      "reason": "private or release asset"
+    },
+    {
+      "path": "pack/mingling-pack/voice/mingling-b-参考.wav",
+      "reason": "private or release asset"
+    },
+    {
+      "path": "pack/mingling-pack/voice/mingling-参考.txt",
+      "reason": "private or release asset"
+    },
+    {
+      "path": "pack/mingling-pack/voice/mingling-参考.wav",
+      "reason": "private or release asset"
+    },
+    {
+      "path": "pack/mingling-pack/plugins/astrbot_plugin_dafeiyu_sing/sing_server/voice/prompt.json",
+      "reason": "private/generated"
+    },
+    {
+      "path": "pack/mingling-pack/plugins/astrbot_plugin_dafeiyu_sing/sing_server/voice/prompt.wav",
+      "reason": "private/generated"
+    },
+    {
+      "path": "pack/mingling-pack/plugins/astrbot_plugin_dafeiyu_sing/sing_server/voice/reference.json",
+      "reason": "private/generated"
+    },
+    {
+      "path": "pack/mingling-vendor/wheels/aiocqhttp-1.4.4-py3-none-any.whl",
+      "reason": "private or release asset"
+    },
+    {
+      "path": "pack/mingling-vendor/wheels/jieba-0.42.1-py3-none-any.whl",
+      "reason": "private or release asset"
+    },
+    {
+      "path": "plugin/mingling_skill/mingling_skill.json",
+      "reason": "private or release asset"
+    },
+    {
+      "path": "plugin/mingling_skill/README.md",
+      "reason": "private or release asset"
+    },
+    {
+      "path": "plugin/astrbot_plugin_bili_bridge/__pycache__/main.cpython-312.pyc",
+      "reason": "binary/runtime/private voice"
+    },
+    {
+      "path": "plugin/mingling_skill/persona/mingling-persona.sample.json",
+      "reason": "private or release asset"
+    },
+    {
+      "path": "plugin/mingling_skill/persona/mingling.md",
+      "reason": "private or release asset"
+    },
+    {
+      "path": "plugin/tests/__pycache__/test_bili_shortlink.cpython-312.pyc",
+      "reason": "binary/runtime/private voice"
+    },
+    {
+      "path": "plugin/tests/__pycache__/test_memory_delivery.cpython-312.pyc",
+      "reason": "binary/runtime/private voice"
+    },
+    {
+      "path": "win32/.tmp/dbg.exe",
+      "reason": "binary/runtime/private voice"
+    },
+    {
+      "path": "win32/.tmp/j.cpp",
+      "reason": "generated/local data"
+    },
+    {
+      "path": "win32/.tmp/j.exe",
+      "reason": "binary/runtime/private voice"
+    },
+    {
+      "path": "win32/build/app.res.o",
+      "reason": "binary/runtime/private voice"
+    },
+    {
+      "path": "win32/build/dsh-api-guard.test.exe",
+      "reason": "binary/runtime/private voice"
+    },
+    {
+      "path": "win32/build/heart_p0.test.exe",
+      "reason": "binary/runtime/private voice"
+    },
+    {
+      "path": "win32/build/her_config_cache.test.exe",
+      "reason": "binary/runtime/private voice"
+    },
+    {
+      "path": "win32/build/her_event.test.exe",
+      "reason": "binary/runtime/private voice"
+    },
+    {
+      "path": "win32/build/Kairos-setup-review.exe",
+      "reason": "binary/runtime/private voice"
+    },
+    {
+      "path": "win32/build/Kairos.exe",
+      "reason": "binary/runtime/private voice"
+    },
+    {
+      "path": "win32/build/Kairos.next.exe",
+      "reason": "binary/runtime/private voice"
+    },
+    {
+      "path": "win32/build/onboarding.test.exe",
+      "reason": "binary/runtime/private voice"
+    },
+    {
+      "path": "win32/build/release-policy.test.exe",
+      "reason": "binary/runtime/private voice"
+    },
+    {
+      "path": "win32/build/setup_manager.test.exe",
+      "reason": "binary/runtime/private voice"
+    },
+    {
+      "path": "win32/build/url-policy.test.exe",
+      "reason": "binary/runtime/private voice"
+    },
+    {
+      "path": "win32/build/webview_runtime.test.exe",
+      "reason": "binary/runtime/private voice"
+    },
+    {
+      "path": "win32/build/cfgcache-test-15040/A/answers.json",
+      "reason": "generated/local data"
+    },
+    {
+      "path": "win32/build/cfgcache-test-15040/B/answers.json",
+      "reason": "generated/local data"
+    },
+    {
+      "path": "win32/build/cfgcache-test-15040/state/settings.json",
+      "reason": "generated/local data"
+    },
+    {
+      "path": "win32/build/cfgcache-test-15040/A/private/marker.txt",
+      "reason": "generated/local data"
+    },
+    {
+      "path": "win32/build/cfgcache-test-15040/B/private/marker.txt",
+      "reason": "generated/local data"
+    },
+    {
+      "path": "win32/build/cfgcache-test-15040/B/private/protocol.txt",
+      "reason": "generated/local data"
+    },
+    {
+      "path": "win32/build/cfgcache-test-35616/A/answers.json",
+      "reason": "generated/local data"
+    },
+    {
+      "path": "win32/build/cfgcache-test-35616/B/answers.json",
+      "reason": "generated/local data"
+    },
+    {
+      "path": "win32/build/cfgcache-test-35616/state/settings.json",
+      "reason": "generated/local data"
+    },
+    {
+      "path": "win32/build/cfgcache-test-35616/A/private/marker.txt",
+      "reason": "generated/local data"
+    },
+    {
+      "path": "win32/build/cfgcache-test-35616/B/private/marker.txt",
+      "reason": "generated/local data"
+    },
+    {
+      "path": "win32/build/cfgcache-test-35616/B/private/protocol.txt",
+      "reason": "generated/local data"
+    },
+    {
+      "path": "win32/build/cfgcache-test-40512/A/answers.json",
+      "reason": "generated/local data"
+    },
+    {
+      "path": "win32/build/cfgcache-test-40512/B/answers.json",
+      "reason": "generated/local data"
+    },
+    {
+      "path": "win32/build/cfgcache-test-40512/state/settings.json",
+      "reason": "generated/local data"
+    },
+    {
+      "path": "win32/build/cfgcache-test-40512/A/private/marker.txt",
+      "reason": "generated/local data"
+    },
+    {
+      "path": "win32/build/cfgcache-test-40512/B/private/marker.txt",
+      "reason": "generated/local data"
+    },
+    {
+      "path": "win32/build/cfgcache-test-40512/B/private/protocol.txt",
+      "reason": "generated/local data"
+    },
+    {
+      "path": "win32/build/cfgcache-test-6680/A/answers.json",
+      "reason": "generated/local data"
+    },
+    {
+      "path": "win32/build/cfgcache-test-6680/B/answers.json",
+      "reason": "generated/local data"
+    },
+    {
+      "path": "win32/build/cfgcache-test-6680/state/settings.json",
+      "reason": "generated/local data"
+    },
+    {
+      "path": "win32/build/cfgcache-test-6680/A/private/marker.txt",
+      "reason": "generated/local data"
+    },
+    {
+      "path": "win32/build/cfgcache-test-6680/B/private/marker.txt",
+      "reason": "generated/local data"
+    },
+    {
+      "path": "win32/build/cfgcache-test-6680/B/private/protocol.txt",
+      "reason": "generated/local data"
+    },
+    {
+      "path": "win32/vendor/webview2/WebView2Loader.dll",
+      "reason": "binary/runtime/private voice"
+    }
+  ]
+}

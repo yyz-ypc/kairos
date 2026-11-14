@@ -1,0 +1,23 @@
+[
+  {
+    "test": "test-component-supply",
+    "exit": 0,
+    "seconds": 88.12
+  },
+  {
+    "test": "test-component-uninstall",
+    "exit": 0,
+    "seconds": 1.14
+  },
+  {
+    "test": "test-component-protocol",
+    "exit": 0,
+    "seconds": 0.52,
+    "note": "Re-run passed after fixture BundledIds initialized; bundled mirror exclusion also asserted"
+  },
+  {
+    "test": "test-tide-migration",
+    "exit": 0,
+    "seconds": 2.76
+  }
+]

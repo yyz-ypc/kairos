@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "version": "V1.0.0",
+  "channel": "stable",
+  "min_version": "1.0.0",
+  "assets": [
+    {
+      "name": "Kairos-1.0.0-setup.exe",
+      "url": "https://github.com/YYZ-YPC/kairos/releases/download/V1.0.0/Kairos-1.0.0-setup.exe",
+      "sha256": "d3777bb16d882798d46e78e52f88f11d2db856680c0b89d74082e4a6139b3de1",
+      "size": 137667632
+    },
+    {
+      "name": "kairos-hermes-1.0.0.zip",
+      "url": "https://github.com/YYZ-YPC/kairos/releases/download/V1.0.0/kairos-hermes-1.0.0.zip",
+      "sha256": "5df117030ac5d46972ee7f2b91dc4b617b9ba1427f20feaee6f2f5b04b4e035e",
+      "size": 6963968
+    },
+    {
+      "name": "kairos-keeper-1.0.0.zip",
+      "url": "https://github.com/YYZ-YPC/kairos/releases/download/V1.0.0/kairos-keeper-1.0.0.zip",
+      "sha256": "ddf21897c51790ddfcfff24b3fa2edb34d815075a9d716879d54c337b058bdc2",
+      "size": 216
+    },
+    {
+      "name": "kairos-node-1.0.0.zip",
+      "url": "https://github.com/YYZ-YPC/kairos/releases/download/V1.0.0/kairos-node-1.0.0.zip",
+      "sha256": "7ea91e80c1381df768150b1625af7837bb83108800834b28579141138921f197",
+      "size": 93737969
+    },
+    {
+      "name": "kairos-rift-1.0.0.zip",
+      "url": "https://github.com/YYZ-YPC/kairos/releases/download/V1.0.0/kairos-rift-1.0.0.zip",
+      "sha256": "5d1af378934a3116f1f9ea8067d67f7a09821ea0972046e3cd1f0bed7789720a",
+      "size": 92151783
+    },
+    {
+      "name": "kairos-vendor-1.0.0.zip",
+      "url": "https://github.com/YYZ-YPC/kairos/releases/download/V1.0.0/kairos-vendor-1.0.0.zip",
+      "sha256": "3cd66a5a2f2996ddd359b92baa9fe629c337b7e50aa7dfe7a03c3df0154e9f36",
+      "size": 19340485
+    },
+    {
+      "name": "kairos-webview2-1.0.0.zip",
+      "url": "https://github.com/YYZ-YPC/kairos/releases/download/V1.0.0/kairos-webview2-1.0.0.zip",
+      "sha256": "6cad6d880f8edcb3fceae480ca943b075831e83b7de3c9b5608422e6a0d4a42b",
+      "size": 166110
+    }
+  ],
+  "release": "https://github.com/YYZ-YPC/kairos/releases/tag/V1.0.0",
+  "previous": null
+}

@@ -1,0 +1,123 @@
+{
+  "style": "barrier",
+  "prompt": "An immense dark stone architectural doorway framing a brilliantly lit amber garden, long steps and geometric threshold, clear volumetric light rays, elegant fantasy editorial illustration, no people, no text",
+  "negative": "low quality, blurry, watermark, text, letters, people",
+  "seed": 1101502,
+  "width": 1024,
+  "height": 576,
+  "model": "anima-base-v1.0.safetensors",
+  "encoder": "qwen_3_06b_base.safetensors",
+  "vae": "qwen_image_vae.safetensors",
+  "steps": 32,
+  "cfg": 5.5,
+  "workflow": {
+    "1": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "anima-base-v1.0.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    "2": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen_3_06b_base.safetensors",
+        "type": "stable_diffusion"
+      }
+    },
+    "3": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "qwen_image_vae.safetensors"
+      }
+    },
+    "4": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "An immense dark stone architectural doorway framing a brilliantly lit amber garden, long steps and geometric threshold, clear volumetric light rays, elegant fantasy editorial illustration, no people, no text"
+      }
+    },
+    "5": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "low quality, blurry, watermark, text, letters, people"
+      }
+    },
+    "6": {
+      "class_type": "EmptySD3LatentImage",
+      "inputs": {
+        "width": 1024,
+        "height": 576,
+        "batch_size": 1
+      }
+    },
+    "7": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "positive": [
+          "4",
+          0
+        ],
+        "negative": [
+          "5",
+          0
+        ],
+        "latent_image": [
+          "6",
+          0
+        ],
+        "seed": 1101502,
+        "steps": 32,
+        "cfg": 5.5,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1
+      }
+    },
+    "8": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "7",
+          0
+        ],
+        "vae": [
+          "3",
+          0
+        ]
+      }
+    },
+    "9": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "8",
+          0
+        ],
+        "filename_prefix": "Kairos-candidates/barrier-v2"
+      }
+    }
+  },
+  "status": "approved",
+  "submission": {
+    "prompt_id": "40c7d6cb-4664-4d84-ac37-980d83350d2c",
+    "number": 9,
+    "node_errors": {}
+  },
+  "output": "art/styles/barrier-hero.webp",
+  "size_bytes": 37566,
+  "sha256": "79e200ee6d00186036fa348dcd395f4b1eedfcdf1311c4a3eec766443452acb2",
+  "webp_quality": 85
+}

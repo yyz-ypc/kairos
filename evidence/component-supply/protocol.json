@@ -1,0 +1,11 @@
+{
+    "fractional_pct_before":  12,
+    "fractional_pct_after":  18,
+    "paused_bytes":  2097152,
+    "paused_speed":  0,
+    "paused_eta":  0,
+    "resume_retains_bytes":  true,
+    "manual_no_bytes":  true,
+    "mirror_change_persisted":  true,
+    "second_mirror_change":  true
+}

@@ -1,0 +1,255 @@
+// 把 snapshot-2 那套状态和动作接给 HTML；业务逻辑不搬到前端来。
+#include <cwctype>
+#include "onboarding.h"
+static wstring g_wizardManual;
+wstring WebUiState() {
+    using namespace her;
+    J s = JObj();
+    s.Set(L"version", APP_VERSION); s.Set(L"tab", g_tab); s.Set(L"bsec", g_bSec);
+    s.Set(L"clock", g_clock); s.Set(L"workspace", WorkspaceDir());
+    s.Set(L"setup", SetupSnapshot());
+    s.Set(L"wizardManual",g_wizardManual);
+    s.Set(L"wizardComplete", SettingGet(L"wizard_complete") == L"1");
+    s.Set(L"wizardStep", _wtoi(SettingGet(L"wizard_step").c_str()));
+    s.Set(L"updateChannel", SettingGet(L"update_channel")==L"beta"?L"beta":L"stable");
+    s.Set(L"rollbackAvailable", SettingGet(L"rollback_available")==L"1");
+    s.Set(L"theme", SettingGet(L"theme"));
+    s.Set(L"style", SettingGet(L"style"));
+    s.Set(L"themeBase", SettingGet(L"theme_base"));
+    s.Set(L"memoryQueue", ReadJson(JoinPath(JoinPath(WorkspaceDir(), L"logs"), L"memory-status.json")));
+    for (auto key : {L"bg", L"panel", L"ink", L"accent"}) s.Set(L"theme_" + wstring(key), SettingGet(L"theme_" + wstring(key)));
+    s.Set(L"toast", GetTickCount() - g_toastAt < g_toastShowMs ? g_toast : L"");
+    s.Set(L"watchBusy", g_watchBusy); s.Set(L"feedBusy", g_feedBusy);
+    s.Set(L"checkBusy", g_checkBusy); s.Set(L"maintBusy", g_mBusy);
+    s.Set(L"watchStatus", g_watchStatus); s.Set(L"progress", g_watchPct);
+    s.Set(L"feedNote", g_feedNote); s.Set(L"input", g_bvInput);
+    J agent = g_ba; agent.Set(L"busy", g_baBusy); agent.Set(L"note", g_baNote); s.Set(L"biliAgent", agent);
+    s.Set(L"check", g_checkText);
+    // 按页发快照：日志只在「记录」页发，避免每分钟把整段日志推给页面。
+    if (g_tab == 3) { s.Set(L"log", g_logText); s.Set(L"logsrc", g_logSrc); }
+    s.Set(L"result", g_result.raw); s.Set(L"resultTitle", g_result.title);
+    s.Set(L"resultOk", g_hasResult); s.Set(L"jobDetail", g_jobDetail);
+    s.Set(L"dsh", g_dshErr.empty() ? g_dshText : g_dshErr); s.Set(L"dshBusy", g_dshBusy);
+    s.Set(L"note", g_mNote); s.Set(L"lastOp", g_mLastOp);
+    J stats = JArr(); for (auto v : {g_mMsg, g_mReply, g_mToken, g_mMem}) stats.Push(J(v)); s.Set(L"stats", stats);
+    J services = JArr();
+    for (int i = 0; i < 2; ++i) { J v = JObj(); v.Set(L"name", i == 0 ? QQServiceName() : wstring(SVCS[i].name)); v.Set(L"desc", SVCS[i].desc); v.Set(L"port", i == 0 ? std::to_wstring(QQServicePort()) : wstring(SVCS[i].port)); v.Set(L"up", g_svcUp[i]); v.Set(L"pid", (int)g_svcPid[i]); services.Push(v); }
+    s.Set(L"services", services);
+    s.Set(L"protocol", Protocol());
+    J items = JArr();
+    for (auto& i : g_mItems) { J v = JObj(); v.Set(L"name", i.name); v.Set(L"state", StateWord(i.state)); v.Set(L"text", i.text); v.Set(L"fix", i.fixAct); v.Set(L"fixLabel", i.fixLbl); v.Set(L"linkLabel", i.linkLbl); items.Push(v); }
+    s.Set(L"items", items);
+    J feed = JArr(); if (g_tab == 0 || g_tab == 1) for (auto& i : g_feed) { J v = JObj(); v.Set(L"title", i.title); v.Set(L"up", i.up); v.Set(L"bv", i.bv); v.Set(L"dur", i.dur); feed.Push(v); } s.Set(L"feed", feed);
+    J jobs = JArr(); if (g_tab == 0 || g_tab == 2 || g_tab == 3) for (auto& i : g_jobs) { J v = JObj(); v.Set(L"title", i.title.empty() ? i.bv : i.title); v.Set(L"source", i.source); v.Set(L"status", i.status); v.Set(L"type", i.type); v.Set(L"seconds", i.seconds); v.Set(L"time", i.t); jobs.Push(v); } s.Set(L"jobs", jobs);
+    J features = JArr();
+    const wchar_t* names[] = {L"astrbot_plugin_dafeiyu_petlink", L"astrbot_plugin_dafeiyu_sing", L"astrbot_plugin_seed_audio_tts", L"astrbot_plugin_breeze_online_tts"};
+    for (auto n : names) features.Push(J(FeatureOn(n, false)));
+    s.Set(L"features", features); s.Set(L"memory", ModeNum(L"memory", 0)); s.Set(L"voice", ModeNum(L"voice", 0));
+    if (g_tab == 5 || g_tab == 6) s.Set(L"featureSettings", FeatureSettings());
+    s.Set(L"group", g_mGroup); s.Set(L"meme", g_mMeme); s.Set(L"voiceFreq", g_mVoice);
+    s.Set(L"watchOn", g_mWatchOn); s.Set(L"gameOn", g_mGameOn); s.Set(L"gameCan", g_mGameCan);
+    J asks = JArr(); for (int i = 0; i < (int)(sizeof(ASKS)/sizeof(ASKS[0])); ++i) { J v = JObj(); v.Set(L"title", AskTitle(i)); v.Set(L"body", AskBody(i)); asks.Push(v); } s.Set(L"asks", asks);
+    J docs = JArr(); if (g_tab == 6) for (auto& i : DOCS) { J v = JObj(); v.Set(L"id", i.id); v.Set(L"title", i.title); v.Set(L"hint", i.hint); docs.Push(v); } s.Set(L"docs", docs); s.Set(L"doc", g_docSrc); s.Set(L"docsel", g_docSel);
+    J updates = JArr(); for (auto& i : g_up.items) { J v = JObj(); v.Set(L"id", i.id); v.Set(L"name", i.name); v.Set(L"local", i.local); v.Set(L"latest", i.latest); v.Set(L"state", i.state); v.Set(L"what", i.what); updates.Push(v); } s.Set(L"updates", updates); s.Set(L"updateBusy", g_upBusy); s.Set(L"updateError", g_up.err); s.Set(L"updateProgress", g_upProg); s.Set(L"updateMessage", g_upMsg);
+    if (g_notify) { J n = JObj(); n.Set(L"title", g_notify->title); n.Set(L"body", g_notify->body); s.Set(L"notify", n); }
+    if ((g_tab == 1 && g_bSec == 3) || g_tab == 6 || !g_wizardManual.empty()) {
+        J rows = JArr();
+        for (size_t i = 0; i < BiliCfgFields().size(); ++i) { auto& f = BiliCfgFields()[i]; J v = JObj(); v.Set(L"row", (int)i); v.Set(L"label", f.label); v.Set(L"hint", f.hint); v.Set(L"kind", f.kind); v.Set(L"value", BiliCfgShow(g_bcfgRoot, f)); rows.Push(v); } s.Set(L"bconfig", rows);
+        rows = JArr();
+        for (auto& r : g_lcRows) if (r.src) { J v = JObj(); v.Set(L"row", (int)(&r - g_lcRows.data())); v.Set(L"label", LcLabel(r)); v.Set(L"hint", LcHint(r)); v.Set(L"kind", LcKind(r)); v.Set(L"value", LcKind(r) == 5 ? L"" : r.src == 1 && r.idx == 3 ? g_lcLink.ua : LcShow(r)); rows.Push(v); }
+        s.Set(L"lconfig", rows);
+        s.Set(L"configNote", g_bcfgMsg + L" " + g_lcMsg);
+        s.Set(L"apiTestBusy", g_lcTestBusy);
+    }
+    { bool tok = false; J tide = J::Parse(TideSnapshot(), &tok);
+      if (tok) { if (g_tab != 7) { tide.Set(L"messages", JArr()); tide.Set(L"logs", JArr()); } s.Set(L"tide", tide); } }
+    return s.Dump();
+}
+
+void WebUiCommand(const wstring& message) {
+    using namespace her;
+    if (message.size() > 128000) return;
+    bool ok = false; J m = J::Parse(message, &ok); if (!ok || !m.Obj()) return;
+    wstring cmd = m.Str(L"cmd"), value = m.Str(L"value"); int index = (int)m.Int(L"index", -1);
+    if (cmd == L"ready") {
+        WebUiStartupMark("web-ready");
+        RefreshStatus(false);
+        if(WebUiTakeNativeBootstrap()&&SettingGet(L"wizard_complete")!=L"1"&&_wtoi(SettingGet(L"wizard_step").c_str())==2&&!SetupRequiredReady())SetupCommand(L"start");
+        return;
+    }
+    if (cmd.rfind(L"setup:",0)==0) {
+        wstring op=cmd.substr(6);
+        if(op==L"settings-back"){g_wizardManual.clear();g_tab=0;UiRequestRepaint();return;}
+        if(op==L"settings"){
+            auto id=m.Str(L"id");
+            if(SettingGet(L"wizard_complete")==L"1"||_wtoi(SettingGet(L"wizard_step").c_str())!=2)return;
+            if(id!=L"memory-plugin"&&id!=L"qq-login"&&id!=L"bili-login"&&id!=L"deepseek-provider")return;
+            if(!SetupRequiredReady()){UiToast(L"请先准备运行必需组件，再打开设置");return;}
+            g_wizardManual=id;
+            if(id==L"bili-login"){BiliCfgOpen();LinkCfgOpen();}
+            if(id==L"qq-login")TideRefreshAsync(true);
+            UiRequestRepaint();return;
+        }
+        if(SettingGet(L"wizard_complete")!=L"1" && _wtoi(SettingGet(L"wizard_step").c_str())!=2 && op!=L"pause" && op!=L"log") return;
+        SetupCommand(op,m.Str(L"id"),m.Str(L"selection"));UiRequestRepaint();return;
+    }
+    if (cmd == L"wizard") {
+        if (SettingGet(L"wizard_complete") == L"1") return;
+        int step = _wtoi(SettingGet(L"wizard_step").c_str());
+        step = (std::max)(0, (std::min)(5, step));
+        if (value == L"exit") { SetupCommand(L"pause"); DestroyWindow(g_hwnd); return; }
+        if (value == L"workspace") {
+            if(SetupSnapshot().Bool(L"busy")){UiToast(L"请先暂停组件任务，再更换工作区");return;}
+            wstring dir = PickFolder(g_hwnd, BRAND_NAME L" · 工作区", WorkspaceDir());
+            if (!dir.empty()) { SetWorkspaceDir(dir); SetBaseDir(dir); }
+        } else if (value == L"retry") { TideRefreshAsync(true); }
+        else if (value == L"back" && step > 0 && (step!=2 || SetupRequiredReady())) { SettingSet(L"wizard_step", std::to_wstring(step - 1)); }
+        else if (value == L"next" || value == L"finish") {
+            if ((value == L"finish") != (step == 5)) return;
+            if (step == 2 && !SetupRequiredReady()) { UiToast(L"运行必需组件尚未完成，请继续准备"); return; }
+            if (step >= 4) {
+                // Recheck the live host-token channel; cached state/demo accounts cannot finish onboarding.
+                TideReply reply = TideApi(L"GET", L"/api/state", L"", 1500);
+                bool parsed = false;
+                J live = J::Parse(reply.body, &parsed);
+                const bool online = OnboardingQQOnline(live, parsed && reply.code == 200 && TideManaged());
+                if (!online) { SettingSet(L"wizard_step", L"4"); UiToast(L"QQ 还没有连上，请重试或退出，下次继续。"); UiRequestRepaint(); return; }
+            }
+            if (step >= 3 && !SetupRequiredReady()) { SettingSet(L"wizard_step",L"2");UiToast(L"请先准备运行必需组件");UiRequestRepaint();return; }
+            if (step == 5) { g_wizardManual.clear(); SettingSet(L"wizard_complete", L"1"); g_tab = 0; }
+            else SettingSet(L"wizard_step", std::to_wstring(step + 1));
+        }
+        UiRequestRepaint(); return;
+    }
+    const bool manualCommand=!g_wizardManual.empty()&&SetupRequiredReady()&&
+        ((cmd==L"action"&&value==L"astrbot:open")||
+         (cmd==L"service"&&index==1&&(g_wizardManual==L"memory-plugin"||g_wizardManual==L"deepseek-provider"))||
+         (cmd==L"configsave"&&value==L"bili"&&g_wizardManual==L"bili-login"));
+    if (SettingGet(L"wizard_complete") != L"1" && !manualCommand && cmd != L"theme" && cmd != L"tide" && cmd != L"window" &&
+        !(cmd == L"action" && value.rfind(L"tide:", 0) == 0)) return;
+    if (cmd == L"protocol") {
+        if (value == BRAND_HERMES || value == L"snowluma" || value == L"napcat") RunHerOp(L"feature", L"protocol/" + value);
+        return;
+    }
+    if (cmd == L"tide") {
+        // 潮信页面：动作名在 TideKnownOp 里白名单校验，参数只认这几个字段。
+        std::wstring op = value;
+        if (!TideKnownOp(op)) return;
+        if (op == L"refresh") { TideRefreshAsync(true); return; }
+        TideAction(op, m);
+        return;
+    }
+    if (cmd == L"featureconfig") {
+        if (g_mBusy) { UiToast(L"上一项操作还没结束"); return; }
+        const J* fields = m.Get(L"fields");
+        if (!fields || !fields->Obj()) return;
+        RunHerOp(L"feature_config", m.Dump()); return;
+    }
+    if (cmd == L"window") {
+        if (value == L"minimize") ShowWindow(g_hwnd, SW_MINIMIZE);
+        else if (value == L"maximize") ShowWindow(g_hwnd, IsZoomed(g_hwnd) ? SW_RESTORE : SW_MAXIMIZE);
+        else if (value == L"close") PostMessageW(g_hwnd, WM_CLOSE, 0, 0);
+        else if (value == L"drag") { ReleaseCapture(); PostMessageW(g_hwnd, WM_NCLBUTTONDOWN, HTCAPTION, GetMessagePos()); }
+        return;
+    }
+    if(cmd==L"update-channel"&&(value==L"stable"||value==L"beta")){SettingSet(L"update_channel",value);SettingSet(L"rollback_available",L"0");RefreshUpdates(true);return;}
+    if(cmd==L"update-rollback"){StartReleaseRollback();return;}
+    if (cmd == L"theme") {
+        // 外观分两轴：theme 管明暗，style 管灵视/术阵/次元壁垒的结构。
+        { std::wstring sty = m.Str(L"style"); if (sty == L"seer" || sty == L"array" || sty == L"barrier" || sty == L"tower" || sty == L"folio") SettingSet(L"style", sty); }
+        if (value != L"system" && value != L"nightfall" && value != L"daylight" && value != L"boundary" && value != L"custom" &&
+            value != L"moon" && value != L"suit") return;
+        if (value == L"custom") {
+            // 自定义主题只收四个 #RRGGBB，base 只认 dark/light；别让 HTML 顺手改别的设置。
+            auto color = [&](const wchar_t* key) -> std::wstring {
+                std::wstring s = Trim(m.Str(key));
+                if (s.size() != 7 || s[0] != L'#') return L"";
+                for (size_t i = 1; i < s.size(); ++i) if (!iswxdigit(s[i])) return L"";
+                return s;
+            };
+            std::wstring base = m.Str(L"base"), bg = color(L"bg"), panel = color(L"panel"), ink = color(L"ink"), accent = color(L"accent");
+            if (base != L"light") base = L"dark";
+            if (bg.empty() || panel.empty() || ink.empty() || accent.empty()) { UiToast(L"颜色要写成 #RRGGBB"); return; }
+            SettingSet(L"theme", L"custom");
+            SettingSet(L"theme_base", base);
+            SettingSet(L"theme_bg", bg);
+            SettingSet(L"theme_panel", panel);
+            SettingSet(L"theme_ink", ink);
+            SettingSet(L"theme_accent", accent);
+        } else {
+            SettingSet(L"theme", value);
+        }
+        UiToast(L"主题已保存"); return;
+    }
+    if (cmd == L"tab" && index >= 0 && index < 8) { if (index == 6) LinkCfgOpen(); DispatchAction("tab:" + std::to_string(index)); return; }
+    if (cmd == L"section" && index >= 0 && index < 4) {
+        g_bSec = index;
+        if (index == 3) { BiliCfgOpen(); LinkCfgOpen(); }
+        return;
+    }
+    if (cmd == L"watch") { if (value.size() > 8192) return; g_bvInput = value; g_tab = 1; g_bSec = 1; StartWatch(); return; }
+    if (cmd == L"feed") { RefreshFeed(); return; }
+    if (cmd == L"biliagent") { BiliAgentCommand(value); return; }
+    if (cmd == L"pick" && index >= 0 && index < (int)g_feed.size()) { g_bvInput = g_feed[index].bv; g_bSec = 1; return; }
+    if (cmd == L"job" && index >= 0 && index < (int)g_jobs.size()) { g_jobSel = index; LoadJobDetail(index); return; }
+    if (cmd == L"log" && index >= 0 && index < 4) { g_logSrc = index; RefreshLogsNow(); return; }
+    if (cmd == L"check" && index >= 0 && index < 5) { RunCheck(index); return; }
+    if (cmd == L"service" && index >= 0 && index < 2) { if (value == L"start") StartService(index); else if (value == L"stop") StopService(index); return; }
+    if (cmd == L"doc" && index >= 0 && index < DOC_COUNT) { g_docSel = index; DocLoad(index); return; }
+    if (cmd == L"askcopy" && index >= 0 && index < (int)(sizeof(ASKS)/sizeof(ASKS[0]))) { CopyText(AskBody(index)); UiToast(L"复制好了，发给 Agent 就行。"); return; }
+    if (cmd == L"asksave" && index >= 0 && index < (int)(sizeof(ASKS)/sizeof(ASKS[0])) && value.size() < 16000) { SetAskText(index, value); UiToast(L"记下了。"); return; }
+    if (cmd == L"configsave" || cmd == L"configtest") {
+        const bool test = cmd == L"configtest";
+        if (test && g_lcTestBusy) return;
+        const J* fields = m.Get(L"fields"); if (!fields || !fields->Arr()) return;
+        wstring err;
+        // 「链接与对话 API」那张表先在内存草稿上校验，通过才落盘。
+        if (value == L"link") {
+            LinkCfg oldLink = g_lcLink; DshApiCfg oldApi = g_lcApi;
+            for (auto& f : fields->a) {
+                int r = (int)f.Int(L"row", -1);
+                if (r < 0 || r >= (int)g_lcRows.size() || !g_lcRows[r].src) continue;
+                if (LcKind(g_lcRows[r]) == 5 && f.Str(L"value").empty()) continue;
+                if (!LcApply(g_lcRows[r], f.Str(L"value"), &err)) { g_lcLink = oldLink; g_lcApi = oldApi; UiToast(err); return; }
+            }
+            if (test) {
+                LinkCfgTest();
+                g_lcLink = oldLink; g_lcApi = oldApi;
+            } else LinkCfgClose(true);
+        } else if (!test && value == L"bili") {
+            J draft = g_bcfgRoot;
+            for (auto& f : fields->a) { int r = (int)f.Int(L"row", -1); if (r < 0 || r >= (int)BiliCfgFields().size() || BiliCfgFields()[r].kind == 4) continue;
+                if (!BiliCfgApply(draft, BiliCfgFields()[r], f.Str(L"value"), &err)) { UiToast(err); return; }
+            }
+            g_bcfgRoot = draft; BiliCfgClose(true);
+        }
+        return;
+    }
+    if (cmd != L"action") return;
+    // 只认下面这张白名单：不让 HTML 传任意命令、URL、路径或操作。
+    if (value == L"astrbot:open") { ShellExecuteW(g_hwnd, L"open", L"http://127.0.0.1:6185/", nullptr, nullptr, SW_SHOWNORMAL); return; }
+    const wchar_t* allowed[] = { L"btn:allstart", L"btn:allstop", L"btn:copy", L"btn:copy_job", L"btn:jobs_refresh", L"btn:log_refresh", L"btn:logdir", L"btn:diary", L"btn:open_sheet", L"btn:open_cover", L"btn:open_shotdir", L"doc:base", L"doc:bots", L"doc:logs", L"doc:jobs", L"docopen", L"ws:pick", L"mref", L"up:refresh", L"up:wbgo", L"up:wbdl", L"upact:skill", L"upact:astrbot", L"upact:hermes", L"op:restart_brain", L"op:relogin", L"op:restart_qq", L"op:repair_bundle", L"op:backup", L"op:diag", L"op:start_breeze", L"op:start_ollama", L"op:autostart_fix", L"op:autosetup", L"op:selfsetup", L"op:import_skill", L"op:skill_update", L"op:watch_on", L"op:watch_off", L"op:watch_every", L"op:watch_test", L"op:game_on", L"op:game_off", L"op:game_hint", L"notify:close", L"notify:fix", L"tide:refresh", L"tide:start", L"tide:stop", L"tide:restart", L"tide:disconnect", L"tide:send", L"tide:settings", L"tide:native_detect", L"tide:native_start", L"tide:native_stop", L"op:cancel", L"proj:novel", L"proj:game", L"proj:comfy", L"proj:bili", L"proj:mobile" };
+    if (value.rfind(L"tide:", 0) == 0) {
+        std::wstring op = value.substr(5);
+        if (!TideKnownOp(op)) return;
+        TideAction(op, m);
+        return;
+    }
+    if (value == L"dsh") { if (!g_dshBusy && g_hasResult) DshAsk(); return; }
+    if (value == L"testapi") { if (!g_lcTestBusy) LinkCfgTest(); return; }
+    for (auto a : allowed) if (value == a) {
+        // 配置面板开着的时候，旧的分发器会把什么都往那儿送，这里只临时关掉分区。
+        int tab = g_tab, sec = g_bSec; g_bSec = 0;
+        DispatchAction(WToUtf8(value));
+        if (g_tab == tab) g_bSec = sec;
+        return;
+    }
+    for (size_t i = 0; i < g_mItems.size(); ++i) {
+        if (!g_mItems[i].fixAct.empty() && value == L"fix:" + g_mItems[i].fixAct) { RunHerOp(g_mItems[i].fixAct, L""); return; }
+        if (value == L"lnk:" + Num(i)) { DispatchAction(WToUtf8(value)); return; }
+    }
+    const wchar_t* plugins[] = {L"astrbot_plugin_dafeiyu_petlink", L"astrbot_plugin_dafeiyu_sing", L"astrbot_plugin_seed_audio_tts", L"astrbot_plugin_breeze_online_tts"};
+    for (auto p : plugins) for (int n = 0; n < 2; ++n) if (value == L"plugin/" + wstring(p) + L"/" + Num(n)) { StartFeature(value); return; }
+    for (auto spec : {L"memory/0", L"memory/1", L"memory/2", L"voice/0", L"voice/1", L"voice/3", L"voice/4", L"voice/5"}) if (value == spec) { StartFeature(value); return; }
+    for (auto k : {L"group", L"meme", L"voice"}) for (auto v : {L"off", L"mention", L"quote", L"both", L"few", L"mid", L"many"}) if (value == L"freq:" + wstring(k) + L":" + v) { DispatchAction(WToUtf8(value)); return; }
+}

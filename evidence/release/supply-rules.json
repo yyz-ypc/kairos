@@ -1,0 +1,30 @@
+{
+  "other_components_identical": [
+    "webview2",
+    "node",
+    "ffmpeg",
+    "uv",
+    "python",
+    "astrbot",
+    "snowluma",
+    "breeze",
+    "ollama",
+    "ollama-service",
+    "memory-plugin",
+    "bili-bridge-plugin",
+    "embedding-model",
+    "soulx-singer",
+    "dsh-pet",
+    "edge-tts",
+    "bots-launchers",
+    "qq-login",
+    "bili-login",
+    "deepseek-provider"
+  ],
+  "changed_other_components": [],
+  "mirrors_identical": true,
+  "defaults_identical": true,
+  "hermes_kind": "bundled",
+  "hermes_detect_and_verify_identical": true,
+  "rift_change": "Copy bundled node_modules, then reuse only if pinned versions and every installed dependency file SHA256 match; otherwise original npm behavior. Other 20 components unchanged."
+}

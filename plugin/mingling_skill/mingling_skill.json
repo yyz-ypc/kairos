@@ -1,0 +1,19 @@
+{
+  "id": "mingling_skill",
+  "name": "Kairos 通用角色模板",
+  "display_name": "自定义角色",
+  "version": "1.0.0",
+  "schema": 1,
+  "persona": {
+    "id": "Kairos-Assistant",
+    "file": "persona/mingling.md",
+    "encoding": "utf-8"
+  },
+  "placeholders": {
+    "persona_id": "Kairos-Assistant",
+    "bot_name": "助手",
+    "owner_qq": "",
+    "owner_name": "",
+    "user_persona": ""
+  }
+}

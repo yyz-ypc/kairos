@@ -1,0 +1,50 @@
+{
+  "core": "all six core groups and release-policy passed",
+  "webui": {
+    "passed": 62,
+    "failed": 0
+  },
+  "matrix": {
+    "cases": 570,
+    "failures": 0,
+    "consoleErrors": 0,
+    "screenshots": 75
+  },
+  "contrast": {
+    "combinations": 25,
+    "AA": true,
+    "boundary_AAA": true
+  },
+  "bundled_repair": {
+    "passed": 11,
+    "failed": 0
+  },
+  "bundle_contract": {
+    "passed": 38,
+    "failed": 0
+  },
+  "compiled_hermes_offline": {
+    "passed": 13,
+    "failed": 0
+  },
+  "actual_installer": {
+    "passed": 12,
+    "failed": 0,
+    "registry_restored": true,
+    "uninstalled": true
+  },
+  "release_versions": {
+    "passed": 4,
+    "failed": 0
+  },
+  "native_update_digest": {
+    "passed": 4,
+    "failed": 0
+  },
+  "network_tests": "Local packs or loopback fake sources only; no real QQ accounts or component downloads",
+  "scope": "Windows development machine; isolated actual installation, not a clean Windows VM",
+  "rift_offline": {
+    "exit": 0,
+    "compiled_entry_loaded": true
+  }
+}

@@ -1,0 +1,23 @@
+{
+    "schema":  1,
+    "algorithm":  "sha256(path\\0size\\0file_sha256, sorted, UTF-8)",
+    "root":  "astrbot_plugin_bili_bridge",
+    "digest":  "16d878b4ae29aaa9115b23211898428eaa1aec1e691b57747da6931c6d86577d",
+    "files":  [
+                  {
+                      "path":  "_conf_schema.json",
+                      "size":  2147,
+                      "sha256":  "74d437f17f9aa045209b165ec89842a7217d9fc54386515b4dbdd377c9424447"
+                  },
+                  {
+                      "path":  "main.py",
+                      "size":  53273,
+                      "sha256":  "6ec264716896bcc7e56c7d7cd64d1432a826fa3a26e5bfcf112736332e05448f"
+                  },
+                  {
+                      "path":  "metadata.yaml",
+                      "size":  220,
+                      "sha256":  "70fd77818426a453b8e0cf9c9c2a618b2ea4dff240894b00eb1c37f9a24777ee"
+                  }
+              ]
+}

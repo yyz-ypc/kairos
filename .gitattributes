@@ -1,0 +1,2 @@
+# Preserve exact UTF-8/BOM and line-ending bytes used by bundled source manifests.
+* -text

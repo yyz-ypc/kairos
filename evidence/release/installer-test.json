@@ -1,0 +1,58 @@
+{
+    "version":  "V1.0.0",
+    "isolated":  true,
+    "qq_accounts_used":  false,
+    "cases":  [
+                  {
+                      "name":  "actual installer completed into isolated directory",
+                      "passed":  true
+                  },
+                  {
+                      "name":  "installed executable reports formal version",
+                      "passed":  true
+                  },
+                  {
+                      "name":  "installer honors isolated state directory",
+                      "passed":  true
+                  },
+                  {
+                      "name":  "all six installed runtime assets match per-file hashes",
+                      "passed":  true
+                  },
+                  {
+                      "name":  "installed health check detects deleted bundled file",
+                      "passed":  true
+                  },
+                  {
+                      "name":  "installed repair restores deleted file from local pack and verifies SHA256",
+                      "passed":  true
+                  },
+                  {
+                      "name":  "installed compiled hermes initializes offline in a clean workspace",
+                      "passed":  true
+                  },
+                  {
+                      "name":  "installed compiled rift initializes offline with pinned bundled npm dependencies",
+                      "passed":  true
+                  },
+                  {
+                      "name":  "installed Rift bytecode loads in bundled Node without network",
+                      "passed":  true
+                  },
+                  {
+                      "name":  "third-party notices remain installed",
+                      "passed":  true
+                  },
+                  {
+                      "name":  "private native source and login package are absent",
+                      "passed":  true
+                  },
+                  {
+                      "name":  "Mingling redrawn hero and original avatar remain installed",
+                      "passed":  true
+                  }
+              ],
+    "registry_restored":  true,
+    "uninstalled":  true,
+    "failure":  null
+}

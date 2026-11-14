@@ -1,0 +1,123 @@
+{
+  "style": "array",
+  "prompt": "masterpiece, high quality, no people, no text, no letters, wide composition, generous negative space, precision ritual circuit, concentric brass diagram, olive parchment and gold, top down technical fantasy illustration",
+  "negative": "low quality, blurry, watermark, text, letters, people",
+  "seed": 1101401,
+  "width": 1024,
+  "height": 576,
+  "model": "anima-base-v1.0.safetensors",
+  "encoder": "qwen_3_06b_base.safetensors",
+  "vae": "qwen_image_vae.safetensors",
+  "steps": 24,
+  "cfg": 4,
+  "workflow": {
+    "1": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "anima-base-v1.0.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    "2": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen_3_06b_base.safetensors",
+        "type": "stable_diffusion"
+      }
+    },
+    "3": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "qwen_image_vae.safetensors"
+      }
+    },
+    "4": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "masterpiece, high quality, no people, no text, no letters, wide composition, generous negative space, precision ritual circuit, concentric brass diagram, olive parchment and gold, top down technical fantasy illustration"
+      }
+    },
+    "5": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "low quality, blurry, watermark, text, letters, people"
+      }
+    },
+    "6": {
+      "class_type": "EmptySD3LatentImage",
+      "inputs": {
+        "width": 1024,
+        "height": 576,
+        "batch_size": 1
+      }
+    },
+    "7": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "positive": [
+          "4",
+          0
+        ],
+        "negative": [
+          "5",
+          0
+        ],
+        "latent_image": [
+          "6",
+          0
+        ],
+        "seed": 1101401,
+        "steps": 24,
+        "cfg": 4,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1
+      }
+    },
+    "8": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "7",
+          0
+        ],
+        "vae": [
+          "3",
+          0
+        ]
+      }
+    },
+    "9": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "8",
+          0
+        ],
+        "filename_prefix": "Kairos-candidates/array"
+      }
+    }
+  },
+  "status": "approved",
+  "submission": {
+    "prompt_id": "8bc02d2f-7169-4374-a842-f99660e0a89a",
+    "number": 4,
+    "node_errors": {}
+  },
+  "output": "art/styles/array-hero.webp",
+  "size_bytes": 206322,
+  "sha256": "0a957419dbbd667434f68509f2d03067713261a4c3137b865427f833676bbabd",
+  "webp_quality": 85
+}

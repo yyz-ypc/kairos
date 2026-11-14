@@ -1,0 +1,293 @@
+{
+    "schema":  1,
+    "algorithm":  "sha256(path\\0size\\0file_sha256, sorted, UTF-8)",
+    "root":  "hermes",
+    "digest":  "6147a838799b71bad21489f3a74066035e1e196bd9f14534b3828890d14e594c",
+    "files":  [
+                  {
+                      "path":  "adapters/onebot-ws.jsc",
+                      "size":  134504,
+                      "sha256":  "f27368077889a24c523f1a9e4ab324051b42ccfb1e01004bcd830cb0f4751c69"
+                  },
+                  {
+                      "path":  "adapters/onebot-ws.mjs",
+                      "size":  291,
+                      "sha256":  "9b3532ffd80de8cf2d5f5d6733aab8897b22a362865c9e2b584f19138e073b16"
+                  },
+                  {
+                      "path":  "client/app.js",
+                      "size":  42854,
+                      "sha256":  "246cf122d5d66ae89d2be70d001990c4e7be30060729093d37453f1dfc241c92"
+                  },
+                  {
+                      "path":  "client/index.html",
+                      "size":  1656,
+                      "sha256":  "751824c7e4973b7c9fc22e3906cffc4998fd2967beac369c2ebc8762d44eb2ab"
+                  },
+                  {
+                      "path":  "client/style.css",
+                      "size":  19363,
+                      "sha256":  "31d8321f57a8a3dba6cff43bc566ad8134588031593b8aa7e36ac62c4c71e2f8"
+                  },
+                  {
+                      "path":  "native/agent.cjs",
+                      "size":  66,
+                      "sha256":  "713b6432667cab9c8d4d8dde650540034d5016cc3188b02c3388d331e7ae5e78"
+                  },
+                  {
+                      "path":  "native/build/hermes-qq-hook.dll",
+                      "size":  2661317,
+                      "sha256":  "51114baee0ba9973b0fb751546b0fd16b8129239dc3dd0086571e2d370a56604"
+                  },
+                  {
+                      "path":  "native/build/hermes-qq-launcher.exe",
+                      "size":  2809592,
+                      "sha256":  "2bd23a73078db65301b49a35b6019f494300fa7ce96eb1f425e3a15852ac24b5"
+                  },
+                  {
+                      "path":  "native/vendor/minhook/LICENSE.txt",
+                      "size":  4365,
+                      "sha256":  "d5c2224982b0b95a16b098a561335fa93f3eaf4d0aa964b7843edb986df78dc8"
+                  },
+                  {
+                      "path":  "package.json",
+                      "size":  483,
+                      "sha256":  "28dd88a1ea9419da91ced0bb2a6b3740269af201db3f3be697758209cbe1a7ef"
+                  },
+                  {
+                      "path":  "src/app.jsc",
+                      "size":  238304,
+                      "sha256":  "b82508dca078891ec39912374d21752cd0560cc107f650571382fcb7a17290c3"
+                  },
+                  {
+                      "path":  "src/app.mjs",
+                      "size":  361,
+                      "sha256":  "2be04abb33b9f6fc6d7781808a82d11d4393a875c8308b4f167dba927e27695b"
+                  },
+                  {
+                      "path":  "src/demo.jsc",
+                      "size":  125048,
+                      "sha256":  "c09dd4dd93dd55cbe74882268f4f9f09474a6bd41760affc2519ce159424ca0d"
+                  },
+                  {
+                      "path":  "src/demo.mjs",
+                      "size":  268,
+                      "sha256":  "2ab5875b3e7b07445ed9e425877b0f51168b34e7187e98148f1165c033ce603a"
+                  },
+                  {
+                      "path":  "src/http.jsc",
+                      "size":  4072,
+                      "sha256":  "92a02800581fbd947c411f14c159b3fc7a16880adcb346b933eca482862bd67b"
+                  },
+                  {
+                      "path":  "src/http.mjs",
+                      "size":  354,
+                      "sha256":  "7bf3ca04b63164906b0de5f976461c7f10cbaa6e53488c2631312bbdacd49672"
+                  },
+                  {
+                      "path":  "src/log.jsc",
+                      "size":  5272,
+                      "sha256":  "c805b7ff8a552020f5a61ddc654fd03b53d308414957e15b02693f31ebec4179"
+                  },
+                  {
+                      "path":  "src/log.mjs",
+                      "size":  261,
+                      "sha256":  "852264aaf181b1fae9ec496645f0cce2ca0a538cd7271059b68916da0a6aad18"
+                  },
+                  {
+                      "path":  "src/main.jsc",
+                      "size":  243920,
+                      "sha256":  "66a05ebd46f23cfa8d33585dda48844e1ec7726afac86f67e8e0e45e6eb3fdad"
+                  },
+                  {
+                      "path":  "src/main.mjs",
+                      "size":  232,
+                      "sha256":  "c0f36240f0bdb8f9fc53f82effb1342d96ecd3d7e3e089a635889f66cae02373"
+                  },
+                  {
+                      "path":  "src/message.jsc",
+                      "size":  5520,
+                      "sha256":  "a6d84fcf5a7ba4d2bb2ff15dfc17d85dc09bf90aaff3b30ae79b647f9bc8fbd5"
+                  },
+                  {
+                      "path":  "src/message.mjs",
+                      "size":  339,
+                      "sha256":  "383cd6b42403844b30f823e08cb7b6389afe160ee5771315555d7c4edb20be36"
+                  },
+                  {
+                      "path":  "src/native.jsc",
+                      "size":  23296,
+                      "sha256":  "4cefff0cad1bd8fe7716681f73d7d9458550c7ec0ad842edfbb5e5ec8238af7e"
+                  },
+                  {
+                      "path":  "src/native.mjs",
+                      "size":  362,
+                      "sha256":  "9e1e38ce0b01fa08dcb414771ef1f2c955e9d306befe6999becace2cfb9d4da1"
+                  },
+                  {
+                      "path":  "src/networks.jsc",
+                      "size":  150960,
+                      "sha256":  "6e582c13f704e50f0c0c24807f10da848c8ebee29450446379e700ac370fb977"
+                  },
+                  {
+                      "path":  "src/networks.mjs",
+                      "size":  308,
+                      "sha256":  "c08e18488f7e178d396167923da4f896d370ac1f186c935fc543ae829f42e0f2"
+                  },
+                  {
+                      "path":  "src/runtime.jsc",
+                      "size":  26840,
+                      "sha256":  "742596e51fcce33745ecb357fe336e2e1c545329c4b1e503bfb8f0c02edb5fbb"
+                  },
+                  {
+                      "path":  "src/runtime.mjs",
+                      "size":  315,
+                      "sha256":  "d48230b14fa7017f7db7fb05c94513ac3e731fd2105762dce08c12d5661d97aa"
+                  },
+                  {
+                      "path":  "src/store.jsc",
+                      "size":  22224,
+                      "sha256":  "ae1f7a8fc8766c3a41d0cdc8691520bcdb60af8351c36b31cb974ba8a29d91be"
+                  },
+                  {
+                      "path":  "src/store.mjs",
+                      "size":  779,
+                      "sha256":  "4b4c93388fbc1272c6c590828df708a01acb0decc1a72953505f83782e60cfec"
+                  },
+                  {
+                      "path":  "start.cmd",
+                      "size":  1151,
+                      "sha256":  "82b3fe133fdf02a2ca9ce6966813450d9f1dc03aeb5886e14ccb8fcd0c176608"
+                  },
+                  {
+                      "path":  "vendor/bytenode/index.cjs",
+                      "size":  14296,
+                      "sha256":  "47fda33afc49480633ebf910e44c16b395925def2a910cff49c120b65a0cdfec"
+                  },
+                  {
+                      "path":  "vendor/bytenode/LICENSE",
+                      "size":  1068,
+                      "sha256":  "16d7ed7b8be9034217983ab33fda4efd22ed23962c4797699c94f159276d03f3"
+                  },
+                  {
+                      "path":  "vendor/bytenode/package.json",
+                      "size":  756,
+                      "sha256":  "700a72b12d339c3e59ae8cc0d1cd100a4a91d60796abc59923145a39047f1326"
+                  },
+                  {
+                      "path":  "vendor/silk-wasm/index.cjs",
+                      "size":  25045,
+                      "sha256":  "74bb76aba57b1b52787e1eace2870eaaab2deec32241e28f47a138c6b98de065"
+                  },
+                  {
+                      "path":  "vendor/silk-wasm/LICENSE",
+                      "size":  1064,
+                      "sha256":  "449bc5a81385bb4a9e3a0cba5e03e64ca8591362cd7cac4caec5e339bc947e46"
+                  },
+                  {
+                      "path":  "vendor/silk-wasm/package.json",
+                      "size":  1101,
+                      "sha256":  "55f69255696623a29fee616525eab2b9f7aab9f21adf9b667155b68b653410d5"
+                  },
+                  {
+                      "path":  "vendor/silk-wasm/silk.wasm",
+                      "size":  234626,
+                      "sha256":  "88152af59af535b8056ac806710824b2259a361027451b494f175f48fb39c807"
+                  },
+                  {
+                      "path":  "vendor/ws/browser.js",
+                      "size":  176,
+                      "sha256":  "010da44addea1d88b2b732540c3f1fd0cbcb28926b96623d4c64222e0ead2d0e"
+                  },
+                  {
+                      "path":  "vendor/ws/index.js",
+                      "size":  796,
+                      "sha256":  "924564d5be26d59b9682c4263f68320e48dde7240bd2d1ad17ec305537429dd2"
+                  },
+                  {
+                      "path":  "vendor/ws/lib/buffer-util.js",
+                      "size":  3501,
+                      "sha256":  "4e996b0c29f30bb094d836a2a563aceebaf3e8692a1e3d5bb4a01a233029732f"
+                  },
+                  {
+                      "path":  "vendor/ws/lib/constants.js",
+                      "size":  503,
+                      "sha256":  "391e823142b8b370e55a2fd32b022deaf03b8415c56000009674ebc86a0b4f86"
+                  },
+                  {
+                      "path":  "vendor/ws/lib/event-target.js",
+                      "size":  7321,
+                      "sha256":  "c45d3c6e12d170c860c0c3f1a050aa0f864d9806632b609a1e607d675aba128c"
+                  },
+                  {
+                      "path":  "vendor/ws/lib/extension.js",
+                      "size":  6183,
+                      "sha256":  "852564f0f6b460287043803eae732666fb5610f676874354fc89f06aa4e986ed"
+                  },
+                  {
+                      "path":  "vendor/ws/lib/limiter.js",
+                      "size":  1034,
+                      "sha256":  "e0469d4b83f6ba764b15f80e1766b75c136fbff68f048f4c050f0b1c7f065f69"
+                  },
+                  {
+                      "path":  "vendor/ws/lib/permessage-deflate.js",
+                      "size":  14669,
+                      "sha256":  "16a91536988a53c23047ee5882392068728a839a244178c3b09b8c54982f58b0"
+                  },
+                  {
+                      "path":  "vendor/ws/lib/receiver.js",
+                      "size":  17778,
+                      "sha256":  "77f7463d96be072b07183cdd8022d80e5032d3257948138ecd669dc758b20efa"
+                  },
+                  {
+                      "path":  "vendor/ws/lib/sender.js",
+                      "size":  16962,
+                      "sha256":  "b343e24310aeb924e713767fb7cd445bccf4f3cc3504ceb2c56ce76b89c1cf45"
+                  },
+                  {
+                      "path":  "vendor/ws/lib/stream.js",
+                      "size":  4204,
+                      "sha256":  "a56fcb6e2b152097ee820b6f5410b1f71e59819b45d08d9f8bda588fe39070ec"
+                  },
+                  {
+                      "path":  "vendor/ws/lib/subprotocol.js",
+                      "size":  1498,
+                      "sha256":  "be3f6323d6f549568577dcba9004c1479d95c65a7abb0fe0c582875b9fac0b7c"
+                  },
+                  {
+                      "path":  "vendor/ws/lib/validation.js",
+                      "size":  3903,
+                      "sha256":  "41ce8e83d0d434132e1704895fedb91f6703a701b42d91c80954ab29b2845593"
+                  },
+                  {
+                      "path":  "vendor/ws/lib/websocket.js",
+                      "size":  38555,
+                      "sha256":  "9a38a02b4b6242ca77d775ba615c3422024264da6e7054f14a5b59e8058cef07"
+                  },
+                  {
+                      "path":  "vendor/ws/lib/websocket-server.js",
+                      "size":  17022,
+                      "sha256":  "6d8dd89a841748c80445fd5fcdb5ba8005369b53cc3525135e11304c8b9c55e5"
+                  },
+                  {
+                      "path":  "vendor/ws/LICENSE",
+                      "size":  1183,
+                      "sha256":  "2b29dcfe0d6471f7e8c92c5fb38c9f93edee10330937055440192f1832b1ecef"
+                  },
+                  {
+                      "path":  "vendor/ws/package.json",
+                      "size":  1829,
+                      "sha256":  "91dd75e390b2d95f431ce8b8ea2df5228b05665c819bbf6f69b8a7f4fe514d78"
+                  },
+                  {
+                      "path":  "vendor/ws/README.md",
+                      "size":  15322,
+                      "sha256":  "a20e3ef3800e3a9dc7ed9b666a93fb39f464fee2f48858967844801c8b3b9027"
+                  },
+                  {
+                      "path":  "vendor/ws/wrapper.mjs",
+                      "size":  554,
+                      "sha256":  "fe154662301fd558f935f9c217fccbe7a7dac02ff39e648a000589403ff27c7f"
+                  }
+              ]
+}

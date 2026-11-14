@@ -1,0 +1,2655 @@
+{
+  "schema": 1,
+  "version": "V1.0.0",
+  "assets": [
+    {
+      "id": "hermes",
+      "name": "kairos-hermes-1.0.0.zip",
+      "url": "https://github.com/YYZ-YPC/kairos/releases/download/V1.0.0/kairos-hermes-1.0.0.zip",
+      "sha256": "5df117030ac5d46972ee7f2b91dc4b617b9ba1427f20feaee6f2f5b04b4e035e",
+      "size": 6963968,
+      "files": [
+        {
+          "path": "sidecar/hermes/adapters/onebot-ws.jsc",
+          "size": 134504,
+          "sha256": "f27368077889a24c523f1a9e4ab324051b42ccfb1e01004bcd830cb0f4751c69"
+        },
+        {
+          "path": "sidecar/hermes/adapters/onebot-ws.mjs",
+          "size": 291,
+          "sha256": "9b3532ffd80de8cf2d5f5d6733aab8897b22a362865c9e2b584f19138e073b16"
+        },
+        {
+          "path": "sidecar/hermes/client/app.js",
+          "size": 42854,
+          "sha256": "246cf122d5d66ae89d2be70d001990c4e7be30060729093d37453f1dfc241c92"
+        },
+        {
+          "path": "sidecar/hermes/client/index.html",
+          "size": 1656,
+          "sha256": "751824c7e4973b7c9fc22e3906cffc4998fd2967beac369c2ebc8762d44eb2ab"
+        },
+        {
+          "path": "sidecar/hermes/client/style.css",
+          "size": 19363,
+          "sha256": "31d8321f57a8a3dba6cff43bc566ad8134588031593b8aa7e36ac62c4c71e2f8"
+        },
+        {
+          "path": "sidecar/hermes/native/agent.cjs",
+          "size": 66,
+          "sha256": "713b6432667cab9c8d4d8dde650540034d5016cc3188b02c3388d331e7ae5e78"
+        },
+        {
+          "path": "sidecar/hermes/native/build/hermes-qq-hook.dll",
+          "size": 2661317,
+          "sha256": "51114baee0ba9973b0fb751546b0fd16b8129239dc3dd0086571e2d370a56604"
+        },
+        {
+          "path": "sidecar/hermes/native/build/hermes-qq-launcher.exe",
+          "size": 2809592,
+          "sha256": "2bd23a73078db65301b49a35b6019f494300fa7ce96eb1f425e3a15852ac24b5"
+        },
+        {
+          "path": "sidecar/hermes/native/vendor/minhook/LICENSE.txt",
+          "size": 4365,
+          "sha256": "d5c2224982b0b95a16b098a561335fa93f3eaf4d0aa964b7843edb986df78dc8"
+        },
+        {
+          "path": "sidecar/hermes/package.json",
+          "size": 483,
+          "sha256": "28dd88a1ea9419da91ced0bb2a6b3740269af201db3f3be697758209cbe1a7ef"
+        },
+        {
+          "path": "sidecar/hermes/src/app.jsc",
+          "size": 238304,
+          "sha256": "b82508dca078891ec39912374d21752cd0560cc107f650571382fcb7a17290c3"
+        },
+        {
+          "path": "sidecar/hermes/src/app.mjs",
+          "size": 361,
+          "sha256": "2be04abb33b9f6fc6d7781808a82d11d4393a875c8308b4f167dba927e27695b"
+        },
+        {
+          "path": "sidecar/hermes/src/demo.jsc",
+          "size": 125048,
+          "sha256": "c09dd4dd93dd55cbe74882268f4f9f09474a6bd41760affc2519ce159424ca0d"
+        },
+        {
+          "path": "sidecar/hermes/src/demo.mjs",
+          "size": 268,
+          "sha256": "2ab5875b3e7b07445ed9e425877b0f51168b34e7187e98148f1165c033ce603a"
+        },
+        {
+          "path": "sidecar/hermes/src/http.jsc",
+          "size": 4072,
+          "sha256": "92a02800581fbd947c411f14c159b3fc7a16880adcb346b933eca482862bd67b"
+        },
+        {
+          "path": "sidecar/hermes/src/http.mjs",
+          "size": 354,
+          "sha256": "7bf3ca04b63164906b0de5f976461c7f10cbaa6e53488c2631312bbdacd49672"
+        },
+        {
+          "path": "sidecar/hermes/src/log.jsc",
+          "size": 5272,
+          "sha256": "c805b7ff8a552020f5a61ddc654fd03b53d308414957e15b02693f31ebec4179"
+        },
+        {
+          "path": "sidecar/hermes/src/log.mjs",
+          "size": 261,
+          "sha256": "852264aaf181b1fae9ec496645f0cce2ca0a538cd7271059b68916da0a6aad18"
+        },
+        {
+          "path": "sidecar/hermes/src/main.jsc",
+          "size": 243920,
+          "sha256": "66a05ebd46f23cfa8d33585dda48844e1ec7726afac86f67e8e0e45e6eb3fdad"
+        },
+        {
+          "path": "sidecar/hermes/src/main.mjs",
+          "size": 232,
+          "sha256": "c0f36240f0bdb8f9fc53f82effb1342d96ecd3d7e3e089a635889f66cae02373"
+        },
+        {
+          "path": "sidecar/hermes/src/message.jsc",
+          "size": 5520,
+          "sha256": "a6d84fcf5a7ba4d2bb2ff15dfc17d85dc09bf90aaff3b30ae79b647f9bc8fbd5"
+        },
+        {
+          "path": "sidecar/hermes/src/message.mjs",
+          "size": 339,
+          "sha256": "383cd6b42403844b30f823e08cb7b6389afe160ee5771315555d7c4edb20be36"
+        },
+        {
+          "path": "sidecar/hermes/src/native.jsc",
+          "size": 23296,
+          "sha256": "4cefff0cad1bd8fe7716681f73d7d9458550c7ec0ad842edfbb5e5ec8238af7e"
+        },
+        {
+          "path": "sidecar/hermes/src/native.mjs",
+          "size": 362,
+          "sha256": "9e1e38ce0b01fa08dcb414771ef1f2c955e9d306befe6999becace2cfb9d4da1"
+        },
+        {
+          "path": "sidecar/hermes/src/networks.jsc",
+          "size": 150960,
+          "sha256": "6e582c13f704e50f0c0c24807f10da848c8ebee29450446379e700ac370fb977"
+        },
+        {
+          "path": "sidecar/hermes/src/networks.mjs",
+          "size": 308,
+          "sha256": "c08e18488f7e178d396167923da4f896d370ac1f186c935fc543ae829f42e0f2"
+        },
+        {
+          "path": "sidecar/hermes/src/runtime.jsc",
+          "size": 26840,
+          "sha256": "742596e51fcce33745ecb357fe336e2e1c545329c4b1e503bfb8f0c02edb5fbb"
+        },
+        {
+          "path": "sidecar/hermes/src/runtime.mjs",
+          "size": 315,
+          "sha256": "d48230b14fa7017f7db7fb05c94513ac3e731fd2105762dce08c12d5661d97aa"
+        },
+        {
+          "path": "sidecar/hermes/src/store.jsc",
+          "size": 22224,
+          "sha256": "ae1f7a8fc8766c3a41d0cdc8691520bcdb60af8351c36b31cb974ba8a29d91be"
+        },
+        {
+          "path": "sidecar/hermes/src/store.mjs",
+          "size": 779,
+          "sha256": "4b4c93388fbc1272c6c590828df708a01acb0decc1a72953505f83782e60cfec"
+        },
+        {
+          "path": "sidecar/hermes/start.cmd",
+          "size": 1151,
+          "sha256": "82b3fe133fdf02a2ca9ce6966813450d9f1dc03aeb5886e14ccb8fcd0c176608"
+        },
+        {
+          "path": "sidecar/hermes/vendor/bytenode/index.cjs",
+          "size": 14296,
+          "sha256": "47fda33afc49480633ebf910e44c16b395925def2a910cff49c120b65a0cdfec"
+        },
+        {
+          "path": "sidecar/hermes/vendor/bytenode/LICENSE",
+          "size": 1068,
+          "sha256": "16d7ed7b8be9034217983ab33fda4efd22ed23962c4797699c94f159276d03f3"
+        },
+        {
+          "path": "sidecar/hermes/vendor/bytenode/package.json",
+          "size": 756,
+          "sha256": "700a72b12d339c3e59ae8cc0d1cd100a4a91d60796abc59923145a39047f1326"
+        },
+        {
+          "path": "sidecar/hermes/vendor/silk-wasm/index.cjs",
+          "size": 25045,
+          "sha256": "74bb76aba57b1b52787e1eace2870eaaab2deec32241e28f47a138c6b98de065"
+        },
+        {
+          "path": "sidecar/hermes/vendor/silk-wasm/LICENSE",
+          "size": 1064,
+          "sha256": "449bc5a81385bb4a9e3a0cba5e03e64ca8591362cd7cac4caec5e339bc947e46"
+        },
+        {
+          "path": "sidecar/hermes/vendor/silk-wasm/package.json",
+          "size": 1101,
+          "sha256": "55f69255696623a29fee616525eab2b9f7aab9f21adf9b667155b68b653410d5"
+        },
+        {
+          "path": "sidecar/hermes/vendor/silk-wasm/silk.wasm",
+          "size": 234626,
+          "sha256": "88152af59af535b8056ac806710824b2259a361027451b494f175f48fb39c807"
+        },
+        {
+          "path": "sidecar/hermes/vendor/ws/browser.js",
+          "size": 176,
+          "sha256": "010da44addea1d88b2b732540c3f1fd0cbcb28926b96623d4c64222e0ead2d0e"
+        },
+        {
+          "path": "sidecar/hermes/vendor/ws/index.js",
+          "size": 796,
+          "sha256": "924564d5be26d59b9682c4263f68320e48dde7240bd2d1ad17ec305537429dd2"
+        },
+        {
+          "path": "sidecar/hermes/vendor/ws/lib/buffer-util.js",
+          "size": 3501,
+          "sha256": "4e996b0c29f30bb094d836a2a563aceebaf3e8692a1e3d5bb4a01a233029732f"
+        },
+        {
+          "path": "sidecar/hermes/vendor/ws/lib/constants.js",
+          "size": 503,
+          "sha256": "391e823142b8b370e55a2fd32b022deaf03b8415c56000009674ebc86a0b4f86"
+        },
+        {
+          "path": "sidecar/hermes/vendor/ws/lib/event-target.js",
+          "size": 7321,
+          "sha256": "c45d3c6e12d170c860c0c3f1a050aa0f864d9806632b609a1e607d675aba128c"
+        },
+        {
+          "path": "sidecar/hermes/vendor/ws/lib/extension.js",
+          "size": 6183,
+          "sha256": "852564f0f6b460287043803eae732666fb5610f676874354fc89f06aa4e986ed"
+        },
+        {
+          "path": "sidecar/hermes/vendor/ws/lib/limiter.js",
+          "size": 1034,
+          "sha256": "e0469d4b83f6ba764b15f80e1766b75c136fbff68f048f4c050f0b1c7f065f69"
+        },
+        {
+          "path": "sidecar/hermes/vendor/ws/lib/permessage-deflate.js",
+          "size": 14669,
+          "sha256": "16a91536988a53c23047ee5882392068728a839a244178c3b09b8c54982f58b0"
+        },
+        {
+          "path": "sidecar/hermes/vendor/ws/lib/receiver.js",
+          "size": 17778,
+          "sha256": "77f7463d96be072b07183cdd8022d80e5032d3257948138ecd669dc758b20efa"
+        },
+        {
+          "path": "sidecar/hermes/vendor/ws/lib/sender.js",
+          "size": 16962,
+          "sha256": "b343e24310aeb924e713767fb7cd445bccf4f3cc3504ceb2c56ce76b89c1cf45"
+        },
+        {
+          "path": "sidecar/hermes/vendor/ws/lib/stream.js",
+          "size": 4204,
+          "sha256": "a56fcb6e2b152097ee820b6f5410b1f71e59819b45d08d9f8bda588fe39070ec"
+        },
+        {
+          "path": "sidecar/hermes/vendor/ws/lib/subprotocol.js",
+          "size": 1498,
+          "sha256": "be3f6323d6f549568577dcba9004c1479d95c65a7abb0fe0c582875b9fac0b7c"
+        },
+        {
+          "path": "sidecar/hermes/vendor/ws/lib/validation.js",
+          "size": 3903,
+          "sha256": "41ce8e83d0d434132e1704895fedb91f6703a701b42d91c80954ab29b2845593"
+        },
+        {
+          "path": "sidecar/hermes/vendor/ws/lib/websocket-server.js",
+          "size": 17022,
+          "sha256": "6d8dd89a841748c80445fd5fcdb5ba8005369b53cc3525135e11304c8b9c55e5"
+        },
+        {
+          "path": "sidecar/hermes/vendor/ws/lib/websocket.js",
+          "size": 38555,
+          "sha256": "9a38a02b4b6242ca77d775ba615c3422024264da6e7054f14a5b59e8058cef07"
+        },
+        {
+          "path": "sidecar/hermes/vendor/ws/LICENSE",
+          "size": 1183,
+          "sha256": "2b29dcfe0d6471f7e8c92c5fb38c9f93edee10330937055440192f1832b1ecef"
+        },
+        {
+          "path": "sidecar/hermes/vendor/ws/package.json",
+          "size": 1829,
+          "sha256": "91dd75e390b2d95f431ce8b8ea2df5228b05665c819bbf6f69b8a7f4fe514d78"
+        },
+        {
+          "path": "sidecar/hermes/vendor/ws/README.md",
+          "size": 15322,
+          "sha256": "a20e3ef3800e3a9dc7ed9b666a93fb39f464fee2f48858967844801c8b3b9027"
+        },
+        {
+          "path": "sidecar/hermes/vendor/ws/wrapper.mjs",
+          "size": 554,
+          "sha256": "fe154662301fd558f935f9c217fccbe7a7dac02ff39e648a000589403ff27c7f"
+        }
+      ]
+    },
+    {
+      "id": "rift",
+      "name": "kairos-rift-1.0.0.zip",
+      "url": "https://github.com/YYZ-YPC/kairos/releases/download/V1.0.0/kairos-rift-1.0.0.zip",
+      "sha256": "5d1af378934a3116f1f9ea8067d67f7a09821ea0972046e3cd1f0bed7789720a",
+      "size": 92151783,
+      "files": [
+        {
+          "path": "sidecar/rift/bin/FFmpeg-LICENSE.txt",
+          "size": 2105,
+          "sha256": "41c98e1bb14dc254df720cb47e1571d65b2d7d3f70c05fde3a7589eec46791a1"
+        },
+        {
+          "path": "sidecar/rift/bin/ffmpeg.exe",
+          "size": 87638016,
+          "sha256": "2ce797a0f88d7f067180338fb227f7b1928ea727bd9a4d7a1d022f7c52af71a3"
+        },
+        {
+          "path": "sidecar/rift/cordis.patch.yml",
+          "size": 855,
+          "sha256": "c861e3a9060ac7187694acbf83be4c22cff821c53aedc109ec3d9f266528fc09"
+        },
+        {
+          "path": "sidecar/rift/lib/auth.js",
+          "size": 306,
+          "sha256": "151f276f0efc3e56df10140ba95152a9669844650f36194e8ffe33936dca8983"
+        },
+        {
+          "path": "sidecar/rift/lib/auth.jsc",
+          "size": 17080,
+          "sha256": "2ea178b77475450e0d681c87ff661dfc77d41fdac9c04f414e55eaf89d2a487c"
+        },
+        {
+          "path": "sidecar/rift/lib/client.js",
+          "size": 33580,
+          "sha256": "edba069bbff7abc8d1a41020d25c9e578bd31d175efeeb0dff2b22de637a6e8a"
+        },
+        {
+          "path": "sidecar/rift/lib/credentials.js",
+          "size": 441,
+          "sha256": "127359c41cc5bd3be28341a1b20cff72fa7c2dd4bc2f07c88adb84f0caca5292"
+        },
+        {
+          "path": "sidecar/rift/lib/credentials.jsc",
+          "size": 10968,
+          "sha256": "697a3bfed0b6c80547ab5b30c0b585663fd03b813cf8fd5c2991a3e437f7a356"
+        },
+        {
+          "path": "sidecar/rift/lib/index.js",
+          "size": 259,
+          "sha256": "d04a5a5ee4022b04c444d77ec4a9ca2caabdb32f8c1edd3ce5a65c1911f623e6"
+        },
+        {
+          "path": "sidecar/rift/lib/index.jsc",
+          "size": 174688,
+          "sha256": "4ec451f45e0cae38915c09b3eadeefc4c91bdad83d7b16fcf2bf12f3403578aa"
+        },
+        {
+          "path": "sidecar/rift/lib/mention-summary.js",
+          "size": 299,
+          "sha256": "ff8393bfca18c7fb6b8a627d5c337e68e21a5bf0f57530742e0f472b9983ce6d"
+        },
+        {
+          "path": "sidecar/rift/lib/mention-summary.jsc",
+          "size": 3072,
+          "sha256": "0b74ef2fe22cf2b09558d642cdca04aff73c5939c87ef671b382f911b89a05dc"
+        },
+        {
+          "path": "sidecar/rift/lib/node-runtime.js",
+          "size": 366,
+          "sha256": "6798038ea4336c21a3948462d9c44435628fe581269847a68d0bc1e091296732"
+        },
+        {
+          "path": "sidecar/rift/lib/node-runtime.jsc",
+          "size": 8256,
+          "sha256": "242d92b0cd7e674efd41dfc7fdf0475c46c6b0555ce782e44fd8e11c45e35d07"
+        },
+        {
+          "path": "sidecar/rift/lib/scheduler.js",
+          "size": 321,
+          "sha256": "cb8f5843bfaa2dd0d857bdcab176f74cf32f45bd432b429cd5195f4ebaeca11f"
+        },
+        {
+          "path": "sidecar/rift/lib/scheduler.jsc",
+          "size": 115496,
+          "sha256": "16aacb7e65ba47763347d9d45191b3eeb0eacee875a9f778529b2544118bdb17"
+        },
+        {
+          "path": "sidecar/rift/lib/session-delivery.js",
+          "size": 304,
+          "sha256": "0dd4a2a423ba617ab1583d85f44153f84675b3b5ab254dbad486d90cd2b19b70"
+        },
+        {
+          "path": "sidecar/rift/lib/session-delivery.jsc",
+          "size": 10928,
+          "sha256": "77c10fcafd55cb92a3b6c38cf9118d5dc668762b60483fd8a3ac20ad7ce5e5d5"
+        },
+        {
+          "path": "sidecar/rift/lib/work-dir.js",
+          "size": 282,
+          "sha256": "2639527dc263ff061e70774434eaf865c93f7e58dea897fc7a5c6a12ce0b74ae"
+        },
+        {
+          "path": "sidecar/rift/lib/work-dir.jsc",
+          "size": 3488,
+          "sha256": "8b4e0a89882ae6a625bd74a6f68be801eb00ec4c74296100f51c6debe0bc3eb0"
+        },
+        {
+          "path": "sidecar/rift/LICENSE",
+          "size": 1066,
+          "sha256": "9b7d848cea82a129d5c26e8714d2f261a6723a16220cd229786a812569859366"
+        },
+        {
+          "path": "sidecar/rift/node_modules/.bin/qrcode",
+          "size": 383,
+          "sha256": "d6fc1a2610700f58b590225c2120db092c56c574c183335c47950888c5c2d9f1"
+        },
+        {
+          "path": "sidecar/rift/node_modules/.bin/qrcode.cmd",
+          "size": 322,
+          "sha256": "5909c66017352d9987d232fb0d09f9535364c3969651b9cbf5348ed343d516b6"
+        },
+        {
+          "path": "sidecar/rift/node_modules/.bin/qrcode.ps1",
+          "size": 793,
+          "sha256": "40522d892f14115f48a12adc8f3a2bcbaf4713a86daa83a3452d2557f996a2ae"
+        },
+        {
+          "path": "sidecar/rift/node_modules/.package-lock.json",
+          "size": 11662,
+          "sha256": "d7f3e30860d8b56ba67dd260c3fa1ea83faace1c907ffad6be4253c704d9e04a"
+        },
+        {
+          "path": "sidecar/rift/node_modules/ansi-regex/index.d.ts",
+          "size": 744,
+          "sha256": "a902326b04490db2b99a85e58e0acb14a437ca7e2231e9adfb2fa91acdcc365c"
+        },
+        {
+          "path": "sidecar/rift/node_modules/ansi-regex/index.js",
+          "size": 350,
+          "sha256": "c92312790eb1f246b7c4c1fe9c1247b15441bbca3c6cb64d167beefc45302753"
+        },
+        {
+          "path": "sidecar/rift/node_modules/ansi-regex/license",
+          "size": 1109,
+          "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+        },
+        {
+          "path": "sidecar/rift/node_modules/ansi-regex/package.json",
+          "size": 841,
+          "sha256": "8b2dc166f2b74d5098bad38bdd3dd2f4d4775c626199872f5e36dbb48c40931d"
+        },
+        {
+          "path": "sidecar/rift/node_modules/ansi-regex/readme.md",
+          "size": 2565,
+          "sha256": "3ebc0f845b1bab50600f823716040fbec355d3c356a3a76b8eb9eb593b6c7a3a"
+        },
+        {
+          "path": "sidecar/rift/node_modules/ansi-styles/index.d.ts",
+          "size": 6349,
+          "sha256": "6b5a49a699ffbccce553dead6c39d3b10a896f78869ef5507d30dfcdbf6f0977"
+        },
+        {
+          "path": "sidecar/rift/node_modules/ansi-styles/index.js",
+          "size": 4139,
+          "sha256": "d3f197d370760ddd8753c1355b4bdb585a787f1baa92bb8ed217f170c138b594"
+        },
+        {
+          "path": "sidecar/rift/node_modules/ansi-styles/license",
+          "size": 1109,
+          "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+        },
+        {
+          "path": "sidecar/rift/node_modules/ansi-styles/package.json",
+          "size": 1054,
+          "sha256": "d405f010681d53f77691015e98461f8484b2afe6a9edfdd2ddb27b1e8a8e883d"
+        },
+        {
+          "path": "sidecar/rift/node_modules/ansi-styles/readme.md",
+          "size": 4327,
+          "sha256": "5331953ca5464ee026f09bd413dfe0949049ce9a8bf2b01aad5c41b2712e66ac"
+        },
+        {
+          "path": "sidecar/rift/node_modules/camelcase/index.d.ts",
+          "size": 1280,
+          "sha256": "b8e7261f41dd775524077306a69c01796bd5a2a742c7338e6607ff4e689bc356"
+        },
+        {
+          "path": "sidecar/rift/node_modules/camelcase/index.js",
+          "size": 2098,
+          "sha256": "c335ea757e3898080795f25093827d97b8fb00d0f3ac04dd56c80eecdac8eef3"
+        },
+        {
+          "path": "sidecar/rift/node_modules/camelcase/license",
+          "size": 1109,
+          "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+        },
+        {
+          "path": "sidecar/rift/node_modules/camelcase/package.json",
+          "size": 746,
+          "sha256": "b6d533c740d144de4da1493940b541978a77aae9d712dd0d609f60c58c83a73e"
+        },
+        {
+          "path": "sidecar/rift/node_modules/camelcase/readme.md",
+          "size": 2214,
+          "sha256": "086278e988c8104ea5aeaa9f296b5ffc18c66837f3b2dadb86253708ce4a3387"
+        },
+        {
+          "path": "sidecar/rift/node_modules/cliui/CHANGELOG.md",
+          "size": 2134,
+          "sha256": "2f287000906366901272e12d6c3270eeac27db4ef00073c78b951f05c509ee06"
+        },
+        {
+          "path": "sidecar/rift/node_modules/cliui/index.js",
+          "size": 8160,
+          "sha256": "2d892d362a5531867047b69e471ab1ca9e2222c313b2bd4d4bcf811bdfdab36d"
+        },
+        {
+          "path": "sidecar/rift/node_modules/cliui/LICENSE.txt",
+          "size": 731,
+          "sha256": "2dc0465729366c3a7890dfa9e972a1ba7048a26c02116fb8b419a6a1ac110149"
+        },
+        {
+          "path": "sidecar/rift/node_modules/cliui/package.json",
+          "size": 1192,
+          "sha256": "aefd282b90d2d0a055f3b40bbd2010531ba7cbf902e76a314fe09fe777491814"
+        },
+        {
+          "path": "sidecar/rift/node_modules/cliui/README.md",
+          "size": 2656,
+          "sha256": "37f25fb12e21a84615cc819111e06c3bf480221ff4ad20fcbf492096392bf421"
+        },
+        {
+          "path": "sidecar/rift/node_modules/color-convert/CHANGELOG.md",
+          "size": 1417,
+          "sha256": "ee2ea4fe91d043ec4214aa60aeaff595009acdfdbb9ed4030896191126d70849"
+        },
+        {
+          "path": "sidecar/rift/node_modules/color-convert/conversions.js",
+          "size": 17040,
+          "sha256": "7225058075157fc78115b8be998a2effdfc1e5b3316b004a130ee5f19303574b"
+        },
+        {
+          "path": "sidecar/rift/node_modules/color-convert/index.js",
+          "size": 1708,
+          "sha256": "adb610f9a2fbba92548161871075262496b563dcd0e5e8f5c20f562160a74b34"
+        },
+        {
+          "path": "sidecar/rift/node_modules/color-convert/LICENSE",
+          "size": 1087,
+          "sha256": "693866fc419c6f61c8570438ec00659d156ec2b4d4a4d04091711f5f11a365d4"
+        },
+        {
+          "path": "sidecar/rift/node_modules/color-convert/package.json",
+          "size": 827,
+          "sha256": "9471d21744ca3137410448da6b3bd7b30ee91d42edce3b82ebcbf84faef74fb4"
+        },
+        {
+          "path": "sidecar/rift/node_modules/color-convert/README.md",
+          "size": 2853,
+          "sha256": "8cb35dae3a64e6edf1a680fecb9a850ea866795715aa46e09e211a1ba662d1c2"
+        },
+        {
+          "path": "sidecar/rift/node_modules/color-convert/route.js",
+          "size": 2257,
+          "sha256": "5f1420af4a106eaa68ed7b4bb5e46f47e0f251169e38841ec8262447e4691b5d"
+        },
+        {
+          "path": "sidecar/rift/node_modules/color-name/index.js",
+          "size": 4617,
+          "sha256": "97dabd7ebb70c33c19ccfa6956377fc722d9769924903f42a3bede30d83a8592"
+        },
+        {
+          "path": "sidecar/rift/node_modules/color-name/LICENSE",
+          "size": 1085,
+          "sha256": "c064f7a3e353bc1bc977f3c897941c75ef763f44f41677e0a15370ca0853d6e2"
+        },
+        {
+          "path": "sidecar/rift/node_modules/color-name/package.json",
+          "size": 607,
+          "sha256": "4a557ea373907e4643badb89ff21b3f4b969d20631086d78eab2e03d05c2efa4"
+        },
+        {
+          "path": "sidecar/rift/node_modules/color-name/README.md",
+          "size": 384,
+          "sha256": "796aef7006b975d2a8a5bad00219c9884e67a51ef96d36b3a0df622e60924c1c"
+        },
+        {
+          "path": "sidecar/rift/node_modules/decamelize/index.js",
+          "size": 323,
+          "sha256": "d51dde17c67ddf486a827fec29a9ecb3036ad36bb39089729184ea285b3ded4e"
+        },
+        {
+          "path": "sidecar/rift/node_modules/decamelize/license",
+          "size": 1119,
+          "sha256": "6fb9754611c20f6649f68805e8c990e83261f29316e29de9e6cedae607b8634c"
+        },
+        {
+          "path": "sidecar/rift/node_modules/decamelize/package.json",
+          "size": 717,
+          "sha256": "fb07ecfb5937f8757b0721fdafa6febff75d3c159f6dc8ec0d6ad4e1d1be7d9c"
+        },
+        {
+          "path": "sidecar/rift/node_modules/decamelize/readme.md",
+          "size": 781,
+          "sha256": "1787832d248f06c9bca2f809f8dad1135adbc25510c23038fb3cad4a4ba6ea8e"
+        },
+        {
+          "path": "sidecar/rift/node_modules/dijkstrajs/.travis.yml",
+          "size": 52,
+          "sha256": "02f031d8c9212a339e175c47b6e83ee7633c1e662cc5f0f3527a0778fe775480"
+        },
+        {
+          "path": "sidecar/rift/node_modules/dijkstrajs/CONTRIBUTING.md",
+          "size": 248,
+          "sha256": "2ea541bbad6bcbdf4c1146b3dcf1793c2bf53c3a9f4fffa6d1630977812f3670"
+        },
+        {
+          "path": "sidecar/rift/node_modules/dijkstrajs/dijkstra.js",
+          "size": 5206,
+          "sha256": "7f5721e77332370a71314f1536b8c552f4f9dbd99bbc6c5aa10df3253eacfd5c"
+        },
+        {
+          "path": "sidecar/rift/node_modules/dijkstrajs/LICENSE.md",
+          "size": 714,
+          "sha256": "c46324e45a005413535a6fb7a97e9eacd3cc6bf30335b7d5c10b8ee3af9e60c2"
+        },
+        {
+          "path": "sidecar/rift/node_modules/dijkstrajs/package.json",
+          "size": 1268,
+          "sha256": "b523e007019401be68405b83e846ef9da4682026e8be339ee4ee7888e90b865a"
+        },
+        {
+          "path": "sidecar/rift/node_modules/dijkstrajs/README.md",
+          "size": 391,
+          "sha256": "a318033578d0f261e3706ee479e345124fec5659dbb306c1ed250dd67e8fcf6c"
+        },
+        {
+          "path": "sidecar/rift/node_modules/emoji-regex/es2015/index.js",
+          "size": 11104,
+          "sha256": "8718dea4d28647912918dba60545890dc10ae672bfb186b6ec0af3fc5e826137"
+        },
+        {
+          "path": "sidecar/rift/node_modules/emoji-regex/es2015/text.js",
+          "size": 11105,
+          "sha256": "aad6b3f580511fe1fd70ae4ddadff4f4ec6bd5143f1a53b93c7e16eaf608d552"
+        },
+        {
+          "path": "sidecar/rift/node_modules/emoji-regex/index.d.ts",
+          "size": 427,
+          "sha256": "69922c48a8f28317217455373eedaf7303772d0c2370cd9b553f091e71f7d47b"
+        },
+        {
+          "path": "sidecar/rift/node_modules/emoji-regex/index.js",
+          "size": 10286,
+          "sha256": "c56978800e47f095cfbfe96712b5e78d150d1f62e32bb4943675213fce481ef0"
+        },
+        {
+          "path": "sidecar/rift/node_modules/emoji-regex/LICENSE-MIT.txt",
+          "size": 1077,
+          "sha256": "483acb265f182907d1caf6cff9c16c96f31325ed23792832cc5d8b12d5f88c8a"
+        },
+        {
+          "path": "sidecar/rift/node_modules/emoji-regex/package.json",
+          "size": 1278,
+          "sha256": "7bec29b9ca68f2c4becc60e866c2f9342ecdc89fab39841a818ccd9eda15c148"
+        },
+        {
+          "path": "sidecar/rift/node_modules/emoji-regex/README.md",
+          "size": 2691,
+          "sha256": "83fa2a1a5a1dd7318b99cb17c76927b775098d8fff0d3136c00303e4a7d0b267"
+        },
+        {
+          "path": "sidecar/rift/node_modules/emoji-regex/text.js",
+          "size": 10287,
+          "sha256": "4bae97c68c68cc8c56fa873fcbcbaf6869da926f3f38ddd9cb6ca22e8f60da41"
+        },
+        {
+          "path": "sidecar/rift/node_modules/find-up/index.d.ts",
+          "size": 3676,
+          "sha256": "0b3126e16e55540a97ecf1bf3bafa53aa97159ef09ed14acc871d7d84fedcbf9"
+        },
+        {
+          "path": "sidecar/rift/node_modules/find-up/index.js",
+          "size": 1940,
+          "sha256": "2c5674173aa95b0d714d876f2e2f865e3c5b641d4d6dd89c6a2f0b9c8d1ed768"
+        },
+        {
+          "path": "sidecar/rift/node_modules/find-up/license",
+          "size": 1109,
+          "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+        },
+        {
+          "path": "sidecar/rift/node_modules/find-up/package.json",
+          "size": 851,
+          "sha256": "19b9626d190ae97ecbc47843ff5781c462b6acfca35a2652dccded7d046dce53"
+        },
+        {
+          "path": "sidecar/rift/node_modules/find-up/readme.md",
+          "size": 4035,
+          "sha256": "2714ec043949381e12704a80eed1e170d9cb1347380af32c1c697766ef19d5f9"
+        },
+        {
+          "path": "sidecar/rift/node_modules/get-caller-file/index.d.ts",
+          "size": 71,
+          "sha256": "ac26d4fa29d2ba00092c3ed61a3cefbd0391b2d9fe95072c40072102da8b34be"
+        },
+        {
+          "path": "sidecar/rift/node_modules/get-caller-file/index.js",
+          "size": 1108,
+          "sha256": "583aba43e0ae0ccfb6c3a790019486990ac9241337dc38005f0189586e18295a"
+        },
+        {
+          "path": "sidecar/rift/node_modules/get-caller-file/index.js.map",
+          "size": 773,
+          "sha256": "f2d123b5756280a04cf41e21594ace05b6f6cb4629361ed1c998c8f57d90c6fa"
+        },
+        {
+          "path": "sidecar/rift/node_modules/get-caller-file/LICENSE.md",
+          "size": 745,
+          "sha256": "902dbb4154679fb2b8d7c33878183f45b268d01eae5e5033dddaa8852d45f213"
+        },
+        {
+          "path": "sidecar/rift/node_modules/get-caller-file/package.json",
+          "size": 954,
+          "sha256": "680a080d2885c05bc51dde429c80784bfb248ca3ef3685438079c5015721e2ae"
+        },
+        {
+          "path": "sidecar/rift/node_modules/get-caller-file/README.md",
+          "size": 1068,
+          "sha256": "de7b6d277d23b5b8a3cc7d31c7a0ba19972363df2818b88573b4a29e3e89ba07"
+        },
+        {
+          "path": "sidecar/rift/node_modules/is-fullwidth-code-point/index.d.ts",
+          "size": 549,
+          "sha256": "9a3e6bdffd8335b7d29c1d578ef7411703c57d07aff959bda92b27110f868532"
+        },
+        {
+          "path": "sidecar/rift/node_modules/is-fullwidth-code-point/index.js",
+          "size": 1756,
+          "sha256": "7db24c9c5d58273ba32eee1bec3dfebd393fdeddd0b5879ef01dc595476e6979"
+        },
+        {
+          "path": "sidecar/rift/node_modules/is-fullwidth-code-point/license",
+          "size": 1109,
+          "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+        },
+        {
+          "path": "sidecar/rift/node_modules/is-fullwidth-code-point/package.json",
+          "size": 737,
+          "sha256": "5b48496ca129073ed44a677b777ea3b91366c8bc228bc75fe858749a78ac1a32"
+        },
+        {
+          "path": "sidecar/rift/node_modules/is-fullwidth-code-point/readme.md",
+          "size": 843,
+          "sha256": "17df4cd59773b379650f1d15fb4e4333a1c7ff9e391a91b99961f65eed39384a"
+        },
+        {
+          "path": "sidecar/rift/node_modules/locate-path/index.d.ts",
+          "size": 1577,
+          "sha256": "82bf3772616ba306ba63c84550e2c45072f829abdb4392a54defe39a4e587b26"
+        },
+        {
+          "path": "sidecar/rift/node_modules/locate-path/index.js",
+          "size": 1336,
+          "sha256": "8661c367be253a559e8cbcae21192e8520b1513b421a1f383558ec4d88c03698"
+        },
+        {
+          "path": "sidecar/rift/node_modules/locate-path/license",
+          "size": 1109,
+          "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+        },
+        {
+          "path": "sidecar/rift/node_modules/locate-path/package.json",
+          "size": 720,
+          "sha256": "6fb0681c3501741d68594c69a0baae9f558f2d426c136946f2c7780a8c5e27bd"
+        },
+        {
+          "path": "sidecar/rift/node_modules/locate-path/readme.md",
+          "size": 1842,
+          "sha256": "d83ce2463d3599223d087ef5895444f6c756d46f6748a04b085c479dc39c457d"
+        },
+        {
+          "path": "sidecar/rift/node_modules/p-limit/index.d.ts",
+          "size": 1349,
+          "sha256": "f0f0fa01772a2d3baedca7341b361483e25bb275cb645bc3b52d9c8b569eb40f"
+        },
+        {
+          "path": "sidecar/rift/node_modules/p-limit/index.js",
+          "size": 1114,
+          "sha256": "b005ce7e192e136df67e3b724bfc156c396ac46928c79508d6fd532bef98cbec"
+        },
+        {
+          "path": "sidecar/rift/node_modules/p-limit/license",
+          "size": 1109,
+          "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+        },
+        {
+          "path": "sidecar/rift/node_modules/p-limit/package.json",
+          "size": 924,
+          "sha256": "d4529e88d06488042103f25322b0b60d90dfc5de0ed61c3b7c7d27f2ac3fe1bb"
+        },
+        {
+          "path": "sidecar/rift/node_modules/p-limit/readme.md",
+          "size": 2894,
+          "sha256": "f33a3fea32927b4a53e8a07ccff4e6722c5e1e8c4c44175f266a914816d88903"
+        },
+        {
+          "path": "sidecar/rift/node_modules/p-locate/index.d.ts",
+          "size": 1868,
+          "sha256": "1337620a49d58c831eb77dddb944fc7ef8b4792d7c0a662d70484e31c9077978"
+        },
+        {
+          "path": "sidecar/rift/node_modules/p-locate/index.js",
+          "size": 1239,
+          "sha256": "44b91a10c69197d1928db80b5bb89d8b31082efbf6b49caf3a424b6ff85909bf"
+        },
+        {
+          "path": "sidecar/rift/node_modules/p-locate/license",
+          "size": 1109,
+          "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+        },
+        {
+          "path": "sidecar/rift/node_modules/p-locate/package.json",
+          "size": 876,
+          "sha256": "26d44c5d05942d6b315ecde2f3dcf78972cfb3b4c81c932ac2573d3eea5f5e94"
+        },
+        {
+          "path": "sidecar/rift/node_modules/p-locate/readme.md",
+          "size": 2193,
+          "sha256": "f185e9ce4fe82baa71bcd091efcd3ca88bc6d2af50cdc4750ec195efc1c705bb"
+        },
+        {
+          "path": "sidecar/rift/node_modules/p-try/index.d.ts",
+          "size": 1082,
+          "sha256": "eed362bb69f02efd66fbe7050f1681f87751209cea8c877d5ee3e00d1ae36bb5"
+        },
+        {
+          "path": "sidecar/rift/node_modules/p-try/index.js",
+          "size": 211,
+          "sha256": "98b069ba5ff64b0f988162a310c47110d5c121d42c33aa7314817393f453c9e3"
+        },
+        {
+          "path": "sidecar/rift/node_modules/p-try/license",
+          "size": 1109,
+          "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+        },
+        {
+          "path": "sidecar/rift/node_modules/p-try/package.json",
+          "size": 636,
+          "sha256": "ff793c821f36985cde9f9d9ff6297e6c1304f8e597aa2d48dc53eda83c11e54c"
+        },
+        {
+          "path": "sidecar/rift/node_modules/p-try/readme.md",
+          "size": 1333,
+          "sha256": "2389e9cb72fae2955b9c76b1f45c9a626c23dd506a44a474796fc5212c16607b"
+        },
+        {
+          "path": "sidecar/rift/node_modules/path-exists/index.d.ts",
+          "size": 429,
+          "sha256": "1cbab72f53316e0997d014579384ad715731e1e701ab0f2b76667161a16f16ff"
+        },
+        {
+          "path": "sidecar/rift/node_modules/path-exists/index.js",
+          "size": 347,
+          "sha256": "379a30047a60f8d7b3bbbc2fa1fa0362f53e11ab7e63859fedfa7f2e25a99601"
+        },
+        {
+          "path": "sidecar/rift/node_modules/path-exists/license",
+          "size": 1109,
+          "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+        },
+        {
+          "path": "sidecar/rift/node_modules/path-exists/package.json",
+          "size": 607,
+          "sha256": "5e258d1a0d185ae469fec34de2af18913421b94181ef61238efcfe0b00d1b2c3"
+        },
+        {
+          "path": "sidecar/rift/node_modules/path-exists/readme.md",
+          "size": 1427,
+          "sha256": "9b41614e1a564d590df6e1367a4ee28f27efc0886e98bbfee104c5fa725db7b7"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/.eslintignore",
+          "size": 31,
+          "sha256": "085af2cfa7c300e3d95158ed1a6f8612e85155aad12a929bbbf24141af444585"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/.eslintrc.json",
+          "size": 320,
+          "sha256": "c1d37735f88f9bf614c8bfce8f18c7baf8fd05b38b9a4bdede21d6049e9c7b7e"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/.prettierignore",
+          "size": 43,
+          "sha256": "c7d3904032d9abaa8b6d59b7e28f38827c353f4007a84e4371d9c36f8d9454a7"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/browser.js",
+          "size": 480994,
+          "sha256": "99450bad8923cd4f3e9133faaf961bdb4ff4836246501b76033ff1e88aeece50"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/coverage/lcov-report/base.css",
+          "size": 5462,
+          "sha256": "5ba8f9c44e5eb2dc31a9f280c9dfa27e03f65a96459aa5e1a18b937bacb0e9da"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/coverage/lcov-report/bitmapper.js.html",
+          "size": 35272,
+          "sha256": "eaedf103b49e7d77dddc1fb2f5f24bbf603a0c36401f2aa749e40e0823f492e6"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/coverage/lcov-report/bitpacker.js.html",
+          "size": 26997,
+          "sha256": "cfa2e249b2e1604cd2c501d8e7375735bb3917864bb74d91918682a3887026ee"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/coverage/lcov-report/block-navigation.js",
+          "size": 2122,
+          "sha256": "ced077507cd5b25b6c8e9a37af35c3faad8707068be50214d0aeaec9bb031e3f"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/coverage/lcov-report/chunkstream.js.html",
+          "size": 25531,
+          "sha256": "a2363c9f88efd00189c0cda3d67277eac9e58b19acd7898ccb347f50fa497f99"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/coverage/lcov-report/constants.js.html",
+          "size": 6490,
+          "sha256": "89ad0d4adff587f607699b9426f395b12d81f66189635ba6642cd046a8b7bc88"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/coverage/lcov-report/crc.js.html",
+          "size": 7347,
+          "sha256": "213fb8ff920a31fa4791e751a869a201e317fdc8ce20605980e4dd2eba5f160e"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/coverage/lcov-report/favicon.png",
+          "size": 540,
+          "sha256": "5846cbbc06e3c41959c9c0ad0d6ae8b00ba104306cf3219866e2a9046babec6d"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/coverage/lcov-report/filter-pack.js.html",
+          "size": 23736,
+          "sha256": "bee4d4573734dd55f9f0f97257fd0940556fd26d4e5acedf1734320f1a2fdea0"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/coverage/lcov-report/filter-parse-async.js.html",
+          "size": 5587,
+          "sha256": "8e511e88d47a9872761dd0530dd7c52e00f8e9e419d2a8c47741b2657357677e"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/coverage/lcov-report/filter-parse-sync.js.html",
+          "size": 5250,
+          "sha256": "6ba6b833ff28ccd1a64addc1b6b7a6e4132d334d9cc6f916ec74b7ab8f0feeef"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/coverage/lcov-report/filter-parse.js.html",
+          "size": 24004,
+          "sha256": "ac25de6f8ef5f816fc0648a239b8fdf051700e35ada9a2cccb36555581839995"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/coverage/lcov-report/format-normaliser.js.html",
+          "size": 13759,
+          "sha256": "eb0e304c7aaf884a4082555b2b953712021ca2f4876ad2fb66987d773dea9501"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/coverage/lcov-report/index.html",
+          "size": 18773,
+          "sha256": "88237339684ba69234c6a2efcd855cee0aad63b2e05f738796649b96e5aa3373"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/coverage/lcov-report/interlace.js.html",
+          "size": 13499,
+          "sha256": "ca75f8dba12107db18c4685df3585f507dd3444618a98dbbe3d242169028bac8"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/coverage/lcov-report/packer-async.js.html",
+          "size": 8610,
+          "sha256": "44051764a40709eb8cc465e3d78168816f24e9673e8f34b0281c95598f2c5790"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/coverage/lcov-report/packer-sync.js.html",
+          "size": 10369,
+          "sha256": "0d6cfb937e724d5604a4bae1e259fcac879fdfca3c883822a348ddbda0def899"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/coverage/lcov-report/packer.js.html",
+          "size": 19095,
+          "sha256": "b2341bf6b0af2579249a34b22f0324f3bece06134b0388b5faf1fdb5e18bf6ed"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/coverage/lcov-report/paeth-predictor.js.html",
+          "size": 4716,
+          "sha256": "c304c4527bb23ff87b57ed1078d5c1df5fe6ba13f7f4bbf5bc0c7411e60cd7e8"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/coverage/lcov-report/parser-async.js.html",
+          "size": 23205,
+          "sha256": "d04fd113f8fd422f7cdb4d789dba54012425c008818099275a4fe26e1239c64c"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/coverage/lcov-report/parser-sync.js.html",
+          "size": 15603,
+          "sha256": "9865c91d68ed106839c47ccc9c9412d7963160609472e72ebf215d53aae88d43"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/coverage/lcov-report/parser.js.html",
+          "size": 38742,
+          "sha256": "c26d86d02f9ef4b5430cb5afde6ba6d828f53d9ec2e206d5de9f1ead1921ba2b"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/coverage/lcov-report/png-sync.js.html",
+          "size": 4309,
+          "sha256": "3081da37e24f1dc1a687caf0ada7ccfb6aa9edd8c83faf535d1db1edfae58d8f"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/coverage/lcov-report/png.js.html",
+          "size": 28551,
+          "sha256": "87fb644c824ee9f052a3278374dac347e9c424a537343aac7172e2d3c0e3a287"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/coverage/lcov-report/prettify.css",
+          "size": 1060,
+          "sha256": "31c66a00ede9f0a6ac6dfc0c3819a6cb925ebb771cde59d8228ec8bc8595a91b"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/coverage/lcov-report/prettify.js",
+          "size": 27207,
+          "sha256": "8bfb90ed950473c414193ad349ba4f1302955c2a500b6e5ed55e841b398fc1f1"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/coverage/lcov-report/sort-arrow-sprite.png",
+          "size": 209,
+          "sha256": "cc0509bb6793ce64f35b199d39fea7bada13ecc2d395a43957d0d8aae4f05864"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/coverage/lcov-report/sorter.js",
+          "size": 4495,
+          "sha256": "c3b624472100170dc6f36f4742424645b3056ab61c411fc3a52c06bc52fc0d72"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/coverage/lcov-report/sync-inflate.js.html",
+          "size": 24234,
+          "sha256": "50867093a5f8da4052c02f7d471cfffbcf0e00a2581be0c5ba573a0a3a944fab"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/coverage/lcov-report/sync-reader.js.html",
+          "size": 8436,
+          "sha256": "5788f32a3f7298469b28189ea56d76fbefff1fb50aff7519374517c3341772bf"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/coverage/lcov.info",
+          "size": 28336,
+          "sha256": "625830753142e349a3327c99a72fea7b561cb782e9f7761fd37e8ced6030896a"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/lib/bitmapper.js",
+          "size": 6477,
+          "sha256": "3f2f720e3a2b4e41cdc03e9f58bb1794bec26dcd1b22568e41ce0b84ab20aeb5"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/lib/bitpacker.js",
+          "size": 4670,
+          "sha256": "3f7bfabcbc82bedd0cc8551bc210b44dc1fb179fa2ce3b8b1d39fa307d8af204"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/lib/chunkstream.js",
+          "size": 4249,
+          "sha256": "43c5507901554a29c5a29e555aaeb3c3987b84fb3aa8c681c1b30794a477aa85"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/lib/constants.js",
+          "size": 662,
+          "sha256": "9e3b4f994ac93751e9ccb4d453e85e4f25a0b086a9f24ec92c7dcb06995bdf6c"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/lib/crc.js",
+          "size": 853,
+          "sha256": "57e2328cfa361fb54f1f4b3a59e071c1ccc864095e4f3759a957cd15aa2a8b65"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/lib/filter-pack.js",
+          "size": 4279,
+          "sha256": "500c1b3b34702c895e9e689143f44280687cac363447523679ec13d12bd564f6"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/lib/filter-parse-async.js",
+          "size": 558,
+          "sha256": "328b6173f1a2a4d91425220a0fa421699552f254006a57ede9f4018ced50a7ee"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/lib/filter-parse-sync.js",
+          "size": 483,
+          "sha256": "201a08dfab26a2903c0dabcbdfe0406b3fa33d60f59b591878329f590fac48ff"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/lib/filter-parse.js",
+          "size": 4798,
+          "sha256": "b8aad6f29371f5b13b232643781a7c49f7d36d565136ddda1ed7fbaca987ce2c"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/lib/format-normaliser.js",
+          "size": 2329,
+          "sha256": "1a6602c8fd0ecbe2c340954af4ae4e3446c98acd98c8211ab4b27a7553fb4a7f"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/lib/interlace.js",
+          "size": 2004,
+          "sha256": "3bb5d57153078ff586667e9a9d2c06db993c8ff1638e0521a9883cdeea6e1e3f"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/lib/packer-async.js",
+          "size": 1162,
+          "sha256": "f50df0610749ce7b1a99abbe9e4596df7c16f96efd3848f12dd632b22cb02b45"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/lib/packer-sync.js",
+          "size": 1193,
+          "sha256": "1b516238168a42704e62ba44528406188864a6ddda2ae92d1b91e5e078cdaa2d"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/lib/packer.js",
+          "size": 3723,
+          "sha256": "b5f9956364c80d67c28d615ace639a5fb4d4d79d3acb235237f3050dca220e03"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/lib/paeth-predictor.js",
+          "size": 372,
+          "sha256": "48555b909af708593dade8e8df75d18ecdffdb6577e362eac01eae357ef1e0e9"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/lib/parser-async.js",
+          "size": 4317,
+          "sha256": "3f9f14c61e5c313e522d21352eb4ed1dc6ce9f3f62e02e59df0340c0c431eefd"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/lib/parser-sync.js",
+          "size": 2543,
+          "sha256": "040cba5289f75be9946076c19d1310b86bf4113a4257b09133c61e04d0b7f0c0"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/lib/parser.js",
+          "size": 7720,
+          "sha256": "574e43fea28a28cc6feb7ab62a480a86bb75411ee4bfaba76a7e9d7310b6e94c"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/lib/png-sync.js",
+          "size": 252,
+          "sha256": "867b1a78dcd3e45458eb4f0af01acd48f38d3a31225bd7cb8dd8ee3966ab54be"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/lib/png.js",
+          "size": 4418,
+          "sha256": "e02cecbd36327829758386dc3f0ca4a36a2339ccb5d5e824ca3556e2c3f89726"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/lib/sync-inflate.js",
+          "size": 3751,
+          "sha256": "08cb8afb79a4c0ab58e94601dab22261daf6638382b211d6a7f6bfbc16d27a0b"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/lib/sync-reader.js",
+          "size": 1116,
+          "sha256": "fa8997f47f5dcd998b6a0873099de7f575673ea2af6eac9517be4abb180761c5"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/LICENSE",
+          "size": 1151,
+          "sha256": "176b07a18c0bb3836aaeb61088fd0bf11a38f66e6f15e3fbda85faa225250d6e"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/package.json",
+          "size": 1805,
+          "sha256": "1f3fbe71a51c03470a83044efb2f7dfcca4877f22f1d54f9d952081cb28fbedf"
+        },
+        {
+          "path": "sidecar/rift/node_modules/pngjs/README.md",
+          "size": 13396,
+          "sha256": "ab0b7c2c0a11b3065b176be5cd9f253351c2892dba832b677f440fd832e0b74e"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/bin/qrcode",
+          "size": 3640,
+          "sha256": "d304dd7918e13800cde038ce37f51087816ccbe42c3688fbe638fd39c04bab5c"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/helper/to-sjis-browser.js",
+          "size": 57,
+          "sha256": "fd53562ed783c453278f656c3d851c6f2d5e5bde8aa50046c311126a229510ce"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/helper/to-sjis.js",
+          "size": 22178,
+          "sha256": "ca432a194287a573ba2b1600e01c647c9c2dcec45f92cc0412a11cb5121f3eaf"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/lib/browser.js",
+          "size": 1886,
+          "sha256": "868da79917b05db1f3d4402f4875148fb06ce843cbd74c65429cd6ef960b1638"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/lib/can-promise.js",
+          "size": 275,
+          "sha256": "fd18906803bd4cfe4f23801a7032c5a1e10be31274ba25dc34541932cdd8f253"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/lib/core/alignment-pattern.js",
+          "size": 2996,
+          "sha256": "7e642a801c5c3d114bcceeeb08a3930369ec16fe874bdb617f02efb43aaea9ba"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/lib/core/alphanumeric-data.js",
+          "size": 1822,
+          "sha256": "cf8f81197e02c0db069155a2e82c098d26329019cfd06cc0e4479124636fa1ea"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/lib/core/bit-buffer.js",
+          "size": 719,
+          "sha256": "c6f982814aa373da6e44183a61f75762c8559909087fff76603885b180bac0ad"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/lib/core/bit-matrix.js",
+          "size": 1501,
+          "sha256": "77e051929fbc9d3b3ba91bd9b190f9a1ab3ccea162d627696ad2c01bf41e51bd"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/lib/core/byte-data.js",
+          "size": 675,
+          "sha256": "24614cb942165dcc5378117a951cc1d68fbfc2e60043830111ae99283cd9aa94"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/lib/core/error-correction-code.js",
+          "size": 3415,
+          "sha256": "03683cae6cc410b83f8ad0e87fa394df5102b52ca4ce843e507aa9f6acce13e5"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/lib/core/error-correction-level.js",
+          "size": 893,
+          "sha256": "7f31b2250223cb7549bf3c305cce948ad9b0ee67cb9ee93b6c08352b7fa2b7f6"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/lib/core/finder-pattern.js",
+          "size": 599,
+          "sha256": "e5808e9b8ed06fd7c3ed201a03f7e7341a5c80f6a8b4cc78c9a94c3ee0ddd6e2"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/lib/core/format-info.js",
+          "size": 1126,
+          "sha256": "889b133cd6a86f4079a3a5d1dfd94c495ca71d4fde4ec88ce9e9a5de358629d0"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/lib/core/galois-field.js",
+          "size": 1899,
+          "sha256": "d487207ce5040b49f95441bedafb6dbc9c010b245a0f0f47b9e3f10f8d9530a6"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/lib/core/kanji-data.js",
+          "size": 1584,
+          "sha256": "2dcd7d5aee492392e0c47976ae718e9783c5b13234487804ed21558fbd4a62de"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/lib/core/mask-pattern.js",
+          "size": 6101,
+          "sha256": "c8cfdab7b8d8276f9c1128ab8e5d930759df7594f03211f72b80c3002af91aa9"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/lib/core/mode.js",
+          "size": 3983,
+          "sha256": "25d3574cf4b0cdbd62363ff2c57eb46da41d21124e6d37eb0e84f979799bd530"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/lib/core/numeric-data.js",
+          "size": 1211,
+          "sha256": "3e506376e4c84b88162024c1d840b5bc3721da3b0d02f18784161adea5e3b2e8"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/lib/core/polynomial.js",
+          "size": 1589,
+          "sha256": "34cb4e4216fc51fe75ac1c4bb00c4f4fc118a51da50c8250aec951062ff3a3c4"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/lib/core/qrcode.js",
+          "size": 15128,
+          "sha256": "216e490908ed95df74992a05d44efa35ea7bc8dcab27b49b446725964704e833"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/lib/core/reed-solomon-encoder.js",
+          "size": 1625,
+          "sha256": "080273fcf5a73c2348330f3edb55f3968c78853e298dc55a074becd7cee3faa2"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/lib/core/regex.js",
+          "size": 1084,
+          "sha256": "974d9358148d11c8e48713ef2da8fc12e597b76f4e6fc6bde00cfe7c8094efa1"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/lib/core/segments.js",
+          "size": 9331,
+          "sha256": "abd08a6ddd778c92e36e2a303d2b4a3b4ad1d9089d2a7605bee8b9d06da7846a"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/lib/core/utils.js",
+          "size": 1621,
+          "sha256": "1b66145cb9afddadf46ea7314b168e0b8369b2ab4938256fe64bd1c465a473bd"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/lib/core/version-check.js",
+          "size": 268,
+          "sha256": "9cffe3a6f9cbb978022c0d0b1652fb2f3d381b9e48b7e01dfc744ded28736da2"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/lib/core/version.js",
+          "size": 4928,
+          "sha256": "1221665a29e6927d3823912bde8bd711c114c61188d7ce862997a33d47fcfba9"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/lib/index.js",
+          "size": 303,
+          "sha256": "c1f2fa38779ae32562a32a1392f7f747649d3ec839eebb934950cee25fb1c2b4"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/lib/renderer/canvas.js",
+          "size": 1501,
+          "sha256": "0ce857661e234786295c9b4042cad6dc1f4d7a496c4990f52870d2bc4ab1e6a9"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/lib/renderer/png.js",
+          "size": 1776,
+          "sha256": "26c35ca2087bde13f91a69cbb755870b6e9ca97e2ca9999f11afaafda16a681a"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/lib/renderer/svg-tag.js",
+          "size": 1971,
+          "sha256": "2f733e88d0b0155fae4aa4827de0fb9ae73cbbfdfc0cae52dc9d5ed17ae0447d"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/lib/renderer/svg.js",
+          "size": 532,
+          "sha256": "21a5e38ca570d96c9be324c9395950e8959b2d82f23c256614ac3f517d1337ef"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/lib/renderer/terminal/terminal-small.js",
+          "size": 2398,
+          "sha256": "1b1d711cea09c0e96dab8eb1f12373315eb730016215dd2ad26beacda4ffcd80"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/lib/renderer/terminal/terminal.js",
+          "size": 1220,
+          "sha256": "298a44e0a8f8080d4c76fd7078ebfb9cecbd0b869207fb70cd583e40b89dba23"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/lib/renderer/terminal.js",
+          "size": 271,
+          "sha256": "227348f2f20ab09dda29e404c95a58a90b25c5511f9208c71516dc69f0b88fa3"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/lib/renderer/utf8.js",
+          "size": 1579,
+          "sha256": "a47dc2b5147bff1e503e299d9effb2b83ddd379e976e9fe66f4d4519034565f4"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/lib/renderer/utils.js",
+          "size": 2894,
+          "sha256": "03ffb1b5f7e629bef61a83835107b391efc0b7a71ab9329a950708b20f361b87"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/lib/server.js",
+          "size": 3571,
+          "sha256": "67555d163f483ee6309fa8f5a038ea2b649347f159c2b31159fdf073ab71a744"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/license",
+          "size": 1076,
+          "sha256": "8df47c6ad9ac2c41eb9b2a72def9908959da0ede8dadd56c7b249c1bdb0c5ce6"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/package.json",
+          "size": 1766,
+          "sha256": "cbe26d7282c802f4ab9c1f790c5d8450d2b5c82e8bb5f67e3a5c2641ea347d1d"
+        },
+        {
+          "path": "sidecar/rift/node_modules/qrcode/README.md",
+          "size": 22372,
+          "sha256": "2c562622aa4a285617dbf412fa51ae73b6f00a73c8423c295103c4bbbae72035"
+        },
+        {
+          "path": "sidecar/rift/node_modules/require-directory/.jshintrc",
+          "size": 1853,
+          "sha256": "2338f248b4ae48525907b524f49de077bc53f6f387d912150f15ca849413689d"
+        },
+        {
+          "path": "sidecar/rift/node_modules/require-directory/.npmignore",
+          "size": 8,
+          "sha256": "17d3035a74abeaaf2ac3156d1388eaa1efad46a68717edf4fa3bcb4d0c5554b7"
+        },
+        {
+          "path": "sidecar/rift/node_modules/require-directory/.travis.yml",
+          "size": 36,
+          "sha256": "5e5329df283badd5487a0556f7cfcedd1f80361915cf246795a475074f64cf81"
+        },
+        {
+          "path": "sidecar/rift/node_modules/require-directory/index.js",
+          "size": 2867,
+          "sha256": "65eaf8b7b519d6ae7be7ea20382d91a117d9c689897897ce4c2ee798e128a2d3"
+        },
+        {
+          "path": "sidecar/rift/node_modules/require-directory/LICENSE",
+          "size": 1099,
+          "sha256": "a92e52eb1fa7cd746e3827bf01d3a3589bbc8e1e51348b1da042aad165525ad1"
+        },
+        {
+          "path": "sidecar/rift/node_modules/require-directory/package.json",
+          "size": 1033,
+          "sha256": "5690bdddd6eb4abd795fa5319df7552279508df9d562d571e3132ddff3045a71"
+        },
+        {
+          "path": "sidecar/rift/node_modules/require-directory/README.markdown",
+          "size": 5175,
+          "sha256": "958e646593907b1757b5a359844bdf69374392f6089eb009a6e0d6591d866497"
+        },
+        {
+          "path": "sidecar/rift/node_modules/require-main-filename/CHANGELOG.md",
+          "size": 852,
+          "sha256": "c34727bb46dcdc250b1b2403bbe733a961f4e1afedb192d05ee1b3aa7e5add6c"
+        },
+        {
+          "path": "sidecar/rift/node_modules/require-main-filename/index.js",
+          "size": 427,
+          "sha256": "2ef41461635fc6b9689fdf72a9989dd2f675757483d85658968056ccec0eab21"
+        },
+        {
+          "path": "sidecar/rift/node_modules/require-main-filename/LICENSE.txt",
+          "size": 731,
+          "sha256": "365496ca1f56da40b23c9815fc40fa9005847b2f8f8fd1c1a4929ef25ec8cd1d"
+        },
+        {
+          "path": "sidecar/rift/node_modules/require-main-filename/package.json",
+          "size": 854,
+          "sha256": "cc3853357a59a82c9a0e5cebbe52221eccc4a52bced4557300b69bbec17fa41b"
+        },
+        {
+          "path": "sidecar/rift/node_modules/require-main-filename/README.md",
+          "size": 1064,
+          "sha256": "5c71d0b3841b668697cea30d8ad369a695e54add095cee40fdd8db3e37d27013"
+        },
+        {
+          "path": "sidecar/rift/node_modules/set-blocking/CHANGELOG.md",
+          "size": 718,
+          "sha256": "d3b4a111a1f1849b18cfeeffdc5d69f06522f37257b97db1041a7cb2186f6629"
+        },
+        {
+          "path": "sidecar/rift/node_modules/set-blocking/index.js",
+          "size": 252,
+          "sha256": "8b238f1de62bb2a7b35a9e6b0364a64ce0f357cb63251580ff5a25429712e1d1"
+        },
+        {
+          "path": "sidecar/rift/node_modules/set-blocking/LICENSE.txt",
+          "size": 731,
+          "sha256": "365496ca1f56da40b23c9815fc40fa9005847b2f8f8fd1c1a4929ef25ec8cd1d"
+        },
+        {
+          "path": "sidecar/rift/node_modules/set-blocking/package.json",
+          "size": 985,
+          "sha256": "e0c598215c66f2c35edbc3cb2a3433d45f9d4b726524c095c93e7376d87a3bce"
+        },
+        {
+          "path": "sidecar/rift/node_modules/set-blocking/README.md",
+          "size": 1538,
+          "sha256": "e07ef2948101128a2273a88cd0ddd30b90f7c0d8e5de12ab59cffa9ec873c4f1"
+        },
+        {
+          "path": "sidecar/rift/node_modules/string-width/index.d.ts",
+          "size": 792,
+          "sha256": "08f234e8871dacf59e1f194fd83c11d002d8d4d488f7be138900755e3e637a24"
+        },
+        {
+          "path": "sidecar/rift/node_modules/string-width/index.js",
+          "size": 923,
+          "sha256": "ed69ea4f757130e46dc48a0cc31beb6257e61a31c70936d82b8a3f02ffd64df5"
+        },
+        {
+          "path": "sidecar/rift/node_modules/string-width/license",
+          "size": 1109,
+          "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+        },
+        {
+          "path": "sidecar/rift/node_modules/string-width/package.json",
+          "size": 941,
+          "sha256": "6457a02418f004fe5d3fbbb19c7cbcc1450a8b887ff9a471dc6985ac83a48d36"
+        },
+        {
+          "path": "sidecar/rift/node_modules/string-width/readme.md",
+          "size": 1396,
+          "sha256": "cd4aaf53cc7df4210595512d1fdfcd78b671da703a7e695673fcecc167ec66a3"
+        },
+        {
+          "path": "sidecar/rift/node_modules/strip-ansi/index.d.ts",
+          "size": 369,
+          "sha256": "4b0f7f88fc46a672cb59eeb2782af271c203600d602f57a717ef07f96092caf8"
+        },
+        {
+          "path": "sidecar/rift/node_modules/strip-ansi/index.js",
+          "size": 154,
+          "sha256": "bf37cd692bf030c2ec270945bc26aa8b19ad379fa5916f12304758f709ab0978"
+        },
+        {
+          "path": "sidecar/rift/node_modules/strip-ansi/license",
+          "size": 1109,
+          "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+        },
+        {
+          "path": "sidecar/rift/node_modules/strip-ansi/package.json",
+          "size": 798,
+          "sha256": "0130850b9da0584f54cc20d3dab6365c807e9436ac78e016d5009efa99bd0530"
+        },
+        {
+          "path": "sidecar/rift/node_modules/strip-ansi/readme.md",
+          "size": 1599,
+          "sha256": "cb384db30337ecec75919b4c69aab67358b4f4e384406956687894b6d777413b"
+        },
+        {
+          "path": "sidecar/rift/node_modules/which-module/index.js",
+          "size": 248,
+          "sha256": "cd3b335884bb4d258e863128b87f90a8025ce97c9cde64b9114e8cfbfc71618c"
+        },
+        {
+          "path": "sidecar/rift/node_modules/which-module/LICENSE",
+          "size": 731,
+          "sha256": "852bf81203aa93aa89afc9f881ebb035322dc7334aaceff435c557634c94a815"
+        },
+        {
+          "path": "sidecar/rift/node_modules/which-module/package.json",
+          "size": 917,
+          "sha256": "02f6f6833d09c32100317a390892888ae44da4f712b2271d4b308bcace09a99f"
+        },
+        {
+          "path": "sidecar/rift/node_modules/which-module/README.md",
+          "size": 2140,
+          "sha256": "9f419c36b60ea4cb30e83839134f88d3bae8dd43154da8b51f8bf0380805a5ea"
+        },
+        {
+          "path": "sidecar/rift/node_modules/wrap-ansi/index.js",
+          "size": 4686,
+          "sha256": "1877d6fb2104414dcf488eadc2a783bef939a58173d97d7c4a0b1f332d3d5f65"
+        },
+        {
+          "path": "sidecar/rift/node_modules/wrap-ansi/license",
+          "size": 1109,
+          "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+        },
+        {
+          "path": "sidecar/rift/node_modules/wrap-ansi/package.json",
+          "size": 945,
+          "sha256": "ee3d1495da354ea19d3900e3f28a4e93cc202966623fee4ad6fe54346b385075"
+        },
+        {
+          "path": "sidecar/rift/node_modules/wrap-ansi/readme.md",
+          "size": 2760,
+          "sha256": "308f129e80db2de7054fe7c1c50838ae6c3f214b6fb008d669f48e32edf1702f"
+        },
+        {
+          "path": "sidecar/rift/node_modules/y18n/CHANGELOG.md",
+          "size": 1250,
+          "sha256": "aaf519e5a685a2c79b52248a55cd0a8cb043207b6459a4e10eddb79acbb9810f"
+        },
+        {
+          "path": "sidecar/rift/node_modules/y18n/index.js",
+          "size": 5273,
+          "sha256": "ca78904cb3c3dc166f0fe659d2fa554847b52405249dffe3074e11bb32991657"
+        },
+        {
+          "path": "sidecar/rift/node_modules/y18n/LICENSE",
+          "size": 731,
+          "sha256": "2034cce3b6fafcddd642c4175e01d3ddfc332a53b9f20fdc46b1466dc89ac469"
+        },
+        {
+          "path": "sidecar/rift/node_modules/y18n/package.json",
+          "size": 889,
+          "sha256": "5995de811ffa1b8a8e9ed9bd0444f60058dba9ce1ccbe12f2d5e12c31a975d9c"
+        },
+        {
+          "path": "sidecar/rift/node_modules/y18n/README.md",
+          "size": 2848,
+          "sha256": "230eff3f840c6d29b3f03293d37c446e0cc30148ab72843893cd91720b27027f"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/build/lib/apply-extends.d.ts",
+          "size": 152,
+          "sha256": "ea0894945e17b90936c26d7e02350581ab7f963d2350c41046f10a2bf21bcd15"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/build/lib/apply-extends.js",
+          "size": 2488,
+          "sha256": "16bd39c938b97b8d834ac8e7ab86e4d0723dfecbd7f755678a6d15bf7aaeee92"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/build/lib/argsert.d.ts",
+          "size": 178,
+          "sha256": "aefe0bb5cf603fe62c4f469d7d6d4ff9ce7f3e97f10305d0b6a4eb48f862664f"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/build/lib/argsert.js",
+          "size": 2751,
+          "sha256": "5932f5a1e49b4150d78bb033e78ae437e42545df5a0e467e5dac8e8dada00b29"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/build/lib/command.d.ts",
+          "size": 3146,
+          "sha256": "d58eef2363745ae57ea6bf6ff839b9062868b0f2ca5df500883f2b00cbca44d9"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/build/lib/command.js",
+          "size": 18037,
+          "sha256": "9474e83f9ebd9c7ead2f2ef58b776c73733f46f0e2075c36ccac1b7190f64696"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/build/lib/common-types.d.ts",
+          "size": 1209,
+          "sha256": "7a38357a59cc0cfc2300a5ee246626600001ab9213789caacd6e4e38ae983809"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/build/lib/common-types.js",
+          "size": 774,
+          "sha256": "3cae601eec527ee688893639ced607bed7ada2364b7f7711cf42b826a0f9f196"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/build/lib/completion-templates.d.ts",
+          "size": 1462,
+          "sha256": "626bfa7c87bfb27d7e5a3c809e5f1f7cfaebfa45cdab4718a139252912d54567"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/build/lib/completion-templates.js",
+          "size": 1530,
+          "sha256": "bfa4c9c625577bde70168e72ca3a3b5c1aefff22341d34484985cec21f68c786"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/build/lib/completion.d.ts",
+          "size": 994,
+          "sha256": "da9c20ef27edd1a509fd31b9206890265e95179fddd0422a7f0a192102a22942"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/build/lib/completion.js",
+          "size": 6184,
+          "sha256": "c2bf1d7345bcca7feb28a334e32b8f3782cc3b796a58dde57f447bf38857332e"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/build/lib/is-promise.d.ts",
+          "size": 96,
+          "sha256": "dbb8ec3a61ea0dc6da01f6cde1bb0c2c347740584dbdcd30594dedb661f3a641"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/build/lib/is-promise.js",
+          "size": 284,
+          "sha256": "9c1127f2fdc3019ff216d3d35df44f2ef60e299577363364d561dcd4f92f3e49"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/build/lib/levenshtein.d.ts",
+          "size": 67,
+          "sha256": "35126a9ca15de89f18677536d24d4b4ac14cd45fc9362705f8c0a87df7cab13b"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/build/lib/levenshtein.js",
+          "size": 2354,
+          "sha256": "478054c3ec4f1097e9798a5959a1987da85d2ed81847ccd1f7f3181ae519683d"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/build/lib/middleware.d.ts",
+          "size": 764,
+          "sha256": "8316be13bd38a59b7b75a65614296adc6f9623f24736c0d9e8d49d071abfe6d6"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/build/lib/middleware.js",
+          "size": 2518,
+          "sha256": "3e39d055563827f02075e807f2bb80843f28ffea0ec33377580580580fa8f3ee"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/build/lib/obj-filter.d.ts",
+          "size": 119,
+          "sha256": "3ef2c55bc20ebcd8bc4371ac54fb32db92dca19f308f1e9b28efcdf81d88088f"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/build/lib/obj-filter.js",
+          "size": 438,
+          "sha256": "eb02edac893d85c591029bb11559269e71c0fdcd504324243ffba4cea39e6c65"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/build/lib/parse-command.d.ts",
+          "size": 309,
+          "sha256": "6d0f8785177e153618eb077a751c472a19784675a2aad5800deae2ef7738ae0d"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/build/lib/parse-command.js",
+          "size": 1195,
+          "sha256": "9915c3493895846d65fbb78dfa9eeabd18cca0b3c8cf3adcf77b7fcdc9488da3"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/build/lib/process-argv.d.ts",
+          "size": 115,
+          "sha256": "f7725da8d44f739b42da0c0057ddecd35509e5d07cc8cdbac8a8dde99f758404"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/build/lib/process-argv.js",
+          "size": 1382,
+          "sha256": "74f093a7705bbec1b12fce12915ef2100c351fa078a2961217779c849e4a4534"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/build/lib/usage.d.ts",
+          "size": 2100,
+          "sha256": "e71a249bda4436dd64966505bab524d1e432c903ade453e2fe32a4fefc576746"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/build/lib/usage.js",
+          "size": 20418,
+          "sha256": "098740f81ce810b420afa6d6479d3195d2ec453ab41f310d0d0721fc1d96cfe4"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/build/lib/validation.d.ts",
+          "size": 1746,
+          "sha256": "c24e3aab30e3de66df7b987d3f5709a37680c287a0acf43ad96d5d2eeafce539"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/build/lib/validation.js",
+          "size": 13441,
+          "sha256": "d6cbaaea7297252ee53a48aeb33b90efb8ad1ea09321b6036a5a6d80d12524fa"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/build/lib/yargs.d.ts",
+          "size": 12433,
+          "sha256": "ee6a9d7a09303b3b870a641fdf173e3dff75b186e5deabe734a670bf8de843c2"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/build/lib/yargs.js",
+          "size": 48661,
+          "sha256": "e89c2fbd14370b3e4ac098eac7543fcb1e35f921f141253e465bdc2f8e67ce35"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/build/lib/yerror.d.ts",
+          "size": 102,
+          "sha256": "2718ec8e433160bc1aba92cada91f56d8589a0cb236af53bbf4e302eaac673de"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/build/lib/yerror.js",
+          "size": 301,
+          "sha256": "48b8954ee3977f7e9eef400a1b194770258fe7d754336541af3efaf45b3b5721"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/CHANGELOG.md",
+          "size": 24871,
+          "sha256": "2e82050b92684b91c6f9968aad6a41c7953e51b01185d6f58a3ff19910e013b2"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/index.js",
+          "size": 1093,
+          "sha256": "de66bcdfdb3828be052a142ec3ef38f727671a24230be3bf2734964c77598b16"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/LICENSE",
+          "size": 1146,
+          "sha256": "2f1a503bfab84b3ba7393627308b3274501e459e3b5185bbb56bbf16cb1602d4"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/locales/be.json",
+          "size": 2602,
+          "sha256": "134235e6c034c2ff51eeef9f00032cd47cbd4f836744fae0821143207c857edf"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/locales/de.json",
+          "size": 1805,
+          "sha256": "dd49fd237f42a5c3da5140730ff81dbfa543bd8eb9a529331b876e00d46902e1"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/locales/en.json",
+          "size": 1917,
+          "sha256": "cd7fbd66c1d52da7b7897dfc44e270ebaf3970e1cc34468efe5e346f74674573"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/locales/es.json",
+          "size": 1885,
+          "sha256": "5e9eab1fbfdde64463e1cae36fbbafe035d0a80fbfe13ec99557d38e5ac9e020"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/locales/fi.json",
+          "size": 2113,
+          "sha256": "04633d64ab6fcbe1fb96ef3c3a347f73995621b97e560729c64d170521ad7aa0"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/locales/fr.json",
+          "size": 2117,
+          "sha256": "12fcfb7c6d0f59c378db746bbf018a1fc3b662b9a4fcc7caa6a037e0f5c375f0"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/locales/hi.json",
+          "size": 3074,
+          "sha256": "66aed85c3d7e2b6564e401c32d12d406983b69f5b965f01aab1b7cbb1c3ba2cf"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/locales/hu.json",
+          "size": 1883,
+          "sha256": "5149e6aaec4cd1facd504efbae03a5cc2d5f6d24cd6c6418c818740b8abd72a2"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/locales/id.json",
+          "size": 1821,
+          "sha256": "3745df73a41c026c2ef8fff048c56afd4e1e362deacc43c04be260fb0d3df93c"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/locales/it.json",
+          "size": 1855,
+          "sha256": "2eed3f6e2f402a7a5c1049ef323d6670e427e9905233ce66b38fbfa8cef282f2"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/locales/ja.json",
+          "size": 2411,
+          "sha256": "b63a4a4d7b7dfbbcd25a5359197171a783c824e7d408c3b2ccc2e360810e3a15"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/locales/ko.json",
+          "size": 2262,
+          "sha256": "adb39ecd2e9811c4097155e20e41b404f4d0b2794120ada8d3752dba60c51683"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/locales/nb.json",
+          "size": 1680,
+          "sha256": "8de6f5381e45e448536b0143a6cc6130b7d87ea495881e5bebc4e9569238ebe6"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/locales/nl.json",
+          "size": 1958,
+          "sha256": "638c26e2d638bc08023e4e9924237c2c0f67130eb4d454c824b15cd4da916671"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/locales/nn.json",
+          "size": 1661,
+          "sha256": "466b2d749e6115b0bc8fe0fce420f4e049f3c7e69831ae4ab0e66b402230a627"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/locales/pirate.json",
+          "size": 569,
+          "sha256": "0e66add12f48117254852ebac22250ad18bbc859b5de40301dd047800be40e36"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/locales/pl.json",
+          "size": 2075,
+          "sha256": "64d84f86e74e9b14e6cb8159e65cb2a2b0302e848d61fdd25f8710e70446665c"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/locales/pt.json",
+          "size": 1917,
+          "sha256": "d36c160b1f4757b6275cb5dd4135d2d8262d8d1b79147e3c3fcf9acecc1b89d2"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/locales/pt_BR.json",
+          "size": 1932,
+          "sha256": "503075049239e50e8fe82b7d06d062f5a1d69f26346d05af487dc8b3e090596e"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/locales/ru.json",
+          "size": 2674,
+          "sha256": "05cd63df5acbbfa2017384f291ac55ec2573424cdd682aed41e0c07562a48519"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/locales/th.json",
+          "size": 3278,
+          "sha256": "3ff78ad6e861403ff1c94707d6e13dd87e948424008156debc0e7d3a4f4500d3"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/locales/tr.json",
+          "size": 1912,
+          "sha256": "4744c36d2531029ed93d593a25c595f4ea1f9c2f4f037867aa8f36161f959886"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/locales/zh_CN.json",
+          "size": 1907,
+          "sha256": "bacf8a4dcdd23146ff5834e7853536a7d97a1baca15a8ad5939c719e583a3f59"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/locales/zh_TW.json",
+          "size": 1831,
+          "sha256": "213dc59eb7abce94422f164022d964924dcd52ff9739db14d3eea46986e9f7cb"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/package.json",
+          "size": 2256,
+          "sha256": "be417ad995e4f608d6f5243ad90b28f3f2604c73abb30d72382ae13358a74949"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/README.md",
+          "size": 3906,
+          "sha256": "bbafb2911ee5da96e1e569afd8a007e7755c41fbfed4ddd073906f026a7b3384"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs/yargs.js",
+          "size": 403,
+          "sha256": "5896a98055ac899211a2189494afba500dcf1fafba23cb761e5e32caaecfcc8b"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs-parser/CHANGELOG.md",
+          "size": 24865,
+          "sha256": "b80549ac9e2caf9606189d06491286325b6d15399c96d364ce32356d4991c737"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs-parser/index.js",
+          "size": 33760,
+          "sha256": "f0b180abc21d5baf8411c4c38f11a88034112731b298fe97f806d2f2b9cf2b4a"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs-parser/lib/tokenize-arg-string.js",
+          "size": 856,
+          "sha256": "0bdd27fba96af18d246e54e5369bcc775c89d25aaf3e7aaf55295f2ecf42adaa"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs-parser/LICENSE.txt",
+          "size": 731,
+          "sha256": "365496ca1f56da40b23c9815fc40fa9005847b2f8f8fd1c1a4929ef25ec8cd1d"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs-parser/package.json",
+          "size": 962,
+          "sha256": "2de71e9a1ff3e5bce791f5e3de66e1ad86f4f143d8c3ce4fbaad7a615e5c5e70"
+        },
+        {
+          "path": "sidecar/rift/node_modules/yargs-parser/README.md",
+          "size": 10308,
+          "sha256": "41abc6f2ae790207873dabcaa3d8959a83078b4a66ba43ef34c0ad179be46434"
+        },
+        {
+          "path": "sidecar/rift/package-lock.json",
+          "size": 11821,
+          "sha256": "0a8c3cc628f1b3a1ef52707894a217440ec5dbd9054be36719e991ea39c9f217"
+        },
+        {
+          "path": "sidecar/rift/package.json",
+          "size": 1255,
+          "sha256": "2316dc308d83b2153c3425bdaab0c23bc35cbb949e3853b9fd6ce6c62aae747b"
+        },
+        {
+          "path": "sidecar/rift/tools/bili.jsc",
+          "size": 21704,
+          "sha256": "b6c099c67f916916b9c32c1d92da0354a2dea928090fd3c6601bb2acbb56e5c7"
+        },
+        {
+          "path": "sidecar/rift/tools/bili.mjs",
+          "size": 232,
+          "sha256": "6d6f87d8478c73c4cba081f0dd376f7db91ae6c01ce306ea15011d1a962e80c6"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/ai-share.jsc",
+          "size": 30640,
+          "sha256": "f1e35910c4a3216249aa92b7414257f8ce85333d890e1168194aa65525376a24"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/ai-share.mjs",
+          "size": 265,
+          "sha256": "bac2b03ac9ce8af7a2127b10d2f5e8ba44851a8b4beb1b519e123067d2d87c6a"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/bili-watch.jsc",
+          "size": 71360,
+          "sha256": "7ab625deff962dd992b3d02a0e6e982bddb36e2190de22205a64fbfb4d2122f7"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/bili-watch.mjs",
+          "size": 241,
+          "sha256": "993e7a096eea42cfed3438861b5bd10cbc4f613b30c4aea7a1aac9d858194597"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/comment-await.jsc",
+          "size": 52024,
+          "sha256": "23631e90cb5a906e3dba7f6d4e4b002623fbc79c59367574e5de6eef05c44c9f"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/comment-await.mjs",
+          "size": 244,
+          "sha256": "60aa491b06f95c8958a069456ea1d20a8797d50749573233d169b49e42ae59be"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/comment-del.jsc",
+          "size": 34960,
+          "sha256": "e63eb8e0c658bcfe1bacec2fa4c5f8a46fe17a48268b9b11f0120885c502b1c7"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/comment-del.mjs",
+          "size": 242,
+          "sha256": "f9922c092ee7d33403cc7f4bbf17e7ed8d30fd21393df2a6b3dfc626d7f42303"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/comment-digest.jsc",
+          "size": 54920,
+          "sha256": "b0fcf6a6985e93ba8eef2462e0b1b87c69f66cae6db599eb3a6f5102c48070b0"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/comment-digest.mjs",
+          "size": 245,
+          "sha256": "883d18eb0bcc1379b0db04dc0d1c1cae04a7f3170725da9c4e642cc8d52aa37f"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/comment.jsc",
+          "size": 83152,
+          "sha256": "d128007f32b374af753e91bb6f4d3125a85468d3053a277395fe055160d46cbf"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/comment.mjs",
+          "size": 238,
+          "sha256": "bc76bf145382f90fbed3139d4790dea716cb3d97b5bf0066b944c2ae209a2bea"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/comments.jsc",
+          "size": 59424,
+          "sha256": "4301c8b32a69ae281f52f2cabd947e15c27b3978c3922eaca65a345b91487f69"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/comments.mjs",
+          "size": 239,
+          "sha256": "38fc93b448c2111aea61bf7a1a1a2b2d98ea0e9b1611391a38e2c82dca2ce6ba"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/danmaku-await.jsc",
+          "size": 65952,
+          "sha256": "f855e25a0e21266f86c07bd749003470d2be0a81281fe6192fc6cfd8c95702c3"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/danmaku-await.mjs",
+          "size": 244,
+          "sha256": "570478849f655701671fd6287d8ac7071526ef30d974aafb465e916b23b95bd1"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/danmaku.jsc",
+          "size": 65560,
+          "sha256": "86a532b11aa82cdc5e76f399ca7c0bb5edcbba7c1f2f4c15b8310d7edd9f0a10"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/danmaku.mjs",
+          "size": 238,
+          "sha256": "1855707cd50e76911a81417526e465d9eb061a4049a30534947d0141cad1c5d5"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/debrief.jsc",
+          "size": 101080,
+          "sha256": "0cd81c0f6daafe9b3d234afc84f04be0cee278fd8df41a5a8202fb87abdb446c"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/debrief.mjs",
+          "size": 238,
+          "sha256": "5eceddd7e1b2cc433f02125e6e50c11fd9d46d9c36923ece9173e549154ac7a5"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/deps.jsc",
+          "size": 60352,
+          "sha256": "0c8966e60dccc75de666db0eeecc3e1450c8d11617c09388734bb3f7dab4d715"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/deps.mjs",
+          "size": 235,
+          "sha256": "4b0aef80f4045ce4bc1b0629efa6c02396924fc8856936c105c0f5ff480ba694"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/diary.jsc",
+          "size": 18552,
+          "sha256": "66f47b35c40799e47360aec12a3f2c4067ad29bf70a1f3409c932a236123a719"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/diary.mjs",
+          "size": 236,
+          "sha256": "48e8569294f8a74dfeb031f334f4985133d79ceac67c37cee3ac17568331908e"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/dm-await.jsc",
+          "size": 69368,
+          "sha256": "1587386634c189ef806357acc780d09c4e5f02c779d7a4fec1c72251d07f7022"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/dm-await.mjs",
+          "size": 239,
+          "sha256": "e81a8515c0c7c94f53fdc213a32e98385b9f809d9ec5fdec4f6bbf651c83ef56"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/dm.jsc",
+          "size": 71080,
+          "sha256": "6d1e5c0b1f16162bbb5ea4b896c614b915766741c878b8aa891d91296f12ac23"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/dm.mjs",
+          "size": 233,
+          "sha256": "68bda1243f47077cf8a0112ed4fd48c8b07b4e55de6ea07946b545047f1337dc"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/dynamic-image.jsc",
+          "size": 58552,
+          "sha256": "1bac2b4773fe374281c6f348bceb89172965a013cae58c7d5170f9584ba90db3"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/dynamic-image.mjs",
+          "size": 244,
+          "sha256": "3cc8f3dbd6a91be9b5c16f8d55bd4c9dca775b1f2b4717a0b21db067774e785f"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/dynamic.jsc",
+          "size": 58736,
+          "sha256": "fd474e9517567ddc92577081ce14dc7b6e5b5c803e8266855c4d4d703985e141"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/dynamic.mjs",
+          "size": 238,
+          "sha256": "aa0b761c7048e3f9e5d62b0d370685bd4d9450ecedd218bc8c37c31ab8e0a023"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/edit-dynamic.jsc",
+          "size": 47312,
+          "sha256": "19accd02f323ad4b3f17eae9fd00f84c2d9eb2182c1548afc10cc06e89d518c7"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/edit-dynamic.mjs",
+          "size": 243,
+          "sha256": "cc68541cf5a5c7c1081259cc1a57ea9f8bcbf91d105dba6e95bad8a61121887c"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/fav.jsc",
+          "size": 62696,
+          "sha256": "2f98695781f32661f33dd160078397c820fc333a2aecebc6705c6077e41dd787"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/fav.mjs",
+          "size": 234,
+          "sha256": "50ceae53d751cdfdd3ff59b20222acc4e0a16e513be04567c4a9791e55bddda4"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/feed.jsc",
+          "size": 70384,
+          "sha256": "5da6efa82dedd2eec529c03b8f812269f252b5943d9c16e3ff7a20ae0cf4992e"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/feed.mjs",
+          "size": 235,
+          "sha256": "fa0ac7d3264c4e51365cc3275517c4f1488c39730d7a4d94b01c790f27853e06"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/likes.jsc",
+          "size": 42080,
+          "sha256": "be0fa4ffb6da898f029f1491d157d5dc05e843b606aeaebde4e447645005e652"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/likes.mjs",
+          "size": 236,
+          "sha256": "4a87591d3b8a29fdbe13b32c076229f0a7511cb0bb66484925c1cb579a2bd35a"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/notify.jsc",
+          "size": 56472,
+          "sha256": "10f783da59b23cfbb2fb15cb43009a42efca493a8adb6b13845a74f30757b1f7"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/notify.mjs",
+          "size": 237,
+          "sha256": "f3b7a398ac42d0d3da1b3ebe79440df6d54f28ddac29b8c9602f2ab2b2aee5af"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/quota.jsc",
+          "size": 90808,
+          "sha256": "0f8648a3033a3ed5c5b3eee0f4ab263624a829d236da2033e86f11abb870886b"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/quota.mjs",
+          "size": 236,
+          "sha256": "581f19667cd405dbfaad5535d5903c16022fb057043d2fb7159e0814c692f679"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/reply-draft.jsc",
+          "size": 18568,
+          "sha256": "35496be6ad996ee5d9983f84fae63610ab68569e7d0051f5eae28c93d26d95f7"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/reply-draft.mjs",
+          "size": 242,
+          "sha256": "5fa211964157d60df7709181928e032cb6f3b43c708af99c0bda2ae00ac8a3c9"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/rift-night.jsc",
+          "size": 19848,
+          "sha256": "b1672cd6569cdfd44c51b8a93ed048c889e7b53787332b865f7de31b2de08ef1"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/rift-night.mjs",
+          "size": 241,
+          "sha256": "c21c7276a439612ad17dd18d5d1451dfa246f2093b2f6546d1f7a013d3906539"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/search.jsc",
+          "size": 39040,
+          "sha256": "b44a3c5dcc7a7ed993b3ba22b8d297dcef3b7c92d674879f458d737c5a7ebce9"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/search.mjs",
+          "size": 237,
+          "sha256": "6508b46e0acb48556a41b74177ef7f226229691fc956746f0d1648a799d97513"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/selftest.jsc",
+          "size": 20168,
+          "sha256": "fd166ae53b58736a0d0e341c63f08519fc97f580a4b5214972bdd761e5b70df5"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/selftest.mjs",
+          "size": 239,
+          "sha256": "bcb456f72b950ee0551c8bd4a2fc8726f4024c14ca3a09cf6b15f0cf43a02e00"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/subtitles.jsc",
+          "size": 61280,
+          "sha256": "309810b57441a054e53d3958293e376099d89389d54283f74b0bf976712da172"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/subtitles.mjs",
+          "size": 240,
+          "sha256": "0634916705c325545205d82878851a44dd76b2ed4db29bd8e28f4a121b1b8f70"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/traffic.jsc",
+          "size": 34568,
+          "sha256": "5478de0f85f7723257c723625cdd7d014cd4b001c06cf443577092302a117b27"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/traffic.mjs",
+          "size": 238,
+          "sha256": "8aa4985a34147b105d2078ce75a0b3e929e15510002b313f67db5589c97331da"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/video-content.jsc",
+          "size": 61656,
+          "sha256": "6551c549f9a012260c7e849aa2e0bb6fc10332eaec515f7f3a22065c32239a90"
+        },
+        {
+          "path": "sidecar/rift/tools/commands/video-content.mjs",
+          "size": 244,
+          "sha256": "06a5de64d180e8b78638c35251fdbb3392c0418165c750b74eabbd56fb884845"
+        },
+        {
+          "path": "sidecar/rift/tools/diagnostics/fetch-covers.jsc",
+          "size": 35136,
+          "sha256": "8ee43dab0b3ae6ea763139e987f955cc321b1caf303991f185d50136751fda04"
+        },
+        {
+          "path": "sidecar/rift/tools/diagnostics/fetch-covers.mjs",
+          "size": 243,
+          "sha256": "340b84fb253c5d6e28642f22a68b1f29b435d0fa593ec67fe5d3e5d7e5909055"
+        },
+        {
+          "path": "sidecar/rift/tools/diagnostics/whois.jsc",
+          "size": 36128,
+          "sha256": "3963534bc5281ecc7e0bfb3a422dc582709498c39925b789735dc21984721576"
+        },
+        {
+          "path": "sidecar/rift/tools/diagnostics/whois.mjs",
+          "size": 236,
+          "sha256": "e4fbdd6a8a563c003072f79fdf34887fd965c7d5bd9f0a52dc292944870093cc"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/ai-share.jsc",
+          "size": 12896,
+          "sha256": "34fdae24a22c43f39630eab4658d44397bd379861a980e67a494abbd3de63ecb"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/ai-share.mjs",
+          "size": 563,
+          "sha256": "b56b0751a5f4f5ddeac3d34b0ef5b75e9369cac52a6c53929b5e5910bf57cccf"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/bili-api.jsc",
+          "size": 49008,
+          "sha256": "e90955544d81853c62b539e660973c68f8e81f72ed8e0880192dc34aea902850"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/bili-api.mjs",
+          "size": 335,
+          "sha256": "de8daa34836ec6c8dd8ea9adc635438511237ff2a500f7325cd51483a1e16a13"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/capture.jsc",
+          "size": 4944,
+          "sha256": "57f847b046391cc576662e037d6bd671ba642259b3a10efbcbc362e8a4499ebd"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/capture.mjs",
+          "size": 280,
+          "sha256": "b4e09703d8cb481e091bd16bd43759948223023c2e768bfdeccc2f4fad3c7cc8"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/cli-args.jsc",
+          "size": 3168,
+          "sha256": "9189109d46e57e5cb9edcf63b3bb984a71a0d78b1fbbe3420ca217e4a774f485"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/cli-args.mjs",
+          "size": 285,
+          "sha256": "b62e3651fed648f5b1634d4726958c47aa940117f94f76063aab47ef899575ea"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/comment-target.jsc",
+          "size": 33760,
+          "sha256": "6499f4346f9f03101824121b474a45b6859b7c9ae984f5f63b69a53810c418c6"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/comment-target.mjs",
+          "size": 299,
+          "sha256": "3318da2862ff1d07449a43d39eebbcbd0d70476a884aacf4cdc3ab90cf693224"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/config.jsc",
+          "size": 7488,
+          "sha256": "10ae416ce59a50c09bcaa95e830e2dd3e596e19af601d8410ffa36d102c61263"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/config.mjs",
+          "size": 339,
+          "sha256": "1d741b55002832f6427aff5f37c975cbdb632e761f9d2aa6c33ee5b089f47687"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/cred.jsc",
+          "size": 7864,
+          "sha256": "4509999cbce34be030fd948316c0347eaaa0b96b2a4f1d7076a0439cc4cbebb0"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/cred.mjs",
+          "size": 517,
+          "sha256": "f2d2651d1cf108507260f337dccc51b4324d46fe07c18cb3f94b2dd1f1b297c5"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/dm-feedback.jsc",
+          "size": 3936,
+          "sha256": "aed59e43c3b1fafbf476a038bbe05ecb91ccfa8a661329cfc976cbcd0950e62f"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/dm-feedback.mjs",
+          "size": 288,
+          "sha256": "469f65fc8584a80ecaf34b8330156d675141d9fac0b79064bbddba525d8ab836"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/dm-history.jsc",
+          "size": 55952,
+          "sha256": "ed2d8fe02a05a8e6c88147e8bf620b5eb6f58500b2394ca51e553da5ff2b0a83"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/dm-history.mjs",
+          "size": 331,
+          "sha256": "2b52d03b6d50ab554e431e4f647465f341bcc0e585d1ff80ec97d20cff978bb1"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/feedback.jsc",
+          "size": 2288,
+          "sha256": "dbd0a2f6db5daf98c89f6aaeae3d8a251fc1e07a2597b40aeacf61874af1d790"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/feedback.mjs",
+          "size": 277,
+          "sha256": "eed064cd9b343c9bbc78a1219ba41095cac8a4c9307fe0e8154a09f46661627a"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/ffmpeg.jsc",
+          "size": 12160,
+          "sha256": "ebb53a14ba4c518fc2d9c9a8f32d70c63f68d05be5520243d333f0372ac67229"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/ffmpeg.mjs",
+          "size": 357,
+          "sha256": "032ff0f85904e778c845f7c874bc6fb8fe71186e73ee6d10c89cdd059d6078d7"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/json-exact.jsc",
+          "size": 2032,
+          "sha256": "741c256fe662d710fc154338f451f8122ecb84b2b779261b889609e1a762a4bd"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/json-exact.mjs",
+          "size": 323,
+          "sha256": "b50fc6d255bd79d101bc059ccfe6b55e4020ae2ca2a950f6daf43d68f206ae8a"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/msgfeed.jsc",
+          "size": 42928,
+          "sha256": "3a7424593aecb758f2bd4091b6748af009b489021c1bcf459fc979dc585b1d44"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/msgfeed.mjs",
+          "size": 416,
+          "sha256": "57a30bc3f9067209f9f44d07c34d34516ba76ad8f7ea6222d4814bbe9b45db01"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/night-config.jsc",
+          "size": 4792,
+          "sha256": "075ef785eb5d8f4636609ccd20ac4b8617e0929dac5066795c3bb87ff04326f0"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/night-config.mjs",
+          "size": 291,
+          "sha256": "f885484018d748fa3fba59fd8446028ad2e9f1c2efe1ade89bc85f7e5ce396ea"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/night-plan.jsc",
+          "size": 13152,
+          "sha256": "f0966d32dd0163715c481fae8e1262caa166d36474362c560058dcc4ba59d10e"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/night-plan.mjs",
+          "size": 561,
+          "sha256": "624c0734a7e93a05a75604064261737ce12dc3059e1b0f5a8fa4160f0baee05a"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/nodebin.jsc",
+          "size": 8872,
+          "sha256": "cfd1ddabc1720f83401da89a96817e5c4a7534dd1e5f2d81f5438dab476402c5"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/nodebin.mjs",
+          "size": 344,
+          "sha256": "eaa938dc46e1087422ec453fc005d0fde6f386027c0da66a7cbc6286f5daf21f"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/paths.jsc",
+          "size": 6248,
+          "sha256": "8a870587efdcc65e5331266643986be13fc531e4d87e62a8d69910af82dedda3"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/paths.mjs",
+          "size": 614,
+          "sha256": "6756feee3a817ea09ae0e6366e4412663a1ada5c1e7037f587373929514c5b8a"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/poll-policy.jsc",
+          "size": 1384,
+          "sha256": "b07db4011166846bb1b5c4c2988c5611d7ddae3f9168ae018f771eeea9fdbc8d"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/poll-policy.mjs",
+          "size": 278,
+          "sha256": "2628976b862c29c6e91d3865fe09dba415280b2b0246cf1a961f78016b325005"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/process-lock.jsc",
+          "size": 5456,
+          "sha256": "91e97d96fbc2d7be58a124b3b1f38b3312f845ac2c3c8e807cf07caacd19bb91"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/process-lock.mjs",
+          "size": 297,
+          "sha256": "7351e6d32470d34caf671d65d052ad021fc622a39f023da68f1ed10123145016"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/quota-gate.jsc",
+          "size": 14504,
+          "sha256": "633f01bb8228f55bb2d7a195d5d3dcfc6041e48d47e4927f2d593ad4ae6aad7a"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/quota-gate.mjs",
+          "size": 297,
+          "sha256": "9a0167cde47b212c82d3f88aceafdc2800fdf11a0cfa01034a2ce1feae3db6f8"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/runtime.jsc",
+          "size": 7368,
+          "sha256": "48de8bc64255fe4954c87b58fc513a3c06bb4aa6deb621da86019630594bd305"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/runtime.mjs",
+          "size": 326,
+          "sha256": "f4826b83b1fa17f9e14fbc181c4c2761207a2d638a0b9c2a348ebd5b72a2cd7f"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/share-policy.jsc",
+          "size": 2032,
+          "sha256": "8c7a8b477b0bb96ed88b8e95d97453fc531ba2ca9c1b0c13f2740d1d5f4e03a4"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/share-policy.mjs",
+          "size": 287,
+          "sha256": "47d3c93050d4a0765f454cfd3599e66d43ef013277ed70766f1129a9644f72ee"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/traffic.jsc",
+          "size": 31712,
+          "sha256": "6b669a43faae49cea92b1718394c0b0b22fc497fc7f51c66d121ac10bcc68fb5"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/traffic.mjs",
+          "size": 554,
+          "sha256": "2e7a28da7f32deb329d11d7a4db91f052758450afa7829b71edde1aacd8a3983"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/watch-options.jsc",
+          "size": 1864,
+          "sha256": "676d7c9b79e9f93042d295bda3eeeeed525f20efce133b381a8a6e98ad343c98"
+        },
+        {
+          "path": "sidecar/rift/tools/lib/watch-options.mjs",
+          "size": 286,
+          "sha256": "f9de350c7ee933acd45ba7fbe44f877281587cb2392126f3b001e63958792429"
+        },
+        {
+          "path": "sidecar/rift/tools/verify/comment-exists.jsc",
+          "size": 39800,
+          "sha256": "2c49922a85fa69bfd20ed54da84ed1a246f2ca49f76fefa8e54308d14a5ff445"
+        },
+        {
+          "path": "sidecar/rift/tools/verify/comment-exists.mjs",
+          "size": 245,
+          "sha256": "e8b5db89cdd43fc99014ba1bcfac4d5229ea1d611e60b75cfa2a8cb9a5be7ed9"
+        },
+        {
+          "path": "sidecar/rift/tools/verify/dryrun.jsc",
+          "size": 55632,
+          "sha256": "a9f5f59416367e785a4ef1416794cd03348472c2b8223d03b05b75ccfa6be518"
+        },
+        {
+          "path": "sidecar/rift/tools/verify/dryrun.mjs",
+          "size": 237,
+          "sha256": "ca8e03f09e838e3b15b34f6b2dd44ecda5e1f94967e1babb4e512d450b17b2cb"
+        },
+        {
+          "path": "sidecar/rift/tools/verify/dynamic-inspect.jsc",
+          "size": 37584,
+          "sha256": "ef8262603b6723eb3c68d60e66c3092b708b895947d9705b1ad107c4240da9bc"
+        },
+        {
+          "path": "sidecar/rift/tools/verify/dynamic-inspect.mjs",
+          "size": 246,
+          "sha256": "5981edaadcce22e2995e6d8dce2ae9c2fe6b2ccf5ea8fbe7825dc33784d3348b"
+        },
+        {
+          "path": "sidecar/rift/tools/verify/mention-check.jsc",
+          "size": 38088,
+          "sha256": "d9fe7117125f7b4b84fc6d2a72b374d4e8216eb6113ce6441995fc5aa20d9fe4"
+        },
+        {
+          "path": "sidecar/rift/tools/verify/mention-check.mjs",
+          "size": 244,
+          "sha256": "08831e64599f0c9e194a9c45f213aa4afa96e805f32cd0f7b7ff239d483fffb2"
+        },
+        {
+          "path": "sidecar/rift/tools/verify/session.jsc",
+          "size": 34512,
+          "sha256": "054593c9e367649efad9bf92b2370506c1fa1815ef1c6639160a584d891c5ff0"
+        },
+        {
+          "path": "sidecar/rift/tools/verify/session.mjs",
+          "size": 238,
+          "sha256": "06c4930a2de64e5a21d2e2ca0f762ecea9101b5a16c63eff83be4bbcb492b33b"
+        },
+        {
+          "path": "sidecar/rift/tools/verify/thread.jsc",
+          "size": 35952,
+          "sha256": "ae9531cb66df10a49e50e87107b18eda4c1165fa98bf80c3e28cc8893b859abb"
+        },
+        {
+          "path": "sidecar/rift/tools/verify/thread.mjs",
+          "size": 237,
+          "sha256": "3a984a17e5a315312a95381b2e0ab7682dac1eec2f822734df9c14ef6112edf2"
+        },
+        {
+          "path": "sidecar/rift/tools/verify/watch-replies.jsc",
+          "size": 38024,
+          "sha256": "a3de530ec3b71d707166e849a8a6f10c0963038eac68cea987b87627bbff9a4b"
+        },
+        {
+          "path": "sidecar/rift/tools/verify/watch-replies.mjs",
+          "size": 244,
+          "sha256": "6783d2327a5a019365ec1dcb3b3c5cdc24d48c0142144fae1c9a6d4921cbb36b"
+        },
+        {
+          "path": "sidecar/rift/vendor/bytenode/index.cjs",
+          "size": 14296,
+          "sha256": "47fda33afc49480633ebf910e44c16b395925def2a910cff49c120b65a0cdfec"
+        },
+        {
+          "path": "sidecar/rift/vendor/bytenode/LICENSE",
+          "size": 1068,
+          "sha256": "16d7ed7b8be9034217983ab33fda4efd22ed23962c4797699c94f159276d03f3"
+        },
+        {
+          "path": "sidecar/rift/vendor/bytenode/package.json",
+          "size": 756,
+          "sha256": "700a72b12d339c3e59ae8cc0d1cd100a4a91d60796abc59923145a39047f1326"
+        },
+        {
+          "path": "sidecar/rift.config.template.json",
+          "size": 1572,
+          "sha256": "eeaa0e79dc74928c3a94bf929436b5c197290f00ef3e3805167b9f92aa1df2db"
+        }
+      ]
+    },
+    {
+      "id": "node",
+      "name": "kairos-node-1.0.0.zip",
+      "url": "https://github.com/YYZ-YPC/kairos/releases/download/V1.0.0/kairos-node-1.0.0.zip",
+      "sha256": "7ea91e80c1381df768150b1625af7837bb83108800834b28579141138921f197",
+      "size": 93737969,
+      "files": [
+        {
+          "path": "sidecar/node/LICENSE",
+          "size": 157609,
+          "sha256": "5888dbb9a1d2b18f2c3e6c5f6af1b39de658372b402a0577b002777f14c62ace"
+        },
+        {
+          "path": "sidecar/node/node.exe",
+          "size": 93580104,
+          "sha256": "ba4e6d110e8c1592a1ecd390f6b05f3da124b13871a5be62b341a07a853c6c32"
+        }
+      ]
+    },
+    {
+      "id": "keeper",
+      "name": "kairos-keeper-1.0.0.zip",
+      "url": "https://github.com/YYZ-YPC/kairos/releases/download/V1.0.0/kairos-keeper-1.0.0.zip",
+      "sha256": "ddf21897c51790ddfcfff24b3fa2edb34d815075a9d716879d54c337b058bdc2",
+      "size": 216,
+      "files": [
+        {
+          "path": "sidecar/keeper/start.cmd",
+          "size": 70,
+          "sha256": "80f38956a9c54e4a6dcaeb4c15fef929e1860d43d614a9953e2ec6544b8a234e"
+        }
+      ]
+    },
+    {
+      "id": "webview2",
+      "name": "kairos-webview2-1.0.0.zip",
+      "url": "https://github.com/YYZ-YPC/kairos/releases/download/V1.0.0/kairos-webview2-1.0.0.zip",
+      "sha256": "6cad6d880f8edcb3fceae480ca943b075831e83b7de3c9b5608422e6a0d4a42b",
+      "size": 166110,
+      "files": [
+        {
+          "path": "bin/WebView2Loader.dll",
+          "size": 165968,
+          "sha256": "462b36fd1be6ca9f7563466a89e57c41ef4a4def3e0a84fa885d203aea4a3aaf"
+        }
+      ]
+    },
+    {
+      "id": "vendor",
+      "name": "kairos-vendor-1.0.0.zip",
+      "url": "https://github.com/YYZ-YPC/kairos/releases/download/V1.0.0/kairos-vendor-1.0.0.zip",
+      "sha256": "3cd66a5a2f2996ddd359b92baa9fe629c337b7e50aa7dfe7a03c3df0154e9f36",
+      "size": 19340485,
+      "files": [
+        {
+          "path": "pack/mingling-vendor/wheels/aiocqhttp-1.4.4-py3-none-any.whl",
+          "size": 25550,
+          "sha256": "c706536d2399cf8f58ab9d5e4bba23d0eed104d497df6cf86ad0cf5862aa9ee2"
+        },
+        {
+          "path": "pack/mingling-vendor/wheels/jieba-0.42.1-py3-none-any.whl",
+          "size": 19314527,
+          "sha256": "bb0b3f305325e2cc7df2b95de34275094a420bc6836bc6db40941433706ffdad"
+        }
+      ]
+    }
+  ]
+}

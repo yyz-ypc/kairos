@@ -1,0 +1,72 @@
+/* Structural UX; all colors come from theme tokens. */
+.nav-group{color:var(--mute);font-size:11px;padding:12px 10px 2px}
+.route-pager{display:flex;flex-shrink:0;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;font:11px var(--mono);color:var(--mute)}
+.route-pager button{padding:4px 9px;background:var(--panel);border:1px solid var(--line);color:var(--ink)}
+:root[data-style=array] .shell,:root[data-style=folio] .shell{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:72px minmax(0,1fr)}
+:root[data-style=array] .rail,:root[data-style=folio] .rail{position:relative;top:auto;height:72px;flex-direction:row;align-items:center;gap:18px;padding:8px 20px;border-right:0;border-bottom:1px solid var(--field-line);width:auto}
+:root[data-style=array] .main,:root[data-style=folio] .main{height:calc(100vh - 72px);min-height:0}
+:root[data-style=array] .me,:root[data-style=folio] .me{padding:0;flex-direction:row}
+:root[data-style=array] .rail-label,:root[data-style=folio] .rail-label,:root[data-style=array] .rail-foot,:root[data-style=folio] .rail-foot{display:none}
+:root[data-style=array] #nav,:root[data-style=folio] #nav{display:flex;flex:1;gap:4px;justify-content:flex-end;width:auto}
+:root[data-style=array] #nav button,:root[data-style=folio] #nav button{display:flex;flex-direction:row;align-items:center;width:auto;min-width:70px;min-height:40px;padding:8px 12px;gap:6px}
+:root[data-style=array] #nav .ic,:root[data-style=folio] #nav .ic{display:none}
+:root[data-style=array] #nav .lb,:root[data-style=folio] #nav .lb{display:block;flex:auto}
+:root[data-style=array] .page{padding:12px 18px 8px}
+:root[data-style=array] .screen-flow .row,:root[data-style=array] .screen-flow .svc{padding:5px 0}
+:root[data-style=folio] #nav button{border-radius:8px 8px 0 0;border-bottom:3px solid var(--line);align-self:end}
+:root[data-style=folio] #nav button.active{border-bottom-color:var(--tide)}
+:root[data-style=folio] .page{max-width:1240px;line-height:1.85}
+:root[data-style=folio] .folio-page{min-width:0}
+:root[data-style=tower] .shell{display:grid;grid-template-columns:148px minmax(0,1fr);grid-template-rows:minmax(0,1fr)}
+:root[data-style=tower] .rail{position:relative;flex-direction:column;align-items:stretch;height:100vh;padding:18px 10px;gap:14px;border-bottom:0;border-right:2px solid var(--field-line)}
+:root[data-style=tower] #nav{display:flex;flex-direction:column;justify-content:start;gap:10px}
+:root[data-style=tower] #nav button{width:100%;flex-direction:row;gap:12px;text-align:left;padding:12px 8px;border-left:2px solid var(--line)}
+:root[data-style=tower] #nav button.active{border-left-color:var(--tide);background:var(--tide-soft)}
+:root[data-style=tower] #nav button.active::after{display:none}
+:root[data-style=tower] .rail-foot{margin-top:auto;margin-left:0}
+:root[data-style=tower] .main{height:100vh;min-height:0}
+:root[data-style=tower] .tower-room{padding-left:8px}
+:root[data-style=tower] .tower-room::before{display:none}
+:root[data-style=tower] .page{padding:12px 18px 8px}
+:root[data-style=seer] .seer-focus{border-top:2px solid var(--tide);padding-top:8px}
+:root[data-style=barrier] .barrier-content{border-top:1px solid var(--field-line);padding-top:8px}
+@media(max-width:900px){
+ :root[data-style=array] .rail,:root[data-style=folio] .rail{padding:6px 10px;gap:8px}
+ :root[data-style=array] .me,:root[data-style=folio] .me{display:none}
+ :root[data-style=array] #nav,:root[data-style=folio] #nav{justify-content:space-between}
+ :root[data-style=array] #nav button,:root[data-style=folio] #nav button{min-width:0;flex:1;padding:8px 5px;font-size:12px;justify-content:center}
+ :root[data-style=array] .nav-no,:root[data-style=folio] .nav-no{display:none}
+ :root[data-style=tower] .shell{grid-template-columns:112px minmax(0,1fr)}
+ :root[data-style=tower] .me-t strong{font-size:12px}
+ .route-pager{font-size:10px}.route-pager button{padding:4px 6px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+.empty-art{width:100px;height:64px;object-fit:cover;border-radius:var(--r);margin:0 auto 10px;display:block}
+.hero{isolation:isolate;background:var(--panel)!important}
+.hero .hero-in{position:relative;z-index:2;max-width:65%}
+.hero .art{left:auto!important;right:0!important;top:0!important;width:48%!important;height:100%!important;object-fit:cover!important;border-radius:0!important;opacity:.9}
+.hero::after{z-index:1!important;background:linear-gradient(90deg,var(--panel) 48%,color-mix(in srgb,var(--panel) 85%,transparent) 64%,transparent)!important}
+:root[data-style=array] .hero{min-height:154px}
+:root[data-style=array] .hero h1{font-size:25px}
+:root[data-style=folio] .hero{border-left:3px solid var(--tide);border-radius:0}
+:root[data-style=folio] .hero h1{font-family:var(--serif);letter-spacing:.12em}
+:root[data-style=tower] .hero{border-bottom:3px solid var(--tide)}
+:root[data-style=barrier] .hero{border-radius:var(--r-hero) 2px 2px var(--r-hero)}
+:root[data-style=array] #nav,:root[data-style=folio] #nav{height:auto;max-height:56px}
+@media(max-width:900px){.hero .hero-in{max-width:72%}.hero .art{width:42%!important}:root[data-style=array] #nav,:root[data-style=folio] #nav{display:flex}:root[data-style=array] #nav button{width:auto;height:40px;justify-content:center}:root[data-style=array] #nav .lb{flex:0}}
+
+:root[data-style=array] #nav,:root[data-style=folio] #nav{flex-direction:row!important;align-items:center;position:static;min-height:0;max-height:none;width:auto;flex:1}
+:root[data-style=array] #nav::before,:root[data-style=array] #nav::after{display:none}
+:root[data-style=array] #nav button:nth-child(n),:root[data-style=folio] #nav button:nth-child(n){position:relative;inset:auto!important;transform:none;writing-mode:horizontal-tb;text-orientation:mixed;flex-direction:row;flex:0 1 auto;min-height:38px;height:38px;max-height:none;width:auto;padding:8px 14px;letter-spacing:.04em}
+:root[data-style=array] #nav .lb,:root[data-style=folio] #nav .lb{flex:0 0 auto;writing-mode:horizontal-tb;overflow:visible}
+:root[data-style=folio] #nav button{border-left:0}
+@media(max-width:900px){:root[data-style=array] #nav button:nth-child(n),:root[data-style=folio] #nav button:nth-child(n){flex:1;min-width:0;padding:7px 5px;font-size:12px}}
+
+.hero .hero-in{max-width:56%;z-index:3}
+.hero .art{right:20%!important;width:34%!important;opacity:.45;display:block!important}
+.hero .companion-art{position:absolute;right:0;top:0;width:30%;height:100%;object-fit:cover;object-position:center 22%;z-index:2;border-left:1px solid var(--line);mask-image:linear-gradient(90deg,transparent,var(--mask) 16%)}
+.hero::after{background:linear-gradient(90deg,var(--panel) 44%,color-mix(in srgb,var(--panel) 75%,transparent) 64%,transparent)!important}
+@media(max-width:900px){.hero .companion-art{width:32%;object-position:center 18%}.hero .hero-in{max-width:65%}.hero .art{right:24%!important;width:28%!important}}
+:root[data-style=array] .main,:root[data-style=folio] .main{padding-bottom:0}
+:root[data-style=array] .rail,:root[data-style=folio] .rail{inset:auto!important;position:relative!important}

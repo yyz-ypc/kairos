@@ -1,0 +1,123 @@
+{
+  "style": "seer",
+  "prompt": "A single elegant emblem object centered on a plain background, simple bold silhouette, no text, no people. A luminous glass astronomical observatory floating above a deep blue ocean, a huge cyan orbital astrolabe in the foreground, brilliant silver star trails, clearly visible architectural silhouette, elegant science fantasy concept illustration, dramatic luminous contrast, wide landscape composition, no people, no letters",
+  "negative": "low quality, blurry, watermark, text, letters, people",
+  "seed": 1102501,
+  "width": 512,
+  "height": 512,
+  "model": "anima-base-v1.0.safetensors",
+  "encoder": "qwen_3_06b_base.safetensors",
+  "vae": "qwen_image_vae.safetensors",
+  "steps": 24,
+  "cfg": 5,
+  "workflow": {
+    "1": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "anima-base-v1.0.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    "2": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen_3_06b_base.safetensors",
+        "type": "stable_diffusion"
+      }
+    },
+    "3": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "qwen_image_vae.safetensors"
+      }
+    },
+    "4": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "A single elegant emblem object centered on a plain background, simple bold silhouette, no text, no people. A luminous glass astronomical observatory floating above a deep blue ocean, a huge cyan orbital astrolabe in the foreground, brilliant silver star trails, clearly visible architectural silhouette, elegant science fantasy concept illustration, dramatic luminous contrast, wide landscape composition, no people, no letters"
+      }
+    },
+    "5": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "low quality, blurry, watermark, text, letters, people"
+      }
+    },
+    "6": {
+      "class_type": "EmptySD3LatentImage",
+      "inputs": {
+        "width": 512,
+        "height": 512,
+        "batch_size": 1
+      }
+    },
+    "7": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "positive": [
+          "4",
+          0
+        ],
+        "negative": [
+          "5",
+          0
+        ],
+        "latent_image": [
+          "6",
+          0
+        ],
+        "seed": 1102501,
+        "steps": 24,
+        "cfg": 5,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1
+      }
+    },
+    "8": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "7",
+          0
+        ],
+        "vae": [
+          "3",
+          0
+        ]
+      }
+    },
+    "9": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "8",
+          0
+        ],
+        "filename_prefix": "Kairos-final/seer-icon"
+      }
+    }
+  },
+  "status": "approved",
+  "submission": {
+    "prompt_id": "14d4aaee-4588-4a8c-8d73-47f29a0f11ea",
+    "number": 12,
+    "node_errors": {}
+  },
+  "output": "art/styles/seer-icon.webp",
+  "size_bytes": 16306,
+  "sha256": "d5c4645b49479ebcf1fe7e56e22d0963017bb94d73904832d94f8b0646e63bbf",
+  "webp_quality": 85
+}
