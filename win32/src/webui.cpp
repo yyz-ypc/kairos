@@ -87,9 +87,13 @@ static COLORREF ThemeColor(const wstring& key, COLORREF fallbackColor) {
     unsigned long rgb = wcstoul(value.c_str() + 1, nullptr, 16);
     return RGB((rgb >> 16) & 255, (rgb >> 8) & 255, rgb & 255);
 }
+static bool NativeLightTheme() {
+    const auto theme=SettingGet(L"theme");
+    return theme==L"daylight"||theme==L"suit";
+}
 static COLORREF ThemeBackground() {
     wstring theme = SettingGet(L"theme");
-    if (theme == L"light") return RGB(0xee, 0xf3, 0xfb);
+    if (NativeLightTheme()) return RGB(0xee, 0xf3, 0xfb);
     if (theme == L"custom") return ThemeColor(L"theme_bg", RGB(0x10, 0x18, 0x27));
     return RGB(0x07, 0x0d, 0x18);
 }
@@ -99,7 +103,7 @@ void WebUiPaintLoading(HDC dc, int width, int height) {
     FillRect(dc, &bounds, brush); DeleteObject(brush);
     if ((view && !fallback) || closing) return;
     if(fallback&&SettingGet(L"wizard_complete")!=L"1")return;
-    COLORREF ink = SettingGet(L"theme") == L"light" ? RGB(32,48,74) : RGB(233,239,252);
+    COLORREF ink = NativeLightTheme() ? RGB(32,48,74) : RGB(233,239,252);
     if (SettingGet(L"theme") == L"custom") ink = ThemeColor(L"theme_ink", ink);
     int oldMode = SetBkMode(dc, TRANSPARENT);
     COLORREF oldInk = SetTextColor(dc, ink);
@@ -273,7 +277,7 @@ static bool NativeSetupVisible(){return host&&IsWindow(host)&&fallback&&!closing
 bool WebUiTakeNativeBootstrap(){bool result=nativeContinueSetup;nativeContinueSetup=false;return result;}
 HBRUSH WebUiNativeControlColor(HDC dc,HWND control){
     if(control!=nativeStatus||!NativeSetupVisible())return nullptr;
-    COLORREF ink=SettingGet(L"theme")==L"light"?RGB(32,48,74):RGB(233,239,252);
+    COLORREF ink=NativeLightTheme()?RGB(32,48,74):RGB(233,239,252);
     if(SettingGet(L"theme")==L"custom")ink=ThemeColor(L"theme_ink",ink);
     SetTextColor(dc,ink);SetBkColor(dc,ThemeBackground());
     if(!nativeBackground){nativeBackground=CreateSolidBrush(ThemeBackground());}

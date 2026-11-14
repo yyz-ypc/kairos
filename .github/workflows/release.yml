@@ -124,7 +124,7 @@ jobs:
           python @args
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
           $info=gh release view $tag --repo YYZ-YPC/kairos --json isDraft 2>$null | ConvertFrom-Json
-          if ($info -and -not $info.isDraft) { throw 'Published releases are immutable; create a new version' }
+          if ($info -and -not $info.isDraft) { Write-Output 'Published release preserved; validation artifacts remain in Actions'; exit 0 }
           if (-not $info) { gh release create $tag --repo YYZ-YPC/kairos --draft --title "时序之子 $tag" --notes-file CHANGELOG.md }
           if ($env:CHANNEL -eq 'beta') { gh release edit $tag --repo YYZ-YPC/kairos --prerelease }
           gh release upload $tag dist/* --repo YYZ-YPC/kairos --clobber
