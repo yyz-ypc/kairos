@@ -35,7 +35,7 @@ try {
     $env:KAIROS_STATE_DIR = $stateRoot
     try {
         $log = & powershell.exe -NoProfile -ExecutionPolicy Bypass -File (Join-Path $stage 'tools\bootstrap.ps1') `
-            -Base $stage -Workspace $ws -Bots (Join-Path $ws 'bots') -Component hermes -Offline 2>&1 | Out-String
+            -Base $ws -Workspace $ws -Bots (Join-Path $ws 'bots') -Component hermes -Offline 2>&1 | Out-String
         $code = $LASTEXITCODE
     } finally {
         if ($null -eq $old) { Remove-Item Env:KAIROS_STATE_DIR -ErrorAction SilentlyContinue } else { $env:KAIROS_STATE_DIR = $old }
@@ -48,9 +48,18 @@ try {
     $tideHome = Join-Path $stateRoot 'hermes'
     $config = Join-Path $tideHome 'config\onebot.json'
     Check (Test-Path -LiteralPath $config) 'bundled hermes initialized its writable data directory'
+    Check (Test-Path -LiteralPath (Join-Path $ws 'private\napcat-ws-token.txt')) 'split install keeps writable token in workspace'
+    Check (-not (Test-Path -LiteralPath (Join-Path $stage 'private'))) 'split install never creates private data inside program directory'
+    # Direct callers must resolve the bundle from the script's program root too.
+    $tokenFile=Join-Path $ws 'private\napcat-ws-token.txt'
+    $tokenBefore=[IO.File]::ReadAllBytes($tokenFile)
+    $direct=& powershell.exe -NoProfile -ExecutionPolicy Bypass -File (Join-Path $stage 'tools\setup-hermes.ps1') -Base $ws -Bots (Join-Path $ws 'bots') -DataDir $tideHome 2>&1 | Out-String
+    Check ($LASTEXITCODE -eq 0) 'direct setup resolves bundled source independently of workspace'
+    Check ([Convert]::ToBase64String($tokenBefore) -ceq [Convert]::ToBase64String([IO.File]::ReadAllBytes($tokenFile))) 'direct split-directory setup preserves existing connection token'
+
     $cfg = [IO.File]::ReadAllText($config) | ConvertFrom-Json
     Check ($cfg.networks.wsClients.Count -eq 1 -and $cfg.networks.wsClients[0].url -eq 'ws://127.0.0.1:6199/ws') 'initialized OneBot template points at AstrBot'
-    Check (Test-Path -LiteralPath (Join-Path $stage 'logs\setup')) 'bootstrap kept its local log directory'
+    Check (Test-Path -LiteralPath (Join-Path $ws 'logs\setup')) 'bootstrap kept its local log directory'
 
     $startCmd = [IO.File]::ReadAllText((Join-Path $stage 'sidecar\hermes\start.cmd'))
     Check (($startCmd -match '\.\.\\node\\node\.exe') -and ($startCmd -match 'HERMES_NODE')) 'bundled start.cmd prefers the bundled Node'

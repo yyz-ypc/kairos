@@ -143,5 +143,6 @@ jobs:
             dist/
             evidence/matrix/
             evidence/release/
+            evidence/hotfix-1.0.1/
             evidence/component-supply/
             evidence/render-matrix.json

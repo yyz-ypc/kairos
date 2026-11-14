@@ -1,12 +1,12 @@
 # 时序之子 · Kairos
 
-**V1.0.0 正式版**。Windows C++ / WebView2 工作台，保留冥零形象，以五种导航和工作方式管理聊天接入、模型、记忆、语音、视频、组件与记录。
+**V1.0.1 正式版**。Windows C++ / WebView2 工作台，保留冥零形象，以五种导航和工作方式管理聊天接入、模型、记忆、语音、视频、组件与记录。
 
-[公开仓库](https://github.com/YYZ-YPC/kairos) · [安装包与离线组件](https://github.com/YYZ-YPC/kairos/releases/tag/V1.0.0) · [MIT 许可证](LICENSE)
+[公开仓库](https://github.com/YYZ-YPC/kairos) · [安装包与离线组件](https://github.com/YYZ-YPC/kairos/releases/tag/V1.0.1) · [MIT 许可证](LICENSE)
 
 ## 使用
 
-下载 `Kairos-1.0.0-setup.exe`，对照 Release 的 `SHA256SUMS` 校验。默认工作区为文档中的「时序之子」，状态与本机配置位于 `%APPDATA%/Kairos`。安装包包含 Node、rift、hermes、FFmpeg、原生 DLL / launcher、通用配置和插件；这些运行时可离线初始化，不附带 QQ 登录包或任何账号会话。
+下载 `Kairos-1.0.1-setup.exe`，对照 Release 的 `SHA256SUMS` 校验。默认工作区为文档中的「时序之子」，状态与本机配置位于 `%APPDATA%/Kairos`。安装包包含 Node、rift、hermes、FFmpeg、原生 DLL / launcher、通用配置和插件；这些运行时可离线初始化，不附带 QQ 登录包或任何账号会话。
 
 首次启动选择工作区、准备组件、选择外观并由用户本人连接 QQ。模型、AstrBot、第三方登录与密钥按组件说明自行配置；软件不会附带私人账号或冥零的私人角色正文。冥零头像和参照原图重绘的公共立绘保留，个人角色可在本机导入。
 
@@ -24,7 +24,7 @@
 
 ## 更新与随包修复
 
-设置 → 帮助 → 检查更新，默认 stable，也可选 beta。客户端校验 HTTPS、版本、最小版本、安装包大小和实际 SHA256 后才提示新版；失败写入本机 `updates/check.log`，启动继续。后续发布保留上一版资产，通过 `latest.json.previous` 支持「回滚上一版」；首发没有虚构的上一版，beta 清单当前跟随 V1.0.0 正式基线。
+设置 → 帮助 → 检查更新，默认 stable，也可选 beta。客户端校验 HTTPS、版本、最小版本、安装包大小和实际 SHA256 后才提示新版；失败写入本机 `updates/check.log`，启动继续。后续发布保留上一版资产，通过 `latest.json.previous` 支持「回滚上一版」；V1.0.1 保留 V1.0.0 的上一版资产；beta 清单跟随最新正式基线。
 
 设置 → 组件 → 随包修复 → **补齐随包组件**。先读取 `pack/components/` 的同版本包，缺失且网络可用才访问 Release；离线不尝试联网，并显示地址、放置位置和校验方法。包与每个文件都校验 SHA256，失败保留原文件。[离线操作说明](docs/offline-components.md)。其他组件仍使用 `tools/components.json` 既有检测、镜像、版本和八项必需锁定规则。
 
@@ -51,7 +51,7 @@ python tools/check-ui-palettes.py --check-css
 python acceptance/tests/test-tide-bundle-contract.py
 powershell -NoProfile -ExecutionPolicy Bypass -File acceptance/tests/test-bundled-repair.ps1
 node tools/render-matrix.mjs
-python tools/generate-release.py --dir dist --version V1.0.0 --channel stable
+python tools/generate-release.py --dir dist --version V1.0.1 --channel stable
 ```
 
 渲染矩阵使用隔离的 Edge / Chromium 调试端口 9342。GitHub Actions 构建 C++、运行隔离测试、25 组合渲染矩阵、生成摘要与更新清单，并生成草稿 Release。维护者可用上一版 `latest.json` 传入 `--previous`；资产不删除。beta 清单另保存在 `channel-beta` 预发布指针。

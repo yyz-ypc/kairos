@@ -175,7 +175,13 @@ if (-not $Bots) {
 $script:Bots = Normalize-Dir $Bots
 
 if ($env:KAIROS_SIDECAR) { $script:Sidecar = Normalize-Dir $env:KAIROS_SIDECAR }
-else { $script:Sidecar = Normalize-Dir (Join-Path $script:Base 'sidecar') }
+else {
+    # Bundled files belong to the program directory; Base/Workspace only owns writable data.
+    $programSidecar = Join-Path $script:Repo 'sidecar'
+    if ((Test-Path -LiteralPath $programSidecar) -or (Test-Path -LiteralPath (Join-Path $PSScriptRoot 'bundled-assets.json'))) {
+        $script:Sidecar = Normalize-Dir $programSidecar
+    } else { $script:Sidecar = Normalize-Dir (Join-Path $script:Base 'sidecar') }
+}
 
 $script:AstrbotData = Join-Path $script:Bots 'AstrBot\data'
 

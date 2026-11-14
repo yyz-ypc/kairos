@@ -28,7 +28,12 @@ if (-not $Base) { $Base = Split-Path -Parent $PSScriptRoot }
 $Base = [IO.Path]::GetFullPath($Base)
 if (-not $Bots) { $Bots = Join-Path $Base 'bots' }
 $Bots = [IO.Path]::GetFullPath($Bots)
-if (-not $Source) { $Source = Join-Path $Base 'sidecar\hermes' }
+if (-not $Source) {
+    $programRoot = Split-Path -Parent $PSScriptRoot
+    $bundledSource = Join-Path $programRoot 'sidecar\hermes'
+    if ((Test-Path -LiteralPath $bundledSource) -or (Test-Path -LiteralPath (Join-Path $PSScriptRoot 'bundled-assets.json'))) { $Source = $bundledSource }
+    else { $Source = Join-Path $Base 'sidecar\hermes' }
+}
 $Source = [IO.Path]::GetFullPath($Source)
 if (-not $DataDir) {
     $root = $env:KAIROS_STATE_DIR

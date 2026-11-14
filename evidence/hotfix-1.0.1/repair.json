@@ -1,0 +1,13 @@
+{
+  "version": "V1.0.1",
+  "reproduced_before_fix": true,
+  "actual_installed_hermes_ready": true,
+  "repair_exit": 0,
+  "offline": true,
+  "qq_accounts_used": false,
+  "existing_configuration_unchanged": {
+    "onebot.json": true
+  },
+  "other_component_rules_unchanged": true,
+  "hermes_bundled_detect_verify_locks_unchanged": true
+}

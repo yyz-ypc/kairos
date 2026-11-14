@@ -3,7 +3,7 @@ name: kairos-install
 description: 安装和维护 Windows 桌面应用「时序之子」Kairos；处理 AstrBot、QQ 接入、记忆、语音、桌宠和看视频的现有配置。
 ---
 
-# 时序之子 · V1.0.0
+# 时序之子 · V1.0.1
 
 公开仓库 https://github.com/YYZ-YPC/kairos ，MIT 源码；下载只使用该仓库 Release 的同版本安装包和运行时资产。不要要求用户在聊天中提供密钥、cookie 或账号会话。
 
