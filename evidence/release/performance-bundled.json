@@ -1,0 +1,397 @@
+{
+  "repeatMemoryAfter": {
+    "processes": [
+      {
+        "workingSet": 8990720,
+        "name": "cmd",
+        "privateBytes": 7237632
+      },
+      {
+        "workingSet": 8224768,
+        "name": "conhost",
+        "privateBytes": 1331200
+      },
+      {
+        "workingSet": 26464256,
+        "name": "Kairos",
+        "privateBytes": 5992448
+      },
+      {
+        "workingSet": 146673664,
+        "name": "msedgewebview2",
+        "privateBytes": 352636928
+      },
+      {
+        "workingSet": 20578304,
+        "name": "msedgewebview2",
+        "privateBytes": 7659520
+      },
+      {
+        "workingSet": 170045440,
+        "name": "msedgewebview2",
+        "privateBytes": 72978432
+      },
+      {
+        "workingSet": 10981376,
+        "name": "msedgewebview2",
+        "privateBytes": 2740224
+      },
+      {
+        "workingSet": 120492032,
+        "name": "msedgewebview2",
+        "privateBytes": 71548928
+      },
+      {
+        "workingSet": 39538688,
+        "name": "msedgewebview2",
+        "privateBytes": 12234752
+      },
+      {
+        "workingSet": 51666944,
+        "name": "node",
+        "privateBytes": 30261248
+      }
+    ],
+    "workingSet": 603656192,
+    "privateBytes": 564621312
+  },
+  "repeatPrivateBytesDelta": 18227200,
+  "repeatWebviewPrivateBytesDelta": 18952192,
+  "paints": [
+    {
+      "name": "first-paint",
+      "entryType": "paint",
+      "startTime": 268,
+      "duration": 0,
+      "navigationId": 8074,
+      "paintTime": 168.40000000596046,
+      "presentationTime": 268
+    },
+    {
+      "name": "first-contentful-paint",
+      "entryType": "paint",
+      "startTime": 268,
+      "duration": 0,
+      "navigationId": 8074,
+      "paintTime": 168.40000000596046,
+      "presentationTime": 268
+    }
+  ],
+  "navigationTiming": [
+    {
+      "name": "https://kairos.localhost/",
+      "entryType": "navigation",
+      "startTime": 0,
+      "duration": 150.70000000298023,
+      "navigationId": 8074,
+      "initiatorType": "navigation",
+      "deliveryType": "",
+      "nextHopProtocol": "",
+      "renderBlockingStatus": "non-blocking",
+      "contentType": "text/html",
+      "contentEncoding": "",
+      "workerStart": 0,
+      "workerRouterEvaluationStart": 0,
+      "workerCacheLookupStart": 0,
+      "workerMatchedSourceType": "",
+      "workerFinalSourceType": "",
+      "redirectStart": 0,
+      "redirectEnd": 0,
+      "fetchStart": 3.6000000089406967,
+      "domainLookupStart": 3.6000000089406967,
+      "domainLookupEnd": 3.6000000089406967,
+      "connectStart": 3.6000000089406967,
+      "secureConnectionStart": 3.6000000089406967,
+      "connectEnd": 3.6000000089406967,
+      "requestStart": 3.6000000089406967,
+      "responseStart": 123.29999999701977,
+      "firstInterimResponseStart": 0,
+      "finalResponseHeadersStart": 0,
+      "responseEnd": 123.29999999701977,
+      "transferSize": 212342,
+      "encodedBodySize": 212042,
+      "decodedBodySize": 212042,
+      "responseStatus": 200,
+      "serverTiming": [],
+      "unloadEventStart": 0,
+      "unloadEventEnd": 0,
+      "domInteractive": 135.20000000298023,
+      "domContentLoadedEventStart": 135.20000000298023,
+      "domContentLoadedEventEnd": 135.20000000298023,
+      "domComplete": 150.6000000089407,
+      "loadEventStart": 150.70000000298023,
+      "loadEventEnd": 150.70000000298023,
+      "type": "navigate",
+      "redirectCount": 0,
+      "activationStart": 0,
+      "criticalCHRestart": 0,
+      "notRestoredReasons": null,
+      "confidence": {}
+    }
+  ],
+  "webviewPrivateBytesBefore": 259088384,
+  "webviewPrivateBytesAfter": 500846592,
+  "webviewPrivateBytesDelta": 241758208,
+  "startupTrace": [
+    "121456750 ui-init",
+    "121456750 webview-init",
+    "121456765 environment-ready",
+    "121456765 find-runtime",
+    "121456765 runtime-found",
+    "121456859 ui-init-complete",
+    "121457171 controller-ready",
+    "121457171 navigate",
+    "121457312 web-ready"
+  ],
+  "engine": "actual WebView2 in Kairos.exe",
+  "fixture": "isolated synthetic state; no QQ accounts; full bundled sidecar; offline",
+  "profile": "new per-run WebView profile",
+  "firstScreenMs": 632.9,
+  "targetMs": 1500,
+  "firstScreenPassed": true,
+  "navigationsDuringStyleSwitch": 0,
+  "styleSwitchTimes": [
+    {
+      "cycle": 0,
+      "style": "seer",
+      "milliseconds": 2.8999999910593033
+    },
+    {
+      "cycle": 0,
+      "style": "array",
+      "milliseconds": 10.100000008940697
+    },
+    {
+      "cycle": 0,
+      "style": "barrier",
+      "milliseconds": 10.200000002980232
+    },
+    {
+      "cycle": 0,
+      "style": "tower",
+      "milliseconds": 24.5
+    },
+    {
+      "cycle": 0,
+      "style": "folio",
+      "milliseconds": 51.8999999910593
+    },
+    {
+      "cycle": 1,
+      "style": "seer",
+      "milliseconds": 16.69999998807907
+    },
+    {
+      "cycle": 1,
+      "style": "array",
+      "milliseconds": 51.5
+    },
+    {
+      "cycle": 1,
+      "style": "barrier",
+      "milliseconds": 10.200000002980232
+    },
+    {
+      "cycle": 1,
+      "style": "tower",
+      "milliseconds": 33.70000000298023
+    },
+    {
+      "cycle": 1,
+      "style": "folio",
+      "milliseconds": 8.199999988079071
+    },
+    {
+      "cycle": 2,
+      "style": "seer",
+      "milliseconds": 10.600000008940697
+    },
+    {
+      "cycle": 2,
+      "style": "array",
+      "milliseconds": 13.799999997019768
+    },
+    {
+      "cycle": 2,
+      "style": "barrier",
+      "milliseconds": 9.400000005960464
+    },
+    {
+      "cycle": 2,
+      "style": "tower",
+      "milliseconds": 16.299999997019768
+    },
+    {
+      "cycle": 2,
+      "style": "folio",
+      "milliseconds": 9.700000002980232
+    },
+    {
+      "cycle": 3,
+      "style": "seer",
+      "milliseconds": 9.900000005960464
+    },
+    {
+      "cycle": 3,
+      "style": "array",
+      "milliseconds": 165.70000000298023
+    },
+    {
+      "cycle": 3,
+      "style": "barrier",
+      "milliseconds": 31
+    },
+    {
+      "cycle": 3,
+      "style": "tower",
+      "milliseconds": 56.5
+    },
+    {
+      "cycle": 3,
+      "style": "folio",
+      "milliseconds": 41
+    },
+    {
+      "cycle": 4,
+      "style": "seer",
+      "milliseconds": 40.6000000089407
+    },
+    {
+      "cycle": 4,
+      "style": "array",
+      "milliseconds": 34.6000000089407
+    },
+    {
+      "cycle": 4,
+      "style": "barrier",
+      "milliseconds": 9.900000005960464
+    },
+    {
+      "cycle": 4,
+      "style": "tower",
+      "milliseconds": 35.3999999910593
+    },
+    {
+      "cycle": 4,
+      "style": "folio",
+      "milliseconds": 7.4000000059604645
+    }
+  ],
+  "memoryBefore": {
+    "processes": [
+      {
+        "workingSet": 8990720,
+        "name": "cmd",
+        "privateBytes": 7237632
+      },
+      {
+        "workingSet": 8224768,
+        "name": "conhost",
+        "privateBytes": 1331200
+      },
+      {
+        "workingSet": 25882624,
+        "name": "Kairos",
+        "privateBytes": 5566464
+      },
+      {
+        "workingSet": 95367168,
+        "name": "msedgewebview2",
+        "privateBytes": 135004160
+      },
+      {
+        "workingSet": 20578304,
+        "name": "msedgewebview2",
+        "privateBytes": 7659520
+      },
+      {
+        "workingSet": 156520448,
+        "name": "msedgewebview2",
+        "privateBytes": 68960256
+      },
+      {
+        "workingSet": 10981376,
+        "name": "msedgewebview2",
+        "privateBytes": 2740224
+      },
+      {
+        "workingSet": 78213120,
+        "name": "msedgewebview2",
+        "privateBytes": 32804864
+      },
+      {
+        "workingSet": 37310464,
+        "name": "msedgewebview2",
+        "privateBytes": 11919360
+      },
+      {
+        "workingSet": 51499008,
+        "name": "node",
+        "privateBytes": 29728768
+      }
+    ],
+    "workingSet": 493568000,
+    "privateBytes": 302952448
+  },
+  "memoryAfter": {
+    "processes": [
+      {
+        "workingSet": 8990720,
+        "name": "cmd",
+        "privateBytes": 7237632
+      },
+      {
+        "workingSet": 8224768,
+        "name": "conhost",
+        "privateBytes": 1331200
+      },
+      {
+        "workingSet": 26779648,
+        "name": "Kairos",
+        "privateBytes": 6717440
+      },
+      {
+        "workingSet": 144707584,
+        "name": "msedgewebview2",
+        "privateBytes": 350871552
+      },
+      {
+        "workingSet": 20578304,
+        "name": "msedgewebview2",
+        "privateBytes": 7659520
+      },
+      {
+        "workingSet": 168878080,
+        "name": "msedgewebview2",
+        "privateBytes": 72343552
+      },
+      {
+        "workingSet": 10981376,
+        "name": "msedgewebview2",
+        "privateBytes": 2740224
+      },
+      {
+        "workingSet": 103731200,
+        "name": "msedgewebview2",
+        "privateBytes": 55197696
+      },
+      {
+        "workingSet": 38707200,
+        "name": "msedgewebview2",
+        "privateBytes": 12034048
+      },
+      {
+        "workingSet": 51601408,
+        "name": "node",
+        "privateBytes": 30261248
+      }
+    ],
+    "workingSet": 583180288,
+    "privateBytes": 546394112
+  },
+  "workingSetDelta": 89612288,
+  "privateBytesDelta": 243441664,
+  "jsHeapBefore": 1491104,
+  "jsHeapAfter": 2564428,
+  "jsHeapDelta": 1073324
+}

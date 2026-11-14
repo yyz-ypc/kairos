@@ -46,5 +46,19 @@
   "rift_offline": {
     "exit": 0,
     "compiled_entry_loaded": true
+  },
+  "ci": {
+    "passed": true,
+    "run": "https://github.com/yyz-ypc/kairos/actions/runs/43582042396",
+    "head": "4c5aedca803f2830ed6193a9693d55ccfeac2fb1"
+  },
+  "migration": {
+    "passed": 19,
+    "failed": 0
+  },
+  "performance_full_bundle": {
+    "firstScreenMs": 632.9,
+    "passed": true,
+    "navigations": 0
   }
 }

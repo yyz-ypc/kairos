@@ -22,5 +22,5 @@
       "expected": 3
     }
   ],
-  "uses": "production ValidateDownloadedSetup in actual Kairos.exe; local bytes only"
+  "uses": "final CI-built production ValidateDownloadedSetup; local final installer bytes only"
 }

@@ -1,6 +1,6 @@
 # 时序之子 V1.0.0 首发验收
 
-日期：2026-11-14。公开源码：YYZ-YPC/kairos；MIT。全新 Git 历史，无旧地址兼容提示。正式版本在其余工作开始前完成，基线见 step0.json。最终资产清单和 SHA256 见 artifacts.json；发布核验记录将在 CI 完成后补入。
+日期：2026-11-14。公开源码：YYZ-YPC/kairos；MIT。全新 Git 历史，无旧地址兼容提示。正式版本在其余工作开始前完成，基线见 step0.json。最终资产清单和 SHA256 见 artifacts.json；发布核验见 release-verification.json。
 
 ## 界面与能力去向
 
@@ -43,8 +43,19 @@ rift/hermes 自有实现以 Node 24.21.0 绑定的 V8 字节码及原生二进�
 - 实际最终安装器在独立目录安装、六组文件核验、删除 Hermes 文件后识别并从本地包修复、Hermes 与 Rift 离线初始化、第三方声明与形象保留、卸载及注册表恢复均验收；明细见 installer-test.json。
 - 测试不使用真实 QQ 账号，也不依赖真实组件下载。实际安装在本开发机隔离目录完成，未声称干净 Windows 虚拟机兼容验收。
 
-实际 Kairos.exe + WebView2、全新隔离配置、合成状态测得首屏 709.75ms，目标 1500ms 通过。原 .local 虚拟主机约 2.38–2.67s；改用 .localhost 并提前启动 WebView 后解决名称解析等待，未关闭安全策略。风格切换导航事件 0。第一次遍历 25 组合 WebView private bytes 增量 237629440 字节（约 226.6MiB），再次遍历增量 19177472 字节（约 18.3MiB）；JS heap 增量 404840 字节。内存增量仍明显，记录实测值，不将其等同于泄漏结论。性能工具与完整快照见 tools/measure-webview.mjs、performance.json。
+最终 CI 安装包中的实际 Kairos.exe + WebView2，完整随包 sidecar、全新隔离配置、空账号且离线，测得首屏 **632.9ms**，目标 1500ms 通过；随后用合成状态测量 25 组合切换，导航事件 0。第一次遍历 WebView private bytes 增量 241758208 字节（约 230.6MiB），再次遍历增量 18952192 字节（约 18.1MiB）；JS heap 增量 1073324 字节。内存增量仍明显，记录实测值，不将其等同于泄漏结论。完整测量见 performance-bundled.json，复现：`node tools/measure-webview.mjs --bundled`。
+
+早期空 sidecar 测量为 709.75ms，保留在 performance.json。原 .local 主机约 2.38–2.67s；改用 .localhost 并提前启动 WebView 后移除了等待，现象与 [WebView2 同类问题记录](https://github.com/MicrosoftEdge/WebView2Feedback/issues/2381) 相符，未关闭安全策略。原生加载与备用界面也同步使用 daylight / suit 新主题判断。
 
 ## 发布产物
 
 完整构建与安装器均报告 V1.0.0 / 1.0.0.0。最终大小及 SHA256 由 artifacts.json、Release 的 SHA256SUMS 和安装包同名 .sha256 共同记录。GitHub Actions 会重建 C++、跑测试与渲染矩阵、验收隔离安装、生成清单及草稿 Release；上线前以最终资产重新核验。
+
+
+最终成功流水线：[43582042396](https://github.com/yyz-ypc/kairos/actions/runs/43582042396)，构建源提交 `4c5aedca803f2830ed6193a9693d55ccfeac2fb1`。云端 C++ / core、WebUI 62、契约 38、随包修复 12、迁移 19、Hermes 离线 13、矩阵 570 及隔离安装 12 项全部通过。之后本机使用下载的同一最终安装包，再次安装验收 12 项全过；原生实际文件校验 4 项全过。
+
+最终 `Kairos-1.0.0-setup.exe`：**137808501 字节**（131.42MiB）；版本资源 ProductVersion=`V1.0.0`，FileVersion=`1.0.0.0`。
+
+SHA256：`74fe4474b26643fa6a5885b70855319d7ff3a3cc858f0e081732444bfb2c9d64`。本地七项产物、latest.json 和 GitHub 上传 digest 已逐项比对一致。
+
+公共包将私人角色默认正文及私人语音参考替换为用户可配置模板；角色导入和声音配置能力仍保留，原本机文件未删除。冥零头像及获授权的新绘立绘保留。

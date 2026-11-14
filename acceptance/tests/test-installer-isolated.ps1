@@ -43,6 +43,9 @@ try {
  Check ((Test-Path (Join-Path $program 'sidecar\node\LICENSE')) -and (Test-Path (Join-Path $program 'sidecar\hermes\vendor\silk-wasm\LICENSE')) -and (Test-Path (Join-Path $program 'sidecar\rift\LICENSE')) -and (Test-Path (Join-Path $program 'docs\licenses\COPYING.GPLv3'))) 'third-party notices remain installed'
  Check (-not (Test-Path (Join-Path $program 'sidecar\hermes\native\hook.cpp')) -and -not (Test-Path (Join-Path $program 'pack\login'))) 'private native source and login package are absent'
  Check ((Test-Path (Join-Path $program 'art\character\hero.webp')) -and (Test-Path (Join-Path $program 'art\character\avatar.webp'))) 'Mingling redrawn hero and original avatar remain installed'
+ $capture=Join-Path $work 'verified-bin';New-Item -ItemType Directory -Force $capture|Out-Null
+ foreach($name in @('Kairos.exe','WebView2Loader.dll')){Copy-Item -LiteralPath (Join-Path $program $name) -Destination (Join-Path $capture $name) -Force}
+ $report.captured_build=$true
 } catch {$failure=$_.Exception.Message} finally {
  try {
   $uninstall=Join-Path $program 'unins000.exe'

@@ -54,5 +54,6 @@
               ],
     "registry_restored":  true,
     "uninstalled":  true,
+    "captured_build":  true,
     "failure":  null
 }

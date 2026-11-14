@@ -2,7 +2,7 @@
 
 **V1.0.0 正式版**。Windows C++ / WebView2 工作台，保留冥零形象，以五种导航和工作方式管理聊天接入、模型、记忆、语音、视频、组件与记录。
 
-[公开仓库](https://github.com/YYZ-YPC/kairos) · [安装包与离线组件](https://github.com/YYZ-YPC/kairos/releases) · [MIT 许可证](LICENSE)
+[公开仓库](https://github.com/YYZ-YPC/kairos) · [安装包与离线组件](https://github.com/YYZ-YPC/kairos/releases/tag/V1.0.0) · [MIT 许可证](LICENSE)
 
 ## 使用
 
