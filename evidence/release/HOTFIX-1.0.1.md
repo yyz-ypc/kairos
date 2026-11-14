@@ -25,3 +25,5 @@
 `Kairos-1.0.1-setup.exe`：137952855 字节。SHA256：`6a95b27a95d7a9d704ab01e5fd98d8afb2dee5e6faed7eb858b4a77751ec1e3e`。本地七项资产、更新清单和 GitHub 上传 digest 已逐项核对。`latest.json.previous` 保留 V1.0.0；原版资产未改写。
 
 [修复记录](../hotfix-1.0.1/repair.json) · [原图标验证](../hotfix-1.0.1/icon.json) · [最终安装验收](../hotfix-1.0.1/installer-test.json) · [CI](../hotfix-1.0.1/ci.json) · [资产清单](../hotfix-1.0.1/artifacts.json)。
+
+V1.0.1 已正式公开。stable / beta 均实测返回 HTTP 200，版本为 V1.0.1，previous 为 V1.0.0；新旧两版资产的本地大小与 SHA256 全部核对通过。见 [发布核验](../hotfix-1.0.1/verification.json)。

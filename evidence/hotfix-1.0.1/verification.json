@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "release": "https://github.com/YYZ-YPC/kairos/releases/tag/V1.0.1",
+  "channels": [
+    {
+      "channel": "stable",
+      "http_status": 200,
+      "version": "V1.0.1",
+      "previous": "V1.0.0",
+      "current_and_previous_assets_verified": true
+    },
+    {
+      "channel": "beta",
+      "http_status": 200,
+      "version": "V1.0.1",
+      "previous": "V1.0.0",
+      "current_and_previous_assets_verified": true
+    }
+  ],
+  "actual_instance_hermes_state": "done",
+  "original_mingling_icon_restored": true,
+  "qq_accounts_operated": false
+}
