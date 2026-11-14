@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "release": "https://github.com/YYZ-YPC/kairos/releases/tag/V1.0.0",
+  "isDraft": false,
+  "channel_checks": [
+    {
+      "channel": "stable",
+      "endpoint": "https://github.com/YYZ-YPC/kairos/releases/latest/download/latest.json",
+      "http_status": 200,
+      "version": "V1.0.0",
+      "assets_verified": 7,
+      "manifest_sha256": "5a986e42139198528c8e84689779242367ce056069dd4d4a918e32cb8c155f57",
+      "passed": true
+    },
+    {
+      "channel": "beta",
+      "endpoint": "https://github.com/YYZ-YPC/kairos/releases/download/channel-beta/latest.json",
+      "http_status": 200,
+      "version": "V1.0.0",
+      "assets_verified": 7,
+      "manifest_sha256": "5efbce2b424b570fbe2035b6d05c97ffe4f78aa6784979aeaba9f2cfe847ee07",
+      "passed": true
+    }
+  ],
+  "previous": null,
+  "rollback": "First release has no previous asset; previous-version policy and rollback helper covered by isolated tests",
+  "qq_accounts_used": false
+}

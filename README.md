@@ -24,7 +24,7 @@
 
 ## 更新与随包修复
 
-设置 → 帮助 → 检查更新，默认 stable，也可选 beta。客户端校验 HTTPS、版本、最小版本、安装包大小和实际 SHA256 后才提示新版；失败写入本机 `updates/check.log`，启动继续。后续发布保留上一版资产，通过 `latest.json.previous` 支持「回滚上一版」；首发没有虚构的上一版。
+设置 → 帮助 → 检查更新，默认 stable，也可选 beta。客户端校验 HTTPS、版本、最小版本、安装包大小和实际 SHA256 后才提示新版；失败写入本机 `updates/check.log`，启动继续。后续发布保留上一版资产，通过 `latest.json.previous` 支持「回滚上一版」；首发没有虚构的上一版，beta 清单当前跟随 V1.0.0 正式基线。
 
 设置 → 组件 → 随包修复 → **补齐随包组件**。先读取 `pack/components/` 的同版本包，缺失且网络可用才访问 Release；离线不尝试联网，并显示地址、放置位置和校验方法。包与每个文件都校验 SHA256，失败保留原文件。[离线操作说明](docs/offline-components.md)。其他组件仍使用 `tools/components.json` 既有检测、镜像、版本和八项必需锁定规则。
 

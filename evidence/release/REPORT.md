@@ -49,7 +49,9 @@ rift/hermes 自有实现以 Node 24.21.0 绑定的 V8 字节码及原生二进�
 
 ## 发布产物
 
-完整构建与安装器均报告 V1.0.0 / 1.0.0.0。最终大小及 SHA256 由 artifacts.json、Release 的 SHA256SUMS 和安装包同名 .sha256 共同记录。GitHub Actions 会重建 C++、跑测试与渲染矩阵、验收隔离安装、生成清单及草稿 Release；上线前以最终资产重新核验。
+V1.0.0 已正式公开；stable / beta 两个公开 HTTPS 清单均实测返回 200，七项资产的大小与 SHA256 全部匹配。Beta 当前跟随 V1.0.0 正式基线，没有另行虚构 beta 安装包。发布核验见 release-verification.json。
+
+完整构建与安装器均报告 V1.0.0 / 1.0.0.0。最终大小及 SHA256 由 artifacts.json、Release 的 SHA256SUMS 和安装包同名 .sha256 共同记录。GitHub Actions 会重建 C++、跑测试与渲染矩阵、验收隔离安装、生成清单及草稿 Release；最终资产已重新核验。
 
 
 最终成功流水线：[43582042396](https://github.com/yyz-ypc/kairos/actions/runs/43582042396)，构建源提交 `4c5aedca803f2830ed6193a9693d55ccfeac2fb1`。云端 C++ / core、WebUI 62、契约 38、随包修复 12、迁移 19、Hermes 离线 13、矩阵 570 及隔离安装 12 项全部通过。之后本机使用下载的同一最终安装包，再次安装验收 12 项全过；原生实际文件校验 4 项全过。
